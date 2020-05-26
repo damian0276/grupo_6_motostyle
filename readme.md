@@ -34,3 +34,7 @@ Le encontramos muy práctico el carro de compras visible en todo momento, al igu
 
 
 
+## Wireframe Grupo 6 ecommerce venta de motos
+dirección
+
+-https://www.figma.com/file/LERxsxeEreMiHohdT9NkY7/Grupo-6-ecommerce-Motos?node-id=0%3A1
