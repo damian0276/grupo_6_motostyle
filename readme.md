@@ -1,8 +1,9 @@
 # Proyecto Integrador
-## Venta de motos, Accesorios y Servicio Técnico.
+## Venta de motos.
 
-- El ecommerce se encargara de ofrecer motos usadas y 0km, accesorios (guantes, cascos, etc) , repuestos (caño dde escape, pastillas de freno, etc) y servicio técnico (post venta y mecánica general).
-- Apuntamos a un público en general; tanto para clientes que utilizan la moto para trabajar, en forma recreativa, deportiva y como medio de transporte.
+- El ecommerce se encargara de vender motos 0km de alta gama  gran turismo. Motos de gran tamaño y cilindrada, diseñadas para ofrecer la máxima comodidad al conductor, sobre todo en trayectos largos. 
+
+- Apuntamos a un público de alto poder adquisitivo.
 
 ## Integrantes del equipo
 - Leandro Corbalán: 31 años, en pareja y dueño de una herrería. Conocimiento básico de HTML5 y CSS.
@@ -28,13 +29,20 @@ Es de la más destacada en cuanto a su estética, paletas de colores, funcionali
 
 Resaltamos el menú de navegación de productos, que se encuentra del lateral izquierdo. El mismo es estático y nos pareció funcional. 
 
+- https://lamoto.com.ar
+
+Nos gustó su adaptabilidad y su paleta de colores.
+
 - https://tiendahonda.com.ar/:
 
 Le encontramos muy práctico el carro de compras visible en todo momento, al igual que la barra de búsqueda y el botón de login. Nos pareció buena idea el carrusel con descuentos y novedades. 
 
 
+## Paleta de colores
+
+- https://coolors.co/777777-000000-bc0606-ffffff-aba58a
 
 ## Wireframe Grupo 6 ecommerce venta de motos
 dirección
 
--https://www.figma.com/file/LERxsxeEreMiHohdT9NkY7/Grupo-6-ecommerce-Motos?node-id=0%3A1
+- https://www.figma.com/file/LERxsxeEreMiHohdT9NkY7/Grupo-6-ecommerce-Motos?node-id=0%3A1
