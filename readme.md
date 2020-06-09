@@ -13,19 +13,19 @@
 
 ## Páginas web de referencia:
 
-- https://motonet.com.ar/#: 
+- https://motonet.com.ar/ 
 
 De esta página nos gustó la subdivisión de su menú. Es sencilla y concisa, en el detalle de sus productos. 
 
-- https://www.bmw-motorrad.com.ar/es/models/modeloverview.html: 
+- https://www.bmw-motorrad.com.ar/es/home.html
 
 Sección de noticias y eventos en el home.
 
-- https://harley-davidson.com.ar/: 
+- https://harley-davidson.com.ar/
 
 Es de la más destacada en cuanto a su estética, paletas de colores, funcionalidad y comodidad del menú. 
 
-- https://www.yamaha-motor.com.ar/:
+- https://www.yamaha-motor.com.ar/
 
 Resaltamos el menú de navegación de productos, que se encuentra del lateral izquierdo. El mismo es estático y nos pareció funcional. 
 
