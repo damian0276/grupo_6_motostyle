@@ -40,7 +40,7 @@ Le encontramos muy práctico el carro de compras visible en todo momento, al igu
 
 ## Paleta de colores
 
-- https://coolors.co/777777-000000-bc0606-ffffff-aba58a
+- https://coolors.co/777777-000000-e70202-ffffff-aba58a
 
 ## Wireframe Grupo 6 ecommerce venta de motos
 dirección
