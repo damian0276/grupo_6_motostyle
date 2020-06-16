@@ -40,9 +40,15 @@ Le encontramos muy práctico el carro de compras visible en todo momento, al igu
 
 ## Paleta de colores
 
-- https://coolors.co/777777-000000-e70202-ffffff-aba58a
+- https://coolors.co/c2c2c2-000000-e70202-ffffff-aba58a
+
+## Estilos de fuente
+
+- Para los títulos y los menús de navegación elegímos la fuente "Cabin".
+
+- Para el contenido de la página elegimos la fuente "Moon".
 
 ## Wireframe Grupo 6 ecommerce venta de motos
 dirección
 
-- https://www.figma.com/file/LERxsxeEreMiHohdT9NkY7/Grupo-6-ecommerce-Motos?node-id=0%3A1
+- https://www.figma.com/file/KWoS6VoLtJPTiZmSbt5HyA/Proyecto_integrador_MotoStyle?node-id=206%3A1273
