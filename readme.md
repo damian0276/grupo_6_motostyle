@@ -52,3 +52,7 @@ Le encontramos muy práctico el carro de compras visible en todo momento, al igu
 dirección
 
 - https://www.figma.com/file/KWoS6VoLtJPTiZmSbt5HyA/Proyecto_integrador_MotoStyle?node-id=206%3A1273
+
+## Tablero de trabajo
+
+- https://trello.com/b/X6UEioXV/proyecto-integrador-ecommerce
