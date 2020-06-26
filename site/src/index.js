@@ -14,8 +14,8 @@ const adminRoutes = require('./routes/admin');
 
 //Para usar las rutas
 
-app.use(webRoutes);
 //app.use(userRoutes);
+app.use(webRoutes);
 app.use(productRoutes);
 app.use(adminRoutes);
 
