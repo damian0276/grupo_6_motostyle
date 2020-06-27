@@ -16,6 +16,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 ul, ol {
     list-style-type: none;
@@ -42,17 +44,33 @@ input {
   font-family: inherit;
 }
 
-.a-header-logo{
-    display:block;
+.blur{
+    background-color: rgba(0, 0, 0, 0.5);    
+    width: 100%;
+    transition: 500ms;
+}
+
+body{
+    background-image: url('/asset/img/fondo-pagina/body-image.png');    
 }
 
 /*Header*/
 
 header{
+    height: 10vh;
     background-color: var(--rojo);
 }
-header .container div ul li .a-header-login,
-header .container div ul li .a-header-shopcart{
+header .header-div{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+}
+.a-header-logo{
+    display:block;
+}
+header .header-div div ul li .a-header-login,
+header .header-div div ul li .a-header-shopcart{
     box-sizing: content-box;
     background-color: white;
     width: 2em;
@@ -63,31 +81,90 @@ header .container div ul li .a-header-shopcart{
     justify-content: center;
     align-items: center;
 }
-header .container div ul li .a-header-login img,
-header .container div ul li .a-header-shopcart img{
+header .header-div div ul li .a-header-login img,
+header .header-div div ul li .a-header-shopcart img{
     width: 65%;
     display: block;
 }
+
+/* Searchbar*/
 .search-bar-back{
     background-color: var(--beige);
-    margin:0.2em 0.5em 1em 0.5em;
+    margin:0.2em 0.5em 0.2em 0.5em;
     border: 1px solid black;
 }
+
+
+.search-bar-back .search-bar .search-form{
+    padding: 0.2em 1em;
+}
 .search-bar-back .search-bar .search-form .search-input{
-    width: 83%;
-    margin:2px 2px 2px 1em;
     border: 0;
     padding-left: 0.5em;
+    flex-grow: 1;
 }
 .search-bar-back .search-bar .search-form .search-button{
     border: none;
     background-color: var(--beige);
 }
-.navbar-lateral .primer-menu li{
+/*Nav bar*/
+.navbar-lateral{
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+}
+.navbar-lateral div{
+    width: max-content;
+}
+.navbar-lateral ul li{
     background-color: var(--rojo);
     width:120px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    border: 1px solid var(--gris);
+}
+.navbar-lateral .navbar-collapse-button{
+    background-color: var(--gris);
+    color: var(--rojo);
+    font-size: 3em;
+    border: none;
+    position: relative;
+    padding:5px 5px;
+}
+.navbar-lateral div #primer-menu,
+.navbar-lateral div #submenu-marcas,
+.navbar-lateral div #submenu-cc{
+    margin-top: 10vh;
+}
+
+
+input[name='boton']:checked ~ label{
+    transform: rotate(180deg);
+}
+
+/*products-container*/
+
+.products-container .titulo-product_div{
+    background-color: var(--beige);
+    padding: 0.1em 0;
+    margin: 0.5em 0em;
+}
+
+.products-container .titulo-product_div h2{
+    margin-left:1em;
+}
+
+.products-container .products .product-box{
+    margin-bottom: 1em;
+    padding: 0 10px;
+}
+.products-container .products .product-box .card-body{
+    padding: 0;
+}
+.products-container .products .product-box .card-body .card-title{
+    margin: 0.5em;
 }
