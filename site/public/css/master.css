@@ -227,10 +227,10 @@ footer .footer-div .a-circle-link i {
 
 @media(min-width: 768px){
     .a-circle-link{
-        height: 2em;
-        width: 2em;
+        height: 4em;
+        width: 4em;
     }
-    .a-circle-link i {
+    footer .footer-div .a-circle-link i {
         font-size: 3em;
     }
     header .header-div ul .text{
@@ -257,5 +257,8 @@ footer .footer-div .a-circle-link i {
     }
     .searchbar-div{
         flex-grow: 1;
+    }
+    footer .footer-div .a-circle-link i {
+        font-size: 1.5em;
     }
 }
