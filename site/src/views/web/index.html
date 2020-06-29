@@ -8,7 +8,7 @@
     <!-- Bootstrap Stylesheet -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!--Logo en el title de la página-->
-    <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png"/>    
+    <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png"/>
     <!--Master Stylesheet-->
     <link rel="stylesheet" href="/css/master.css">
     <title>Moto Style</title>
@@ -17,14 +17,14 @@
     <section id="blur-container">
         <!--Header-->
         <header id="header">
-            <div class="header-div">
-                <div class="row justify-content-between">
-                    <figure class="col-6">
-                        <a href="/" class="a-header-logo">
-                            <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
-                        </a>
-                    </figure>
-                    <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
+            <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
+                <figure class="col-5 col-md-4 col-lg-2 ">
+                    <a href="/" class="a-header-logo">
+                        <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
+                    </a>
+                </figure>
+                <div class="searchbar-div">
+                    <div id="searchbar" class="search-bar-back rounded-pill col-lg-10 d-none d-lg-block">
                         <div class="search-bar">
                             <form action="" method="GET" class="search-form d-flex">
                                 <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
@@ -32,135 +32,190 @@
                             </form>
                         </div>
                     </div>
-                    <div class="search-bar-back rounded-pill d-none">
-                        <div class="search-bar">
-                            <form action="" method="GET" class="search-form">
-                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
-                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <ul class="col-4 mr-1 row align-items-center justify-content-center">
-                        <li class="col-6">
-                            <a href="#" class="a-header-login"><img src="/asset/img/header/icono-login.png" alt="Login"></a>
-                        </li>
-                        <li class="d-none">
-                            <a href="#" class="d-none">Login</a>
-                        </li>
-                        <li class="col-6">
-                            <a href="/productCart" class="a-header-shopcart"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras">
-                            </a>
-                        </li>
-                        <li class="d-none">                  
-                            <a href="/productCart" >Carito</a>
-                        </li>
-                    </ul>
-                </div>
+                </div>  
+                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
+                    <li class="col-6 col-md-3">
+                        <a href="#" class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="#">Login</a></li>
+                    <li class="col-6 col-md-3">
+                        <a href="/productCart" class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras">
+                        </a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="/productCart">Carito</a></li>
+                </ul>
             </div>
         </header>
-        <!--Barra de busqueda-->
-        <div id="searchbar" class="search-bar-back rounded-pill  d-lg-none">
+        <!--NavBar lateral-->
+        <nav id="navbar-lateral" class="navbar-lateral d-flex">
+            <div>
+                <ul id="primer-menu" class="primer-menu">
+                    <li><a href="#"><span>Home</span></a></li>
+                    <li><a href="#"><span>Nuestras<br>Motos</span></a></li>                    
+                    <li><a href="#"><span>Noticias </span></a></li>
+                    <li><a href="#"><span>Eventos </span></a></li>
+                    <li><a href="#"><span>Nosotros </span></a></li>
+                    <li><a href="#"><span>Sucursales </span></a></li>
+                    <li><a href="#"><span>Contacto </span></a></li>
+                </ul>
+                <div class="align-self-center">
+                    <input class="d-none" type="checkbox" name="boton" id="boton" >
+                    <label for="boton" class="navbar-collapse-button d-flex align-items-center rounded-right">
+                        <i class="fas fa-caret-right"></i>
+                    </label>
+                </div>
+            </div>            
+        </nav>               
+         <!--Barra de busqueda-->
+         <div id="searchbar" class="search-bar-back rounded-pill d-lg-none">
             <div class="search-bar">
                 <form action="" method="GET" class="search-form d-flex">
                     <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
                     <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-        </div>
-        <!--NavBar lateral-->
-        <nav id="navbar-lateral" class="navbar-lateral d-flex"> 
-            <div>
-                <ul id="primer-menu" class="primer-menu collapse">
-                    <li><a href="#">Home</a></li>
-                    <li><a data-toggle="collapse" href="#submenu-marcas" role="button" aria-expanded="false" aria-controls="submenu-marcas">Motos por<br> marca</a>                    
-                    </li>
-                    <li><a data-toggle="collapse" href="#submenu-cc" role="button" aria-expanded="false" aria-controls="submenu-cc">Motos por<br> cilindrada</a>
-                    </li>
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Sucursales</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>      
-            <div>
-                <ul id="submenu-marcas" class="collapse">
-                    <li><a href="#">Yamaha</a></li>
-                    <li><a href="#">Honda</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Mercedes Benz</a></li>
-                    <li><a href="#">Kawasaki</a></li>
-                    <li><a href="#">Ducati</a></li>
-                    <li><a href="#">KTM</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul id="submenu-cc" class="submenu-cc collapse">
-                    <li><a href="#">400cc - 600cc</a></li>
-                    <li><a href="#">600cc - 900cc</a></li>
-                    <li><a href="#">900cc - 1200cc</a></li>
-                    <li><a href="#">1200cc - 1500cc</a></li>
-                    <li><a href="#">1500cc - 1900cc</a></li>
-                </ul>
-            </div>
-            <div class="align-self-center">
-                <input class="d-none" type="checkbox" name="boton" id="boton" >
-                <label for="boton" class="navbar-collapse-button d-flex align-items-center rounded-right" data-toggle="collapse" data-target="#primer-menu" aria-expanded="false" aria-controls="primer-menu">
-                    <i class="fas fa-caret-right"></i>
-                </label>
-            </div>
-        </nav>
-        <!--Carrousel-->
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/asset/img/banner/banner-1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/asset/img/banner/banner-2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/asset/img/banner/banner-3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/asset/img/banner/banner-4.jpg" class="d-block w-100" alt="...">
+        </div> 
+        <!--Contenedor-->
+        <main class="page-containar" id="page-container">                   
+            <!--Carrousel-->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/asset/img/banner/banner-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/asset/img/banner/banner-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/asset/img/banner/banner-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/asset/img/banner/banner-4.jpg" class="d-block w-100" alt="...">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--Productos-->
-        <div class="products-container" id="products-container">
-            <div class="titulo-product_div" id="titulo-product_div">
-                <h2>Motos para vos</h2>
+            <!--Productos-->
+            <div class="products-container" id="products-container">
+                <div class="titulo-product_div" id="titulo-product_div">
+                    <h2>Motos para vos</h2>
+                </div>
+                <div class="row products" id="productos">
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>  
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="product-box col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <a href="#">
+                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
+                            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                            </div>
+                        </article>
+                    </div>                  
+                </div>
             </div>
-            <div class="row products" id="productos">
-                <div class="product-box col col-md-6 col-lg-4">
-                    <article class="card">
-                        <a href="#">
-                            <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                        </a>    
-                        <div class="card-body">                           
-                          <h5 class="card-title">Yamaha Tracer 900</h5>
-                        </div>
-                    </article>
-                </div>       
-            </div>
-        </div>
+        </main>
         <!--Footer-->
-
+        <footer class="w-100">
+            <div class="footer-div w-100" id="footer-div">
+                <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
+                <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
+                <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
     </section>
-    
-    <!--Script de boostrap-->    
+
+    <!--Script de boostrap-->
     <script src="/js/jquery.js"></script>
     <script src="/js/popper.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
         jQuery("input[name='boton']").change(function(){
+            var navbar = $('#primer-menu');
             if(jQuery(this).is(":checked")){
-                $('#navbar-lateral').addClass("blur"); 
+                $('#navbar-lateral').addClass("blur");
+                navbar.addClass('open');
             }
             else{
-                $('#navbar-lateral').removeClass("blur");  
+                $('#navbar-lateral').removeClass("blur");
+                navbar.removeClass('open');
             } });
-        </script>
+    </script>
     </body>
     </html>
