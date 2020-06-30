@@ -149,13 +149,15 @@ header .header-div{
 input[name='boton']:checked ~ label i{
     transform: rotate(180deg);
 }
-
+/*Page-container*/
+.page-container{
+    margin-top: 10vh;
+}
 /* Searchbar*/
 .search-bar-back{
     background-color: var(--beige);
     border: 1px solid black;
-    width: 100%;
-    margin-top: 10vh;
+    width: 100%;    
 }
 
 .search-bar-back .search-bar .search-form{
@@ -257,5 +259,14 @@ footer .footer-div .a-circle-link i {
     }
     .searchbar-div{
         flex-grow: 1;
+    }
+    .navbar-lateral div .primer-menu{
+        margin-left: 0;
+        margin-top: 20vh;
+    }
+    .page-container{
+        margin-top: 15vh;
+        width: 90%;
+        margin-left: 10%;
     }
 }
