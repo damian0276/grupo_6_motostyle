@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Logo en el title de la página-->
+    <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png"/>
+    <!--ProductCart Stylesheet-->    
+    <link rel="stylesheet" href="/css/productCart.css">
+    <title>Carrito de compras</title>
+</head>
+<body>
+    <section id="all-container">
+        <!--Header-->
+        <header id="header">
+            <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
+                <figure class="col-5 col-md-4 col-lg-2 ">
+                    <a href="/" class="a-header-logo">
+                        <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
+                    </a>
+                </figure>
+                <div class="searchbar-div">
+                    <div id="searchbar" class="search-bar-back rounded-pill col-lg-10 d-none d-lg-block">
+                        <div class="search-bar">
+                            <form action="" method="GET" class="search-form d-flex">
+                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
+                    <li class="col-6 col-md-3">
+                        <a href="#" class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="#">Login</a></li>
+                    <li class="col-6 col-md-3">
+                        <a href="/productCart" class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras">
+                        </a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="/productCart">Carito</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--NavBar lateral-->
+        <nav id="navbar-lateral" class="navbar-lateral d-flex">
+            <div>
+                <ul id="primer-menu" class="primer-menu">
+                    <li><a href="#"><span>Home</span></a></li>
+                    <li><a href="#"><span>Nuestras<br>Motos</span></a></li>                    
+                    <li><a href="#"><span>Noticias </span></a></li>
+                    <li><a href="#"><span>Eventos </span></a></li>
+                    <li><a href="#"><span>Nosotros </span></a></li>
+                    <li><a href="#"><span>Sucursales </span></a></li>
+                    <li><a href="#"><span>Contacto </span></a></li>
+                </ul>
+                <div class="align-self-center d-lg-none">
+                    <input class="d-none" type="checkbox" name="boton" id="boton" >
+                    <label for="boton" class="navbar-collapse-button d-flex align-items-center rounded-right">
+                        <i class="fas fa-caret-right"></i>
+                    </label>
+                </div>
+            </div>            
+        </nav>
+        <!--Contenedor de la página-->
+        <main class="page-container" id="page-container">
+            <!--Barra de busqueda-->
+            <div id="searchbar" class="search-bar-back rounded-pill d-lg-none">
+                <div class="search-bar">
+                    <form action="" method="GET" class="search-form d-flex">
+                        <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <!--Carrito de compras-->
+            <section class="cart-section" id="cart-section">
+                <div class="photos-box"> 
+                    <div class="bike-name" id="bike-name">
+                        <h2>Yamaha Tracer 900</h2>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
+                            <figure>
+                                <a href="/productDetail.html"><img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt=""></a>
+                            </figure>
+                        </div>
+                        <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
+                            <figure class="pre-image-figure">
+                                <img src="/asset/img/productos/yamaha-tracer-900/tablero.jpg" alt="">
+                            </figure> 
+                        </div>
+                        <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
+                            <figure class="pre-image-figure">
+                                <img src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="">
+                            </figure>
+                        </div>
+                        <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
+                            <figure class="pre-image-figure">
+                                <img src="/asset/img/productos/yamaha-tracer-900/rueda.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs w-100 mt-1" id="myTab" role="tablist">
+                        <li class="nav-item w-25" role="presentation">
+                            <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
+                                <figure>
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="">
+                                </figure> 
+                            </a>
+                        </li>
+                        <li class="nav-item w-25" role="presentation">
+                            <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
+                                <figure class="pre-image-figure">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/tablero.jpg" alt="">
+                                </figure> 
+                            </a>
+                        </li>
+                        <li class="nav-item w-25" role="presentation">
+                            <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
+                                <figure class="pre-image-figure">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="">
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="nav-item w-25" role="presentation">
+                            <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
+                                <figure class="pre-image-figure">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/rueda.jpg" alt="">
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>          
+                </div>  
+                <div class="check-form white-back p-1 mt-1 d-flex" id="check-form">
+                    <div class="div-checkboxes-labels w-md-75" id="checkbox-labels">
+                        <div>
+                            <p class="text-right">Precio:</p>
+                        </div>
+                        <div class="div-label-checkbox">
+                            <p class="p-label-checkbox text-right">
+                                <input class="hide-checkbox" type="checkbox" name="patentamiento" id="patentamiento">
+                                <span class="checkmark"></span>
+                                <label class="mb-0" for="patentamiento">Patentamiento:</label>
+                            </p>
+                        </div>
+                        <div class="div-label-checkbox">
+                            <p class="p-label-checkbox text-right">
+                                <input class="hide-checkbox" type="checkbox" name="flete" id="flete">
+                                <span class="checkmark"></span>
+                                <label class="mb-0" for="flete">Flete:</label>
+                            </p>
+                        </div>
+                        <div class="div-label-checkbox">
+                            <p class="p-label-checkbox text-right">
+                                <input class="hide-checkbox" type="checkbox" name="formulario" id="formulario">
+                                <span class="checkmark"></span>
+                                <label class="mb-0" for="formulario">Formularios:</label>
+                            </p>
+                        </div>
+                    </div>                    
+                    <div class="w-md-25 prices-div" id="prices-div">
+                        <p class="d-flex justify-content-between"><span>USD</span><span>42.000</span></p>
+                        <p class="d-flex justify-content-between"><span>USD</span><span>2.500</span></p>
+                        <p class="d-flex justify-content-between"><span>USD</span><span>100</span></p>
+                        <p class="d-flex justify-content-between"><span>USD</span><span>500</span></p>
+                    </div>                    
+                </div>    
+                <div class="final-price-div white-back border-top border-dark" id="final-price-div">
+                    <p class="d-flex justify-content-end" style="font-size:1.5em"><span>Total:USD 42.000</span></p>
+                </div> 
+                <div class="buttons-cart w-100 d-flex" id="buttons-cart">
+                    <div class="div-button-cart pr-1 w-50" id="button-reset">
+                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder  button-cart w-100" href="#"><span>Vaciar Carrito</span></a>
+                    </div>
+                    <div class="div-button-cart pl-1 w-50" id="button-buy">
+                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder  button-cart w-100" href="/product-cart/buy"><span>Comprar</span></a>
+                    </div>
+                </div>  
+                <!--Publicidad-->
+                <aside class="publicidad" id="publicidad">
+                    <figure>
+                        <img src="/asset/img/publicidad/herreria-leke.jpg" alt="publicidad">
+                    </figure>
+                    <div class="white-back">
+                        <p>
+                            Se realizan trabajos personalizados para cada cliente. Somos fabricantes confiables, serios y responsables.
+                        </p>
+                        <div class="row">
+                            <a class="text-info col-6 text-center" style="font-size: 2em;" href="https://www.facebook.com/HerreriaLeke"><i class="fab fa-facebook"></i></a>
+                            <a class="text-info col-6 text-center" style="font-size: 2em;" href="https://www.instagram.com/herrerialeke"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </aside>                          
+            </section>
+            <!--Mapa-->
+            <section class="map-section w-100 white-back" id="map-section">
+                <div class="title-map w-100" id="title-map">
+                    <h4>Tu concesionario más cercano:</h4>
+                </div>
+                <div class="map-div w-100" id="map-div">
+                    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.1866261820574!2d-58.445864885197125!3d-34.54882986210211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb436efe09303%3A0xfb39818e7624ac76!2sDigital%20House!5e0!3m2!1ses-419!2sar!4v1593543699353!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </section>    
+            
+        </main>
+        <!--Footer-->
+        <footer class="w-100">
+            <div class="footer-div w-100" id="footer-div">
+                <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
+                <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
+                <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer> 
+    </section>
+    <!--Script de boostrap-->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        jQuery("input[name='boton']").change(function(){
+            var navbar = $('#primer-menu');
+            if(jQuery(this).is(":checked")){
+                $('#navbar-lateral').addClass("blur");
+                navbar.addClass('open');
+            }
+            else{
+                $('#navbar-lateral').removeClass("blur");
+                navbar.removeClass('open');
+            } });
+        </script>    
+    </body>
+    </html>
