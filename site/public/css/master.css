@@ -228,12 +228,9 @@ footer .footer-div .a-circle-link i {
 }
 
 @media(min-width: 768px){
-    .a-circle-link{
+    header .a-circle-link{
         height: 4em;
         width: 4em;
-    }
-    footer .footer-div .a-circle-link i {
-        font-size: 3em;
     }
     header .header-div ul .text{
         font-size: 1.5em;
@@ -242,6 +239,14 @@ footer .footer-div .a-circle-link i {
     header .header-div ul .text a{
         color: white;
     }
+    footer .footer-div .a-circle-link{
+        width: 3em;
+        height: 3em;
+    }
+    footer .footer-div .a-circle-link i {
+        font-size: 2em;
+    }
+   
 }
 @media(min-width: 992px){
     header{
@@ -253,7 +258,7 @@ footer .footer-div .a-circle-link i {
     .search-bar-back{
         margin-top: 0;
     }
-    .a-circle-link{
+    header .a-circle-link{
         height:2em ;
         width:2em ;
     }
@@ -268,5 +273,12 @@ footer .footer-div .a-circle-link i {
         margin-top: 15vh;
         width: 90%;
         margin-left: 10%;
+    }
+    footer .a-circle-link{        
+        height:2em !important ;
+        width:2em !important ;
+    }
+    footer .a-circle-link i{
+        font-size: 1.5em !important;
     }
 }
