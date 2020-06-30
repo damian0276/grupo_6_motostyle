@@ -1,0 +1,128 @@
+@import url('/css/master.css');
+
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+}
+
+/* Photos-box*/
+
+.page-container .cart-section{
+    padding: 1em 0.5em;
+}
+.page-container .cart-section .photos-box{
+    background-color: var(--gris);
+    padding: 0.5em;
+}
+.page-container .cart-section .photos-box figure img{
+    border: 4px solid var(--rojo);
+}
+
+/* Check-form*/
+.white-back{
+    background-color: white;
+}
+.page-container .cart-section .check-form .div-checkboxes-labels{
+    width: 66.6666666666%
+}
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox{
+    position: relative;
+}
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .hide-checkbox{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
+  position: absolute;
+  top: 0;
+  left: 3em;
+  height: 1em;
+  width: 1em;
+  background-color: var(--gris);
+  border: 1px solid black;
+}
+
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark:after{
+  content: "";
+  position: absolute;
+  display: none;
+}
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .hide-checkbox:checked ~ .checkmark:after{
+    display: block;
+}
+.page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark:after{
+    left: 0.25em;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--rojo);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+
+.page-container .cart-section .check-form .prices-div{
+   width: 33.3333333333%;
+}
+
+/*Cart buttons*/
+.page-container .cart-section .buttons-cart .div-button-cart .button-cart{
+    background-color: var(--gris);
+    border: 1px solid black;
+    height: 3em;
+}
+
+/*Map section*/
+
+.page-container .map-section{
+    padding: 0 0.5em;
+}
+.page-container .map-section .map-div i{
+    height: 100px;
+}
+
+@media(min-width: 768px){
+    .page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
+        left: 20em;
+    }
+}
+
+@media(min-width: 992px){
+   .page-container .cart-section .photos-box,
+   .page-container .cart-section .check-form,
+   .page-container .cart-section .final-price-div{
+       width: 50%;
+   }  
+   .page-container .cart-section .photos-box,
+   .page-container .cart-section .check-form,
+   .page-container .cart-section .final-price-div{
+       margin-left: 10%;
+       margin-right: auto;
+   }
+   .page-container .cart-section{
+       position: relative;
+   }  
+   .page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
+    left: 15em;
+    }
+   
+   .page-container .cart-section .buttons-cart{
+       width: 80% !important;
+   }
+
+   .page-container .cart-section .publicidad{
+       width: 25%;
+       position: absolute;
+       top: 3em;
+       right: 50px;
+   }
+}
+
