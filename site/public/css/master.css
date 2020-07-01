@@ -92,6 +92,29 @@ header .header-div{
     width: 65%;
     display: block;
 }
+/*Modal*/
+#login-modal .modal-dialog-centered{
+    justify-content: center;
+}
+#login-modal .modal-dialog .modal-content{
+    width: 250px;
+}
+
+#login-modal .modal-dialog .modal-content .modal-body{
+    background-color: var(--gris);
+    border: 2px solid black;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form{
+    font-weight: 700;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form .modal-login-button{
+    background-color: var(--rojo);
+    color: white;
+    width: 70%;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form a{
+    color: black;
+}
 
 /*Nav bar*/
 .navbar-lateral{
@@ -228,13 +251,11 @@ footer .footer-div .a-circle-link i {
 }
 
 @media(min-width: 768px){
-    .a-circle-link{
-        height: 2em;
-        width: 2em;
+    header .a-circle-link{
+        height: 4em;
+        width: 4em;
     }
-    .a-circle-link i {
-        font-size: 3em;
-    }
+    
     header .header-div ul .text{
         font-size: 1.5em;
         padding: 0;
@@ -242,10 +263,21 @@ footer .footer-div .a-circle-link i {
     header .header-div ul .text a{
         color: white;
     }
+    footer .footer-div .a-circle-link{
+        height: 4em;
+        width: 4em;
+    }
+    footer .footer-div .a-circle-link i {
+        font-size:2.5em ;
+    }
 }
 @media(min-width: 992px){
     header{
         height: 15vh;
+    }
+    header .a-circle-link{
+        height: 3em;
+        width: 3em;
     }
     .navbar-lateral div .primer-menu{
         margin-top: 15vh;
@@ -268,5 +300,9 @@ footer .footer-div .a-circle-link i {
         margin-top: 15vh;
         width: 90%;
         margin-left: 10%;
+    }
+    footer .footer-div .a-circle-link{
+        height: 3em;
+        width: 3em;
     }
 }
