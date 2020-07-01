@@ -92,6 +92,29 @@ header .header-div{
     width: 65%;
     display: block;
 }
+/*Modal*/
+#login-modal .modal-dialog-centered{
+    justify-content: center;
+}
+#login-modal .modal-dialog .modal-content{
+    width: 250px;
+}
+
+#login-modal .modal-dialog .modal-content .modal-body{
+    background-color: var(--gris);
+    border: 2px solid black;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form{
+    font-weight: 700;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form .modal-login-button{
+    background-color: var(--rojo);
+    color: white;
+    width: 70%;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form a{
+    color: black;
+}
 
 /*Nav bar*/
 .navbar-lateral{
@@ -232,6 +255,7 @@ footer .footer-div .a-circle-link i {
         height: 4em;
         width: 4em;
     }
+    
     header .header-div ul .text{
         font-size: 1.5em;
         padding: 0;
@@ -240,17 +264,20 @@ footer .footer-div .a-circle-link i {
         color: white;
     }
     footer .footer-div .a-circle-link{
-        width: 3em;
-        height: 3em;
+        height: 4em;
+        width: 4em;
     }
     footer .footer-div .a-circle-link i {
-        font-size: 2em;
+        font-size:2.5em ;
     }
-   
 }
 @media(min-width: 992px){
     header{
         height: 15vh;
+    }
+    header .a-circle-link{
+        height: 3em;
+        width: 3em;
     }
     .navbar-lateral div .primer-menu{
         margin-top: 15vh;
@@ -258,7 +285,7 @@ footer .footer-div .a-circle-link i {
     .search-bar-back{
         margin-top: 0;
     }
-    header .a-circle-link{
+    .a-circle-link{
         height:2em ;
         width:2em ;
     }
@@ -274,11 +301,8 @@ footer .footer-div .a-circle-link i {
         width: 90%;
         margin-left: 10%;
     }
-    footer .a-circle-link{        
-        height:2em !important ;
-        width:2em !important ;
-    }
-    footer .a-circle-link i{
-        font-size: 1.5em !important;
+    footer .footer-div .a-circle-link{
+        height: 3em;
+        width: 3em;
     }
 }
