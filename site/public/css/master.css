@@ -60,7 +60,7 @@ body{
 /*Header*/
 
 header{
-    height: 10vh;
+    height: 60px;
     background-color: var(--rojo);
     position: fixed;
     top: 0px;
@@ -141,7 +141,7 @@ header .header-div{
   width: 120px;
   margin-left: -120px;
   transition: .3s;
-  margin-top: 10vh;
+  margin-top: 60px;
 }
 .navbar-lateral div .open {
   margin-left: 0;
@@ -174,7 +174,7 @@ input[name='boton']:checked ~ label i{
 }
 /*Page-container*/
 .page-container{
-    margin-top: 10vh;
+    margin-top: 60px;
 }
 /* Searchbar*/
 .search-bar-back{
@@ -237,7 +237,7 @@ main{
 
 footer{
     background-color: var(--rojo);
-    height: 10vh;
+    height: 60px;
 }
 .footer-div{
     height: 100%;
@@ -251,6 +251,9 @@ footer .footer-div .a-circle-link i {
 }
 
 @media(min-width: 768px){
+    header{
+        height: 100px;
+    }
     header .a-circle-link{
         height: 4em;
         width: 4em;
@@ -263,6 +266,12 @@ footer .footer-div .a-circle-link i {
     header .header-div ul .text a{
         color: white;
     }
+    .page-container{
+        margin-top: 100px;
+    }
+    footer{
+        height: 100px;
+    }
     footer .footer-div .a-circle-link{
         height: 4em;
         width: 4em;
@@ -272,15 +281,12 @@ footer .footer-div .a-circle-link i {
     }
 }
 @media(min-width: 992px){
-    header{
-        height: 15vh;
-    }
     header .a-circle-link{
         height: 3em;
         width: 3em;
     }
     .navbar-lateral div .primer-menu{
-        margin-top: 15vh;
+        margin-top: 100px;
     }
     .search-bar-back{
         margin-top: 0;
@@ -297,7 +303,7 @@ footer .footer-div .a-circle-link i {
         margin-top: 20vh;
     }
     .page-container{
-        margin-top: 15vh;
+        margin-top: 100px;
         width: 90%;
         margin-left: 10%;
     }
