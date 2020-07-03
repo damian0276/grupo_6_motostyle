@@ -7,5 +7,5 @@ const controllerWeb = require(path.resolve(__dirname, '..', 'controllers', 'cont
 
 //Armo mis rutas
 router.get('/', controllerWeb.index);
-
+router.get('/nosotros', controllerWeb.nosotros);
 module.exports = router;

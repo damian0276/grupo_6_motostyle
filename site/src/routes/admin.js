@@ -6,4 +6,5 @@ const controllerAdmin = require(path.resolve(__dirname, '..', 'controllers', 'co
 
 router.get('/productAdd', controllerAdmin.add)
 
+
 module.exports = router;
