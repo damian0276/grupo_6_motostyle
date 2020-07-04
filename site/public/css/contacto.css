@@ -1,0 +1,113 @@
+@import url('/css/master.css');
+
+/* Variables */
+:root {
+ --gris: #C2C2C2;
+ --rojo: #E70202;
+ --blanco: #ffffff;
+ --beige: #aba58a;
+}
+
+.contact-container .contact-title{
+    background-color: var(--beige);
+    width: 100%;
+    padding-left: 35px;
+}
+
+.contact-container .contact-div{
+    margin-left: 35px;
+    background-color: white;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.contact-container .contact-div h5{
+    color: var(--gris);
+}
+.contact-container a{
+    color: var(--rojo);
+}
+.contact-container .contact-form-div{
+    margin-left: 35px;
+    background-color: var(--gris);
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.contact-container .contact-form-div form .flexing-div-contacts-form .contact-inputs-div input{
+    padding: 5px;
+    width:100%;
+    margin-bottom: 5px;
+}
+.contact-container .contact-form-div form .flexing-div-contacts-form textarea{
+    width: 100%;
+}
+.contact-container .contact-form-div form .contact-button-div button{
+    background-color: var(--rojo);
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    width: 100%;
+}
+@media(min-width: 768px){
+    .contact-container{
+        margin-top: 40px;
+    }
+    .contact-container .contact-form-div{
+        margin-top: 40px;
+    }
+
+    .contact-container .contact-form-div form .flexing-div-contacts-form .contact-inputs-div input{
+        width: 75%;
+    }
+
+}
+@media(min-width: 992px){
+    .contact-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contact-container .contact-div{
+        width: 40%;
+        margin-right: 2%;    
+        padding-left: 40px;    
+    }
+    .contact-container .contact-form-div{
+        margin-left: 0;
+        width: 95%;
+        margin-top: 0;
+    }
+    .contact-container .contact-form-div h5{
+        margin-bottom: 20px;
+    }
+    .contact-container .contact-form-div form .flexing-div-contacts-form{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        height: 200px;
+    }
+    .contact-container .contact-form-div form .flexing-div-contacts-form .contact-inputs-div,
+    .contact-container .contact-form-div form .flexing-div-contacts-form textarea{
+        width: 45%;
+    }
+    .contact-container .contact-form-div form .flexing-div-contacts-form .contact-inputs-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    .contact-container .contact-form-div form .flexing-div-contacts-form .contact-inputs-div input{
+        width: 100%;
+      
+    }
+    .contact-container .contact-form-div form .contact-button-div{
+        margin-bottom: 20px;
+    }
+    .contact-container .contact-form-div form .contact-button-div button{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+}
+
+

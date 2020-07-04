@@ -44,9 +44,9 @@ Le encontramos muy práctico el carro de compras visible en todo momento, al igu
 
 ## Estilos de fuente
 
-- Para los títulos y los menús de navegación elegímos la fuente "Cabin".
+- Para los títulos y los menús de navegación elegímos la fuente "Lato".
 
-- Para el contenido de la página elegimos la fuente "Moon".
+- Para el contenido de la página elegimos la fuente "Cabin".
 
 ## Wireframe Grupo 6 ecommerce venta de motos
 dirección
