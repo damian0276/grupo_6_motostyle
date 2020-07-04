@@ -238,13 +238,30 @@ main{
 
 .products-container .products .product-box{
     margin-bottom: 1em;
-    padding: 0 10px;
+    padding: 0 10px;    
 }
-.products-container .products .product-box .card-body{
-    padding: 0;
+.products-container .products .product-box .card{
+    box-shadow: 10px 5px 5px grey;
+    transition: all .2s ease-in-out;
 }
-.products-container .products .product-box .card-body .card-title{
+.products-container .products .product-box .card:hover{
+    transform: scale(1.02);
+}
+.products-container .products .product-box .card .card-body{
+    padding: 0;    
+    border: 1px solid black;
+}
+.products-container .products .product-box .card .card-body .card-title{
     margin: 0.5em;
+    background-color: var(--beige);
+    padding: 5px;
+}
+.products-container .products .product-box .card .card-body .card-title .product-name{
+    font-weight: bolder;
+}
+
+.products-container .products .product-box .card .card-body p{
+    padding: 5px;
 }
 
 /*Footer*/
@@ -277,8 +294,8 @@ footer .footer-div .a-circle-link i {
         max-width: 200px;
     }
     header .a-circle-link{
-        min-height: 4em;
-        min-width: 4em;
+        min-height: 2em;
+        min-width: 2em;
     }
     
     .page-container{
@@ -297,15 +314,11 @@ footer .footer-div .a-circle-link i {
 }
 @media(min-width: 992px){
     header .a-circle-link{
-        height: 3em;
-        width: 3em;
+        height: 2em;
+        width: 2em;
     }
     .search-bar-back{
         margin-top: 0;
-    }
-    .a-circle-link{
-        height:2em ;
-        width:2em ;
     }
     .searchbar-div{
         flex-grow: 1;
