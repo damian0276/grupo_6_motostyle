@@ -8,17 +8,11 @@
     --blanco: #ffffff;
     --beige: #aba58a;
 }
-.cs-container {
-    text-align: center;
-    font-size:5em;
-    color: white;
-    position:absolute;
-    top:30%;
-    margin-left: 10px;
-    background-color: rgb(241, 237, 237,0.2);
- }
- .nosotrosfondo{
-   height: 500px;
+ 
+
+.imagen1 .nosotrosfondo{
+ 
+ height: 500px;
  }
 
  /*rectangulo izquierdo*/
@@ -42,7 +36,7 @@
     background-color: rgba(227, 238, 238, 0.8);
     border: 3px solid var(--rojo);
     margin-top: 300px;
-    margin-left: 650px;
+    margin-left: 600px;
    
 }
 #copyrigth{
