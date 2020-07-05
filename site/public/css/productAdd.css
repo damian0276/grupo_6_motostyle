@@ -49,6 +49,8 @@ h6{
     width: 6rem;
     text-align: center;
 }
+
+
 .texth4{
     text-align: left;
     padding-left:  20px;
@@ -67,4 +69,15 @@ h6{
         display: flexbox;
         margin-top: 15vh;
     }
+.fotop{
+    margin-left: 30vw;
+} 
+#descripcion{
+    width: 90vw;
+}
+.large-textarea textarea {
+    font-family: Courier, sans-serif;
+    height: 10em;
+    width: 500px;
+ }
 }

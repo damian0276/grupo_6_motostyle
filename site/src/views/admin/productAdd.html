@@ -20,29 +20,26 @@
         <!--Header-->
         <header id="header ">
             <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
-                <!--Logo home-->
+             <!--Logo home-->
                 <figure class="col-5 col-md-4 col-lg-2 ">
                     <a href="/" class="a-header-logo">
                         <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
                     </a>
-                </figure>
-                
+                </figure>                
                 <!--Login y carrito-->
                 <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
                     <li class="col-6 col-md-3">
                         <a href="#login-modal" data-toggle="modal" class="a-circle-link"><img
                             src="/asset/img/header/icono-login.png" alt="Login"></a>
-                        </li>
-                        <li class="d-none col-md-3 d-md-block text"><a href="#login-modal" data-toggle="modal">Login</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </header>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="#login-modal" data-toggle="modal">Login</a></li>                        
+                </ul>
+             </div>
+         </header>
             <!--Modal de login-->
-            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
+                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -64,9 +61,9 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                     </div>
+                   </div>
+                 </div>
                             <!-- Solapas -->
                             <section>            
                                 <div class="solapas">
@@ -182,30 +179,45 @@
                                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div clas="container-fluid">
                                                 <div class="paso2 row">
-                                                    <h4 class="texth4" >Vista previa </h4>
-                                                    <figure class=" col-12 col-md-6 col-lg- 3 foto">
+                                                    <h4 class="texth4" >Vista previa</h4>  
+                                                    <!-- imagen portada -->
+                                                    <div class="fotop">
+                                                        <figure class=" col-12 col-md-6 col-lg-7  ">
+                                                            <h4>Imagen de la portada</h4>
+                                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                                                                  
+                                                            <div class="custom-file">
+                                                                <input type="file" name="imagen" >
+                                                            </div>
+                                                        </figure>
+                                                    </div>
+                                                    
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto ">
                                                         <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">
                                                     </figure>
-                                                    <figure class=" col-12 col-md-6 col-lg- 3 foto">
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
                                                         <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa3.jpg" alt="imagen">
                                                     </figure>
-                                                    <figure class=" col-12 col-md-6 col-lg- 3 foto">
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
                                                         <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="imagen">
                                                     </figure>
-                                                    <figure class=" col-12 col-md-6 col-lg- 3 foto">
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
                                                         <img class="w-100 border-1 p-1" src="./asset/img/productos/yamaha-tracer-900/frente.jpg" alt="imagen">
                                                     </figure>
-                                                    <div class="col-12">
-
-                                                     
+                                                    <div class="col-12">                                                     
                                                         <form  action="#"method="POST" enctype="multipart/form-data">
                                                             <div class="custom--file">
                                                                 <div class="custom-file">
                                                                     <input type="file" name="imagen[]" multiple>
                                                                 </div>
-                                                                <p><label for="">Descripción</label></p> 
-                                                                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea> 
-                                                                <div class="form-group ">
+                                                                <div class="texta col-12 w-100  ">
+                                                                    <p><label for="">Descripción</label></p> 
+                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                                    <p><label for="">Especificaciones</label></p> 
+                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                                    <p><label for="">Ficha técnica</label></p> 
+                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                                </div> 
+                                                                <div class="form-group guardar">
                                                                     <button type="submit" class="btm">Guardar</button>
                                                                 </div>
                                                             </div>
@@ -220,23 +232,23 @@
                                 </section>
                                 
                                 <!--Footer-->
-                                <footer class="w-100 row">
+                                <footer class="w-100 ">
                                     <div class="footer-div w-100" id="footer-div">
                                         <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
                                         <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
                                         <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
                                     </div>
                                 </footer>
-                            </section> 
+    </section> 
                             
-                            <!--Script de boostrap-->
-                            <script src="/js/jquery.js"></script>
-                            <script src="/js/popper.js"></script>
-                            <script src="/js/bootstrap.min.js"></script>
-                            <script src="htpps://code.jquery.com/jquery.js"></script>
-                            <script src="dist/js/bootstrap.min.js"></script>
-                            <script type="text/javascript" src="js/bootstrap.js"></script>
+ <!--Script de boostrap-->
+         <script src="/js/jquery.js"></script>
+         <script src="/js/popper.js"></script>
+         <script src="/js/bootstrap.min.js"></script>
+         <script src="htpps://code.jquery.com/jquery.js"></script>
+         <script src="dist/js/bootstrap.min.js"></script>
+         <script type="text/javascript" src="js/bootstrap.js"></script>
                             
-                        </body>
+     </body>
                         
-                        </html>
+ </html>

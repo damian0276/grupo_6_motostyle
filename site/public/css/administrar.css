@@ -1,0 +1,32 @@
+@import url(./master.css);
+
+.rows{
+    margin-top:8.5vh;
+}
+.cartel{
+    font-size: 1rem;
+    background-color: #e70202;
+}
+
+
+
+
+
+@media(min-width: 768px){
+    .rows{
+        margin-top:14vh;
+    }
+    .cartel{
+        font-size: 2rem;
+        background-color: #e70202;
+    }
+}
+@media(min-width: 992px){
+    .rows{
+        margin-top:14vh;
+    }
+    .cartel{
+        font-size: 3rem;
+        background-color: #e70202;
+    }
+}

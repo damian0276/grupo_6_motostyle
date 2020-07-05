@@ -1,1 +1,55 @@
 @import url(./master.css);
+
+.rows{
+    margin-top:10%;
+}
+.cartel{
+    font-size: 1rem;
+    background-color: #e70202;
+}
+.formu{
+    width:95%;
+
+}
+
+.formulario{
+    display: flex;
+margin-top: 1%;
+justify-content: center;
+
+}
+.nav2{
+    height: 39px !important;
+}
+.input-group{
+    width: 99%;
+    margin: 3px;
+}
+.input-group-text{
+    width: 6rem;
+    height:-1.8rem !important;
+}
+
+
+
+@media(min-width: 768px){
+    .rows{
+        margin-top:13.5%;
+    }
+    .cartel{
+        font-size: 2rem;
+        background-color: #e70202;
+    }
+}
+@media(min-width: 992px){
+    .formu{
+        width: 88vh;
+    }
+    .rows{
+        margin-top:7%;
+    }
+    .cartel{
+        font-size: 2.5rem;
+        background-color: #e70202;
+    }
+}
