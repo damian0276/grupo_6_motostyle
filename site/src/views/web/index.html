@@ -16,7 +16,7 @@
 <body>
     <section id="all-container">
         <!--Header-->
-        <header id="header">
+        <header class="container-fluid" id="header">
             <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
                 <!--Logo home-->
                 <figure class="col-5 col-md-4 col-lg-2 ">
@@ -25,8 +25,8 @@
                     </a>
                 </figure>
                 <!--Searchbar en header-->
-                <div class="searchbar-div">
-                    <div id="searchbar" class="search-bar-back rounded-pill col-lg-10 d-none d-lg-block">
+                <div class="searchbar-div d-none d-lg-block">
+                    <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
                         <div class="search-bar">
                             <form action="/products" method="GET" class="search-form d-flex">
                                 <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
@@ -36,16 +36,14 @@
                     </div>
                 </div>  
                 <!--Login y carrito-->
-                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
-                    <li class="col-6 col-md-3">
-                        <a href="#login-modal" data-toggle="modal" class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></a>
+                <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <li class="col-6">
+                        <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
                     </li>
-                    <li class="d-none col-md-3 d-md-block text"><a href="#login-modal" data-toggle="modal">Login</a></li>
-                    <li class="col-6 col-md-3">
-                        <a href="/productCart" class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras">
+                    <li class="col-6">
+                        <a class="d-flex align-items-center" href="/productCart"><span class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras"></span><span class="d-none d-md-block text">Carrito</span>
                         </a>
                     </li>
-                    <li class="d-none col-md-3 d-md-block text"><a href="/productCart">Carito</a></li>
                 </ul>
             </div>
         </header>
@@ -83,6 +81,7 @@
                     <li><a href="/nosotros"><span>Nosotros</span></a></li>
                     <li><a href="/sucursales"><span>Sucursales</span></a></li>
                     <li><a href="/contacto"><span>Contacto</span></a></li>
+                    <li><a href="/productAdd"><span>Administrar</span></a></li>
                 </ul>
                 <div class="align-self-center d-lg-none">
                     <input class="d-none" type="checkbox" name="boton" id="boton" >
@@ -122,99 +121,112 @@
             </div>
             <!--Productos-->
             <div class="products-container" id="products-container">
-                <div class="titulo-product_div" id="titulo-product_div">
+                <div class="titulo-product_div col-12" id="titulo-product_div">
                     <h2>Motos para vos</h2>
                 </div>
-                <div class="row products" id="productos">
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>  
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="product-box col-12 col-md-6 col-lg-4">
-                        <article class="card">
-                            <a href="/productDetail">
-                                <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha Tracer 900 u$s30.000</h5>
-                                <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                            </div>
-                        </article>
-                    </div>                  
-                </div>
+                <section class="container-fluid">
+                    <div class="row products" id="productos">
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>                                                     
+                    </div>                
+                </section>
             </div>
         </main>
         <!--Footer-->

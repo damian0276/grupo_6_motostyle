@@ -1,0 +1,68 @@
+@import url('/css/master.css');
+
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+}
+/*Contenedor pagina de registro*/
+.register-container .register-title{
+    background-color: var(--beige);
+    width: 100%;
+    padding-left: 35px;
+}
+/*banner*/
+
+.register-section .banner-register{
+    background-image: url('/asset/img/banner/banner-1.jpg');
+    background-size: cover;
+    height: 400px;
+    margin-bottom: 10px;
+    width: 100%;    
+}
+.register-section .banner-register h5{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 3em;
+    position: relative;
+    top: 50px;
+}
+
+
+/*Formulario*/
+.register-section .div-form form{
+    background-color: var(--gris);
+    width: 80%;
+    border: 2px solid black;
+    font-weight: bolder;
+}
+.register-section .div-form form input{
+    width: 80%;
+}
+.register-section .div-form form button{
+    background-color: var(--rojo);
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+/*Beneficios*/
+.register-section .beneficios-div p{
+    color: var(--gris);
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+@media(min-width: 992px){
+    .register-section .banner-register{
+        height: 600px;
+        margin-bottom: 10px;
+        width: 99%;  
+    }
+
+}
