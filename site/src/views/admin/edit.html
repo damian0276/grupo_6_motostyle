@@ -17,7 +17,7 @@
 <body>
     <section id="all-container">
         <!--Header-->
-        <header id="header  ">
+        <header class="container-fluid" id="header">
             <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
                 <!--Logo home-->
                 <figure class="col-5 col-md-4 col-lg-2 ">
@@ -25,19 +25,26 @@
                         <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
                     </a>
                 </figure>
-                
+                <!--Searchbar en header-->
+                <div class="searchbar-div d-none d-lg-block">
+                    <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
+                        <div class="search-bar">
+                            <form action="/products" method="GET" class="search-form d-flex">
+                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>  
                 <!--Login y carrito-->
-                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
-                    <li class="col-6 col-md-3">
-                        <a href="#login-modal" data-toggle="modal" class="a-circle-link"><img
-                            src="/asset/img/header/icono-login.png" alt="Login"></a>
-                        </li>
-                        <li class="d-none col-md-3 d-md-block text"><a href="#login-modal" data-toggle="modal">Login</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </header>
+                <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <li class="col-6">
+                        <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </header>
             <!--Modal de login-->
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -68,7 +75,7 @@
                             </div>                       
                         </section>
                         <!-- Cuerpo principal -->
-                        <section class="rows">
+                        <section class="container rows">
                             <article class="col-12">
                                 <h2 class="display-4 text-white o text-center cartel ">Editor de Productos</h2>
                             </article>
@@ -118,12 +125,26 @@
                                             </div>
                                             <textarea class="form-control  nav2" aria-label="With textarea"></textarea>
                                         </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text"  for="inputGroupSelect01">Frenos</label>
+                                            </div>
+                                            <select name="frenos" class="custom-select" id="inputGroupSelect01">
+                                                <option selected>Seleccionar</option>
+                                                <option value="discoDelantero">Disco delantero</option>
+                                                <option value="discoDelanteroYTrasero">Disco delantero y trasero</option>
+                                                <option value="dobledisco">Doble disco</option>
+                                                
+                                            </select>
+                                        </div>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cantidad</span>
                                             </div>
                                             <textarea class="form-control nav2" aria-label="With textarea"></textarea>
                                         </div>
+                                       
+                                        
                                         <hr>
                                         <!-- Precio -->
                                         <h5>Precio</h5>

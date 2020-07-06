@@ -125,12 +125,25 @@
                                                                 </div>
                                                                 <textarea class="form-control" aria-label="With textarea"></textarea>
                                                             </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"  for="inputGroupSelect01">Frenos</label>
+                                                                </div>
+                                                                <select name="frenos" class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Seleccionar</option>
+                                                                    <option value="discoDelantero">Disco delantero</option>
+                                                                    <option value="discoDelanteroYTrasero">Disco delantero y trasero</option>
+                                                                    <option value="dobleDisco">Doble disco</option>
+                                                                    
+                                                                </select>
+                                                            </div>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">Cantidad</span>
                                                                 </div>
                                                                 <textarea class="form-control" aria-label="With textarea"></textarea>
                                                             </div>
+                                                            
                                                             <hr>
                                                             <!-- Precio -->
                                                             <h5>Precio</h5>
@@ -186,7 +199,7 @@
                                                             <h4>Imagen de la portada</h4>
                                                             <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                                                                  
                                                             <div class="custom-file">
-                                                                <input type="file" name="imagen" >
+                                                                <input type="file" name="imagen" class="botonImg" >
                                                             </div>
                                                         </figure>
                                                     </div>
@@ -207,7 +220,7 @@
                                                         <form  action="#"method="POST" enctype="multipart/form-data">
                                                             <div class="custom--file">
                                                                 <div class="custom-file">
-                                                                    <input type="file" name="imagen[]" multiple>
+                                                                    <input type="file" name="imagen[]" multiple class="botonImg">
                                                                 </div>
                                                                 <div class="texta col-12 w-100  ">
                                                                     <p><label for="">Descripción</label></p> 

@@ -1,20 +1,48 @@
 @import url(./master.css);
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
 
 .rows{
-    margin-top:8.5vh;
+    margin-top:63px;
 }
 .cartel{
     font-size: 1rem;
     background-color: #e70202;
+    border-radius: 37px;
 }
-
+.table tbody{
+    background-color:var(--gris);
+}
+.table td{
+    background-color: #ffffff;
+}
+.table thead tr th {
+    font: 1.2em sans-serif;
+    color: var(--blanco);
+}
+.table tr{
+    background-color: #aba58a;
+    
+    
+    
+}
 
 
 
 
 @media(min-width: 768px){
+    .hd{
+        height: 96px;
+    }
+    .login{
+        padding-left: 35%;
+    }
     .rows{
-        margin-top:14vh;
+        margin-top:102px;
     }
     .cartel{
         font-size: 2rem;
@@ -22,9 +50,10 @@
     }
 }
 @media(min-width: 992px){
-    .rows{
-        margin-top:14vh;
+    .hd{
+        height: 96px;
     }
+    
     .cartel{
         font-size: 3rem;
         background-color: #e70202;

@@ -1,4 +1,11 @@
 @import url(./master.css);
+root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
+
 .header-div{
     justify-content: space-between !important;
 }
@@ -14,6 +21,9 @@
 margin-top: 1%;
 justify-content: center;
 
+}
+.formu{
+    background-color:#ffffff;
 }
 
 /* Precio */
@@ -50,7 +60,7 @@ h6{
     text-align: center;
 }
 
-
+/* <!-- Aca empieza el paso 2 --> */
 .texth4{
     text-align: left;
     padding-left:  20px;
@@ -58,14 +68,33 @@ h6{
 .foto{
     padding: 3%;
     width: 50%;
+    
 }
 
 #descripcion{
     padding-left: 30px;
+
+}
+
+.botonImg{
+    background-color: var(--rojo);
+    color: var(--blanco);
+    
+}
+.texta{
+    background-color: var(--gris);
+    opacity: 0.8;
+    height: 115vh;
+}
+
+@media(min-width:776px){
+    #descripcion{
+        width: 94vw;
+}
 }
 /* desctop */
 @media(min-width:992px){
-    .solapas{
+.solapas{
         display: flexbox;
         margin-top: 15vh;
     }
@@ -73,10 +102,10 @@ h6{
     margin-left: 30vw;
 } 
 #descripcion{
-    width: 90vw;
+    width: 94vw;
 }
 .large-textarea textarea {
-    font-family: Courier, sans-serif;
+    font-family: Courier, sans-serif,;
     height: 10em;
     width: 500px;
  }

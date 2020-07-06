@@ -1,14 +1,25 @@
 @import url(./master.css);
 
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
+
 .rows{
-    margin-top:10%;
+    margin-top:63px;
 }
 .cartel{
     font-size: 1rem;
     background-color: #e70202;
+    border-radius: 37px;
 }
 .formu{
     width:95%;
+    background-color: white;
+    opacity: 0.8;
 
 }
 
@@ -34,8 +45,8 @@ justify-content: center;
 
 @media(min-width: 768px){
     .rows{
-        margin-top:13.5%;
-    }
+        margin-top:102px;
+    } 
     .cartel{
         font-size: 2rem;
         background-color: #e70202;
@@ -43,11 +54,9 @@ justify-content: center;
 }
 @media(min-width: 992px){
     .formu{
-        width: 88vh;
+        width: 88vh;background-color: g;
     }
-    .rows{
-        margin-top:7%;
-    }
+    
     .cartel{
         font-size: 2.5rem;
         background-color: #e70202;
