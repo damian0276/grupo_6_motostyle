@@ -5,6 +5,7 @@ const path = require('path');
 //Debo requerir nuestro controlador
 const controllerProduct = require(path.resolve(__dirname, '..', 'controllers', 'controllerProduct'));
 
+router.get('/products', controllerProduct.index)
 router.get('/productCart', controllerProduct.cart)
 router.get('/productDetail', controllerProduct.detail)
 

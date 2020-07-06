@@ -1,0 +1,81 @@
+@import url('/css/master.css');
+
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
+
+   /*Filtros*/
+.products-container .filtros-section .boton-menu-filtros{
+    background-color: var(--gris);
+    border: 1px solid black;
+}
+.products-container .filtros-section .filtros-div{
+    width: 85%; 
+    margin-left: 7.5%;
+}
+
+.products-container .filtros-section .filtros-div div .title-filtro{
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+.products-container .filtros-section .filtros-div div .title-filtro:focus{
+    box-shadow: 10px 0px 5px grey;
+}
+.products-container .filtros-section .filtros-div div .input-div{
+    background-color: white;
+    border-left: 1px solid black ;
+    border-right: 1px solid black ;
+}
+.products-container .filtros-section .filtros-div div .input-div .checkboxes-filtros{
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: baseline;
+    margin: 0 auto;
+}
+.products-container .filtros-section .filtros-div div .input-div .precio-input input{
+    width: 4em;
+}
+
+@media(min-width: 992px){
+    .products-container .filtros-section .filtros-title h4{
+        width: max-content;
+        background-color: var(--beige);
+        padding: 0.2em;
+        border-radius: 2px;
+        margin-left: 7.5%;
+    }
+    .products-container .filtros-section .filtros-div{
+        width: 70%;
+    }
+    .products-container .filtros-section .filtros-div div{
+        flex-direction: row !important;
+    }
+    .products-container .filtros-section .filtros-div div .contenedor-flexible{
+        width: 25%;
+    }
+    .products-container .filtros-section .filtros-div div .input-div .checkboxes-filtros{
+        display: block;
+        text-align: left;
+    }
+    .products-container .filtros-section .filtros-div div .input-div{
+        border-bottom: 1px solid black;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+    #title-filtro-marca{
+        border-top-right-radius:0 !important;
+    }
+    #title-filtro-precio{
+        border-top-right-radius:2px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius:0 !important;
+    }
+
+}

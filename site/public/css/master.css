@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
 }
+.sombra{
+    box-shadow: 10px 5px 5px grey;
+    transition: all .2s ease-in-out;
+}
 ul, ol {
     list-style-type: none;
     margin: 0;
@@ -55,6 +59,7 @@ input {
 body{
     background-image: url('/asset/img/fondo-pagina/body-image.png');
     font-family: 'Cabin', sans-serif;
+    background-size: cover;
 }
 
 /*Header*/
@@ -97,6 +102,10 @@ header .header-div{
 }
 header .header-div ul li{
     padding: 0;
+}
+header .header-div ul li:hover{
+    transform: scale(1.1);
+    transition: .3s;
 }
 
 header .header-div ul .text{
@@ -167,6 +176,11 @@ header .header-div ul .text{
     height: 60px;
     border: 1px solid var(--gris);
 }
+.navbar-lateral div ul li:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
 .navbar-lateral div ul li a{
     color:white;
     width: 100%;
@@ -175,13 +189,6 @@ header .header-div ul .text{
     align-items: center;
     justify-content: center;
 }
-.navbar-lateral div ul li ul{
-    display: block;
-}
-.navbar-lateral div ul li:hover >li{
- display: block;
-}
-
 
 input[name='boton']:checked ~ label i{
     transform: rotate(180deg);
@@ -239,10 +246,6 @@ main{
 .products-container .products .product-box{
     margin-bottom: 1em;
     padding: 0 10px;    
-}
-.products-container .products .product-box .card{
-    box-shadow: 10px 5px 5px grey;
-    transition: all .2s ease-in-out;
 }
 .products-container .products .product-box .card:hover{
     transform: scale(1.02);
