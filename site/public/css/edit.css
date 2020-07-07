@@ -11,9 +11,18 @@ root {
 }
 .solapas{
     /* background-color: white; */
-    margin-top: 10vh;
+    margin-top: 9vh;
     padding-left: 2px;
     padding-right: 2px;
+}
+.titulo{
+    background-color: #E70202;
+    color: var(--blanco);
+    font-size: 84px;
+    width: 72vw;
+    text-align: center;
+    border-radius: 27px;
+    margin-inline-start: 9vw;
 }
 
 .formulario{
@@ -84,19 +93,30 @@ h6{
 .texta{
     background-color: var(--gris);
     opacity: 0.8;
-    height: 115vh;
+    height: 78vh;
 }
 
-@media(min-width:776px){
+@media(min-width:768px){
     #descripcion{
         width: 94vw;
+}
+.solapas{
+    /* background-color: white; */
+    margin-top: 7vh;
+ 
+}
+.titulo{
+    margin-top: 14vh;
 }
 }
 /* desctop */
 @media(min-width:992px){
 .solapas{
         display: flexbox;
-        margin-top: 15vh;
+        margin-top: 14vh;
+    }
+    .titulo{
+        margin-top: 12vh;
     }
 .fotop{
     margin-left: 30vw;
