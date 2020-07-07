@@ -1,0 +1,38 @@
+@import url('/css/master.css');
+
+
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+}
+body{
+    background-image: url("/asset/img/Nosotros/nosotros.jpg");
+}
+
+
+.logosito{
+    border: 3px solid var(--rojo);
+    background-color: rgba(2, 2, 2, 0.37);
+}
+
+.logosito2{
+    border: 3px solid var(--rojo);
+    background-color: rgba(2, 2, 2, 0.37);
+}
+
+.logosito3
+{
+    border: 3px solid black;
+    
+}
+.card title{
+    border: 3px solid var(--rojo); 
+    opacity: 1;
+}
+
+.card-body{
+    background-color: rgba(255, 255, 255, 0.527);
+}

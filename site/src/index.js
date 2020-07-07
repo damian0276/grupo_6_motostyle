@@ -19,6 +19,7 @@ app.use(webRoutes);
 app.use(productRoutes);
 app.use(adminRoutes);
 
+
 //Levantar servidor
 
 app.listen(3000, 'localhost', ()=> console.log('Servidor corriendo en el puerto 3000'));

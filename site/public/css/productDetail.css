@@ -1,0 +1,64 @@
+@import url('/css/master.css');
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
+
+/*productos*/ 
+.products-container .mb-0{
+color: black;
+}
+
+/*productos, texto encima de la foto*/ 
+
+.ch-container .c-img {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.ch-container #multis{
+   text-align: center;
+   font-size:5em;
+   color: white;
+   position:absolute;
+   top:10%;
+   margin-left: 10px;
+   background-color: rgb(241, 237, 237,0.2);
+}
+
+.ch-container .c-img .text{
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top:80%;
+    
+}
+
+/*Titulos accordeon*/
+.accordion .card .card-header h2 button{
+    color: var(--rojo);
+    border-color: black;
+    
+}
+
+
+.barra{
+text-align: right;
+    }
+
+/*Icono Carrtio*/
+.carroFuego .icon{
+    width:4%;
+    background-color: rgba(235, 20, 20, 0.384);
+    border: double var(--rojo);
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+}
+

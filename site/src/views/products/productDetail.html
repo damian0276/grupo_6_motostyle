@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Logo en el title de la página-->
+    <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png"/>
+    <!--Master Stylesheet-->
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <title>Moto Style</title>
+</head>
+<body>
+    <section id="all-container">
+        <!--Header-->
+        <header id="header">
+            <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
+                <figure class="col-5 col-md-4 col-lg-2 ">
+                    <a href="/" class="a-header-logo">
+                        <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
+                    </a>
+                </figure>
+                <div class="searchbar-div">
+                    <div id="searchbar" class="search-bar-back rounded-pill col-lg-10 d-none d-lg-block">
+                        <div class="search-bar">
+                            <form action="" method="GET" class="search-form d-flex">
+                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
+                    <li class="col-6 col-md-3">
+                        <a href="#" class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="#">Login</a></li>
+                    <li class="col-6 col-md-3">
+                        <a href="/productCart" class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras">
+                        </a>
+                    </li>
+                    <li class="d-none col-md-3 d-md-block text"><a href="/productCart">Carrito</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--NavBar lateral-->
+        <nav id="navbar-lateral" class="navbar-lateral d-flex">
+            <div>
+                <ul id="primer-menu" class="primer-menu">
+                    <li><a href="#"><span>Home</span></a></li>
+                    <li><a href="#"><span>Nuestras<br>Motos</span></a></li>                    
+                    <li><a href="#"><span>Noticias </span></a></li>
+                    <li><a href="#"><span>Eventos </span></a></li>
+                    <li><a href="#"><span>Nosotros </span></a></li>
+                    <li><a href="#"><span>Sucursales </span></a></li>
+                    <li><a href="#"><span>Contacto </span></a></li>
+                </ul>
+                <div class="align-self-center d-lg-none">
+                    <input class="d-none" type="checkbox" name="boton" id="boton" >
+                    <label for="boton" class="navbar-collapse-button d-flex align-items-center rounded-right">
+                        <i class="fas fa-caret-right"></i>
+                    </label>
+                </div>
+            </div>            
+        </nav>      
+        <!--Contenedor-->        
+        <main class="page-container" id="page-container">  
+            <!--Barra de busqueda-->
+            <div id="searchbar" class="search-bar-back rounded-pill d-lg-none">
+                <div class="search-bar">
+                    <form action="" method="GET" class="search-form d-flex">
+                        <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>  
+            
+            <!--Producto-->   
+            <div class="ch-container">
+                <div class="d-none d-lg-block c-img">
+                    <h1 id="multis">MULTISTRADA 950/950 S</h1>    
+                    <img class="multi" src="/asset/img/productos/Multistrada-950/Multistrada2.jpg"alt="">
+                    <div class="text">
+                        <p>Con la nueva Multistrada 950 se puede experimentar la belleza del viaje todos los días,
+                            gracias a la combinación de emociones de conducción de Ducati y su versatilidad que la
+                            hacen ideal para cada uso. El peso limitado y la altura del asiento de 840 mm aseguran
+                            agilidad y facilidad de manejo, mientras que el equipamiento tecnológico avanzado garantiza
+                            la máxima seguridad en todas las condiciones. </p>
+                    </div>
+                </div>
+                    <!--fotos-->
+                    <section class="cart-section" id="cart-section">
+                        <div class="photos-box"> 
+                            <div class="bike-name" id="bike-name">
+                                <h2 class="d-none d-lg-block">Esta moto te esta esperando...</h2>
+                                <h4 class="d-lg-none">Multistrada 950 -Ducati</h4> 
+                            </div>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
+                                    <figure>
+                                        <a href="/productDetail.html"><img src="/asset/img/productos/Multistrada-950/frente.jpg" alt=""></a>
+                                    </figure>
+                                </div>
+                                <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
+                                    <figure class="pre-image-figure">
+                                        <img src="/asset/img/productos/Multistrada-950/trasera.jpg" alt="">
+                                    </figure> 
+                                </div>
+                                <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
+                                    <figure class="pre-image-figure">
+                                        <img src="/asset/img/productos/Multistrada-950/tablero.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
+                                    <figure class="pre-image-figure">
+                                        <img src="/asset/img/productos/Multistrada-950/entera.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs w-100 mt-1" id="myTab" role="tablist">
+                                <li class="nav-item w-25" role="presentation">
+                                    <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
+                                        <figure>
+                                            <img src="/asset/img/productos/Multistrada-950/frente.jpg" alt="">
+                                        </figure> 
+                                    </a>
+                                </li>
+                                <li class="nav-item w-25" role="presentation">
+                                    <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
+                                        <figure class="pre-image-figure">
+                                            <img src="/asset/img/productos/Multistrada-950/trasera.jpg" alt="">
+                                        </figure> 
+                                    </a>
+                                </li>
+                                <li class="nav-item w-25" role="presentation">
+                                    <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
+                                        <figure class="pre-image-figure">
+                                            <img src="/asset/img/productos/Multistrada-950/tablero.jpg" alt="">
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="nav-item w-25" role="presentation">
+                                    <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
+                                        <figure class="pre-image-figure">
+                                            <img src="/asset/img/productos/Multistrada-950/entera.jpg" alt="">
+                                        </figure>
+                                    </a>
+                                </li>
+                            </ul>          
+                        </div> 
+                    </div>
+                    <div class="carroFuego">
+                        <a href="#" class="icon float-right"><img src="/asset/img/productos/shopping-cart.png" alt="Agregar al carrito"></a>
+                    </div>
+                    <!--Menú acordeon-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Descripción
+                                    </button>
+                                </h2>
+                            </div>
+                            
+                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    De tamaño compacto y elegante: Combina a la perfección las características sobresalientes de las otras versiones de la familia, pero se destaca por su forma más compacta y delgada. La luz delantera es única, mientras que los nuevos deflectores laterales y el tanque de 20 litros realzan el carácter vanguardista de la nueva Multistrada 950, lo que la convierte en una encarnación del diseño y estilo puramente italianos.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Especificaciones
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    El Ducati Safety Pack incluye ABS y control de tracción Ducati (DTC); se mejoró con IMU Bosch, que permite el uso de ABS en las curvas y garantiza una mayor seguridad y un rendimiento notable. La nueva Multistrada 950 también cuenta con Ducati Traction Control, que analiza los datos obtenidos a través de los sensores de velocidad instalados en las ruedas, para ajustar el deslizamiento de la rueda trasera, cuando sea necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Ficha técnica 
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <table class="table table-sm table-dark">
+                                        <tbody>
+                                            <tr>                                                
+                                                <td >Marca</td>
+                                                <td></td>
+                                                <td class="barra">Ducati</td>
+                                            </tr>
+                                            <tr>                                                
+                                                <td >Modelo</td>
+                                                <td></td>
+                                                <td class="barra" >Multistrada</td>
+                                            </tr> 
+                                            <tr>                                                
+                                                <td >Color</td>
+                                                <td></td>
+                                                <td class="barra" >Blanco</td>
+                                            </tr>  
+                                            <tr>                                                
+                                                <td >Stock</td>
+                                                <td></td>
+                                                <td class="barra">3</td>
+                                            </tr> 
+                                            <tr>                                                
+                                                <td >Cilindrada</td>
+                                                <td></td>
+                                                <td class="barra">950</td>
+                                            </tr> 
+                                            <tr>                                                
+                                                <td >Frenos</td>
+                                                <td></td>
+                                                <td class="barra">Doble disco</td>
+                                            </tr>                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                           </div>
+                    </section> 
+                    <!--Footer-->
+                    <footer class="w-100">
+                        <div class="footer-div w-100" id="footer-div">
+                            <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
+                            <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
+                            <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </footer>
+              
+                
+                <!--Script de boostrap-->
+                <script src="/js/jquery.js"></script>
+                <script src="/js/popper.js"></script>
+                <script src="/js/bootstrap.min.js"></script>
+                <script>
+                    jQuery("input[name='boton']").change(function(){
+                        var navbar = $('#primer-menu');
+                        if(jQuery(this).is(":checked")){
+                            $('#navbar-lateral').addClass("blur");
+                            navbar.addClass('open');
+                        }
+                        else{
+                            $('#navbar-lateral').removeClass("blur");
+                            navbar.removeClass('open');
+                        } });
+                    </script>
+                </body>
+                </html>
+                
