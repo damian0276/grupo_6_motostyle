@@ -60,7 +60,7 @@ h2{
  
 @media(min-width: 768px){
     .maps{
-        width: 250px;
+        width: 100%;
         right: 200px;
     }
     .header{
