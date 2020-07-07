@@ -41,7 +41,7 @@
 .page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
   position: absolute;
   top: 0;
-  left: 3em;
+  right: 10em;
   height: 1em;
   width: 1em;
   background-color: var(--gris);
@@ -89,12 +89,6 @@
     height: 100px;
 }
 
-@media(min-width: 768px){
-    .page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
-        left: 20em;
-    }
-}
-
 @media(min-width: 992px){
    .page-container .cart-section .photos-box,
    .page-container .cart-section .check-form,
@@ -109,10 +103,7 @@
    }
    .page-container .cart-section{
        position: relative;
-   }  
-   .page-container .cart-section .check-form .div-checkboxes-labels .div-label-checkbox .p-label-checkbox .checkmark{
-    left: 15em;
-    }
+   }
    
    .page-container .cart-section .buttons-cart{
        width: 80% !important;

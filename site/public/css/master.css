@@ -59,6 +59,7 @@ input {
 body{
     background-image: url('/asset/img/fondo-pagina/body-image.png');
     font-family: 'Cabin', sans-serif;
+    background-size: cover;
 }
 
 /*Header*/

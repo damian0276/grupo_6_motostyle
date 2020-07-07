@@ -11,6 +11,15 @@ module.exports = {
     sucursales: function(req,res){
         res.sendFile(path.resolve(__dirname, '..', 'views','web','sucursales.html')); 
                
+    },
+    contacto: function(req,res){
+        res.sendFile(path.resolve(__dirname, '..', 'views','web','contacto.html'));   
+    },
+    register: function(req, res){
+        res.sendFile(path.resolve(__dirname, '..', 'views','web','register.html'))
     }
 }
  
+   
+
+
