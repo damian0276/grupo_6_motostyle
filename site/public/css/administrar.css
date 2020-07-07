@@ -34,10 +34,16 @@
     color: var(--blanco);
 }
 .table tr{
-    background-color: #aba58a;
-    
-    
-    
+    background-color: #aba58a;   
+       
+}
+.btm{
+    background-color: #e70202;
+    color: white;
+    border-radius: 1rem;
+    width: 6rem;
+    text-align: center;
+margin-bottom: 3px;
 }
 
 

@@ -18,11 +18,11 @@ root {
 .titulo{
     background-color: #E70202;
     color: var(--blanco);
-    font-size: 40px;
+    font-size: 84px;
     width: 72vw;
     text-align: center;
     border-radius: 27px;
-    margin-inline-start: 12vw;
+    margin-inline-start: 9vw;
 }
 
 .formulario{
