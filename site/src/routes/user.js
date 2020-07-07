@@ -8,5 +8,5 @@ const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'con
 
 //Armo mis rutas
 router.get('/register', controllerUser.register);
-
+router.get('/passwordRecovery', controllerUser.passwordRecovery);
 module.exports = router;

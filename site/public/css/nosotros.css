@@ -30,7 +30,7 @@ body{
 }
 .card title{
     border: 3px solid var(--rojo); 
-    opacity: 1;
+   background: transparent !important;
 }
 
 .card-body{

@@ -13,9 +13,10 @@ module.exports = {
                
     },
     contacto: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','contacto.html'));   
-    }
-}
+        res.sendFile(path.resolve(__dirname, '..', 'views','web','contacto.html'));       
+    },
+     
+   }
  
    
 
