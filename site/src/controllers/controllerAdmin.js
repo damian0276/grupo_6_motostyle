@@ -14,6 +14,7 @@ module.exports = {
         res.sendFile(path.resolve(__dirname,'..','views','admin','administrar.html'));
 
      }
+    
 
     
 }
