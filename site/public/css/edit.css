@@ -1,26 +1,19 @@
 @import url(./master.css);
-
-/* Variables */
-:root {
+root {
     --gris: #C2C2C2;
     --rojo: #E70202;
     --blanco: #ffffff;
     --beige: #aba58a;
    }
 
-.rows{
-    margin-top:63px;
+.header-div{
+    justify-content: space-between !important;
 }
-.cartel{
-    font-size: 1rem;
-    background-color: #e70202;
-    border-radius: 37px;
-}
-.formu{
-    width:95%;
-    background-color: white;
-    opacity: 0.8;
-
+.solapas{
+    /* background-color: white; */
+    margin-top: 10vh;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .formulario{
@@ -29,8 +22,22 @@ margin-top: 1%;
 justify-content: center;
 
 }
-.nav2{
-    height: 39px !important;
+.formu{
+    background-color:#ffffff;
+}
+
+/* Precio */
+.flex-container{
+    display: flex;
+    width: 99%;
+    margin: 2px;     
+}
+h5{
+    margin-left: 2%;
+}
+h6{
+    font-size: 12px;
+    margin-right: 11px;
 }
 .input-group{
     width: 99%;
@@ -42,23 +49,64 @@ justify-content: center;
 }
 
 
-
-@media(min-width: 768px){
-    .rows{
-        margin-top:102px;
-    } 
-    .cartel{
-        font-size: 2rem;
-        background-color: #e70202;
-    }
+.form-control{
+    height: 38px !important;
 }
-@media(min-width: 992px){
-    .formu{
-        width: 88vh;background-color: g;
-    }
+.btm{
+    background-color: #e70202;
+    color: white;
+    border-radius: 1rem;
+    width: 6rem;
+    text-align: center;
+}
+
+/* <!-- Aca empieza el paso 2 --> */
+.texth4{
+    text-align: left;
+    padding-left:  20px;
+}
+.foto{
+    padding: 3%;
+    width: 50%;
     
-    .cartel{
-        font-size: 2.5rem;
-        background-color: #e70202;
+}
+
+#descripcion{
+    padding-left: 30px;
+
+}
+
+.botonImg{
+    background-color: var(--rojo);
+    color: var(--blanco);
+    
+}
+.texta{
+    background-color: var(--gris);
+    opacity: 0.8;
+    height: 115vh;
+}
+
+@media(min-width:776px){
+    #descripcion{
+        width: 94vw;
+}
+}
+/* desctop */
+@media(min-width:992px){
+.solapas{
+        display: flexbox;
+        margin-top: 15vh;
     }
+.fotop{
+    margin-left: 30vw;
+} 
+#descripcion{
+    width: 94vw;
+}
+.large-textarea textarea {
+    font-family: Courier, sans-serif,;
+    height: 10em;
+    width: 500px;
+ }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <!--Logo en el title de la página-->
     <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png" />
     <!--Master Stylesheet-->
-    <link rel="stylesheet" href="./css/edit.css">
+    <link rel="stylesheet" href="./css/productAdd.css">
     <title>Moto Style</title>
 </head>
 
@@ -24,31 +25,19 @@
                     <a href="/" class="a-header-logo">
                         <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
                     </a>
-                </figure>
-                <!--Searchbar en header-->
-                <div class="searchbar-div d-none d-lg-block">
-                    <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
-                        <div class="search-bar">
-                            <form action="/products" method="GET" class="search-form d-flex">
-                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
-                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>  
-                <!--Login y carrito-->
+                </figure>                
+                <!--Login -->
                 <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
                     <li class="col-6">
                         <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
                     </li>
-                    
                 </ul>
             </div>
         </header>
             <!--Modal de login-->
-            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
+                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -70,162 +59,205 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>                       
-                        </section>
-                        <!-- Cuerpo principal -->
-                        <section class="container rows">
-                            <article class="col-12">
-                                <h2 class="display-4 text-white o text-center cartel ">Editor de Productos</h2>
-                            </article>
-                            
-                        </section>
-                        
-                        <div class="contenedor mt-1 ">            
-                            <div class="formulario">
-                                <div class="formu">
-                                    <form action="#" method="POST" enctype="multipart/form-data">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <label  class="input-group-text" for="inputGroupSelect01">Marcas</label>
-                                            </div>
-                                            <select name="marca" class="custom-select" id="inputGroupSelect01">
-                                                <option selected>Seleccionar</option>
-                                                <option value="yamaha">Yamaha</option>
-                                                <option value="honda">Honda</option>
-                                                <option value="bmw">BMW</option>
-                                                <option value="mercedezbenz">Mercedes Benz</option>
-                                                <option value="kawasaki">Kawasaki</option>
-                                                <option value="ducati">Ducati</option>
-                                                <option value="ktm">KTM</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-group  mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text ">Modelo</span>
-                                            </div>
-                                            <textarea class="form-control nav2" aria-label="With textarea"></textarea>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <label class="input-group-text"  for="inputGroupSelect01">Color</label>
-                                            </div>
-                                            <select name="color" class="custom-select" id="inputGroupSelect01">
-                                                <option selected>Seleccionar</option>
-                                                <option value="rojo">Rojo</option>
-                                                <option value="negro">Negro</option>
-                                                <option value="azul">Azul</option>
-                                                <option value="gris">Gris</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Cilindrada</span>
-                                            </div>
-                                            <textarea class="form-control  nav2" aria-label="With textarea"></textarea>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <label class="input-group-text"  for="inputGroupSelect01">Frenos</label>
-                                            </div>
-                                            <select name="frenos" class="custom-select" id="inputGroupSelect01">
-                                                <option selected>Seleccionar</option>
-                                                <option value="discoDelantero">Disco delantero</option>
-                                                <option value="discoDelanteroYTrasero">Disco delantero y trasero</option>
-                                                <option value="dobledisco">Doble disco</option>
-                                                
-                                            </select>
-                                        </div>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Cantidad</span>
-                                            </div>
-                                            <textarea class="form-control nav2" aria-label="With textarea"></textarea>
-                                        </div>
-                                       
+                     </div>
+                   </div>
+                 </div>
+                            <!-- Solapas -->
+                            <section>            
+                                <div class="solapas">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                            aria-controls="home" aria-selected="true">Paso 1</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                            aria-controls="profile" aria-selected="false">Paso 2</a>
+                                        </li>
                                         
-                                        <hr>
-                                        <!-- Precio -->
-                                        <h5>Precio</h5>
-                                        <div class="flex-container">                                     
-                                            <div>   
-                                                <h6>Moneda</h6>
-                                                <div  class="form-group btc">                                            
-                                                    <select name="moneda" class="custom-select" id="validationCustom04" required>
-                                                        <option value=""></option>
-                                                        <option value="">Dolar</option>
-                                                        <option value="">Peso</option>
-                                                        <option value="">Euro</option>
-                                                    </select>
-                                                </div>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <!-- Aca empiesa el paso 1 -->
+                                            <!-- Botones -->         
+                                            <div class="contenedor mt-1 ">            
+                                                <div class="formulario">
+                                                    <div class="formu">
+                                                        <form action="#" method="POST" enctype="multipart/form-data">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label  class="input-group-text" for="inputGroupSelect01">Marcas</label>
+                                                                </div>
+                                                                <select name="marca" class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Seleccionar</option>
+                                                                    <option value="yamaha">Yamaha</option>
+                                                                    <option value="honda">Honda</option>
+                                                                    <option value="bmw">BMW</option>
+                                                                    <option value="mercedezbenz">Mercedes Benz</option>
+                                                                    <option value="kawasaki">Kawasaki</option>
+                                                                    <option value="ducati">Ducati</option>
+                                                                    <option value="ktm">KTM</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text ">Modelo</span>
+                                                                </div>
+                                                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"  for="inputGroupSelect01">Color</label>
+                                                                </div>
+                                                                <select name="color" class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Seleccionar</option>
+                                                                    <option value="rojo">Rojo</option>
+                                                                    <option value="negro">Negro</option>
+                                                                    <option value="azul">Azul</option>
+                                                                    <option value="gris">Gris</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Cilindrada</span>
+                                                                </div>
+                                                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"  for="inputGroupSelect01">Frenos</label>
+                                                                </div>
+                                                                <select name="frenos" class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Seleccionar</option>
+                                                                    <option value="discoDelantero">Disco delantero</option>
+                                                                    <option value="discoDelanteroYTrasero">Disco delantero y trasero</option>
+                                                                    <option value="dobleDisco">Doble disco</option>
+                                                                    
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Cantidad</span>
+                                                                </div>
+                                                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                            </div>
+                                                            
+                                                            <hr>
+                                                            <!-- Precio -->
+                                                            <h5>Precio</h5>
+                                                            <div class="flex-container">                                     
+                                                                <div>   
+                                                                    <h6>Moneda</h6>
+                                                                    <div  class="form-group btc">                                            
+                                                                        <select name="moneda" class="custom-select" id="validationCustom04" required>
+                                                                            <option value=""></option>
+                                                                            <option value="">Dolar</option>
+                                                                            <option value="">Peso</option>
+                                                                            <option value="">Euro</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h6>IVA</h6>
+                                                                    <div class="form-group">
+                                                                        <input type="number" class="form-control" name="iva"required="required" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h6 >Bruto</h6>
+                                                                    <div class="form-group">
+                                                                        
+                                                                        <input type="number" class="form-control" name="bruto"required="required" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h6>Neto</h6>
+                                                                    <div class="form-group">
+                                                                        <input type="number" class="form-control" name="neto"required="required" value="">
+                                                                    </div>
+                                                                </div>                                                        
+                                                            </div>
+                                                            <hr>
+                                                            <div class="form-group ">
+                                                                <button type="submit" class="btm">Guardar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>                           
                                             </div>
-                                            <div>
-                                                <h6>IVA</h6>
-                                                <div class="form-group">
-                                                    <input type="number" class="form-control" name="iva"required="required" value="">
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <h6 >Bruto</h6>
-                                                <div class="form-group">
+                                        </div>
+                                        <!-- Aca empieza el paso 2 -->
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div clas="container-fluid">
+                                                <div class="paso2 row">
+                                                    <h4 class="texth4" >Vista previa</h4>  
+                                                    <!-- imagen portada -->
+                                                    <div class="fotop">
+                                                        <figure class=" col-12 col-md-6 col-lg-7  ">
+                                                            <h4>Imagen de la portada</h4>
+                                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                                                                  
+                                                            <div class="custom-file">
+                                                                <input type="file" name="imagen" class="botonImg" >
+                                                            </div>
+                                                        </figure>
+                                                    </div>
                                                     
-                                                    <input type="number" class="form-control" name="bruto"required="required" value="">
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto ">
+                                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">
+                                                    </figure>
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa3.jpg" alt="imagen">
+                                                    </figure>
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="imagen">
+                                                    </figure>
+                                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                                        <img class="w-100 border-1 p-1" src="./asset/img/productos/yamaha-tracer-900/frente.jpg" alt="imagen">
+                                                    </figure>
+                                                    <div class="col-12">                                                     
+                                                        <form  action="#"method="POST" enctype="multipart/form-data">
+                                                            <div class="custom--file">
+                                                                <div class="custom-file">
+                                                                    <input type="file" name="imagen[]" multiple class="botonImg">
+                                                                </div>
+                                                                <div class="texta col-12 w-100  ">
+                                                                    <p><label for="">Descripción</label></p> 
+                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                                    <p><label for="">Especificaciones</label></p> 
+                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                                </div> 
+                                                                <div class="form-group guardar">
+                                                                    <button type="submit" class="btm">Guardar</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h6>Neto</h6>
-                                                <div class="form-group">
-                                                    <input type="number" class="form-control" name="neto"required="required" value="">
-                                                </div>
-                                            </div>                                                        
                                         </div>
-                                        <hr>
-                                        <div class="photo">
-                                            <div class="custom-file">
-                                                <figure class="form-group">
-                                                    <img  class="w-100" src="/img/" alt="Imagen">
-                                                </figure>
-                                                <input type="hidden"  name="oldImagen"  value="">
-                                                
-                                                <input type="file" name="imagen" >
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn btn-info">Actualizar</button>
-                                                <a href="/administrar" class="btn btn-danger">Volver</a>
-                                            </div>
-                                        </div>
-                                        </form>
                                         
                                     </div>
-                                </div>                           
-                            </div>
-                        </div>
-                        <!--Aquí solicito la imagen-->
-                       
-                </div>                        
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--Footer-->
-<footer class="w-100 ">
-    <div class="footer-div w-100" id="footer-div">
-        <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
-        <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
-        <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
-    </div>
-</footer>
-</section> 
-
-<!--Script de boostrap-->
-<script src="/js/jquery.js"></script>
-<script src="/js/popper.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="htpps://code.jquery.com/jquery.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-</body>
-</html>
+                                    
+                                </section>
+                                
+                                <!--Footer-->
+                                <footer class="w-100 ">
+                                    <div class="footer-div w-100" id="footer-div">
+                                        <a href="http://facebook.com" class="a-circle-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="http://instagram.com" class="a-circle-link"><i class="fab fa-instagram"></i></a>
+                                        <a href="http://twitter.com" class="a-circle-link"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </footer>
+    </section> 
+                            
+ <!--Script de boostrap-->
+         <script src="/js/jquery.js"></script>
+         <script src="/js/popper.js"></script>
+         <script src="/js/bootstrap.min.js"></script>
+         <script src="htpps://code.jquery.com/jquery.js"></script>
+         <script src="dist/js/bootstrap.min.js"></script>
+         <script type="text/javascript" src="js/bootstrap.js"></script>
+                            
+     </body>
+                        
+ </html>

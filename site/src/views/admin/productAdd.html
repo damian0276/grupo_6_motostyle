@@ -18,24 +18,22 @@
 <body>
     <section id="all-container">
         <!--Header-->
-        <header id="header ">
+        <header class="container-fluid" id="header">
             <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
-             <!--Logo home-->
+                <!--Logo home-->
                 <figure class="col-5 col-md-4 col-lg-2 ">
                     <a href="/" class="a-header-logo">
                         <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
                     </a>
                 </figure>                
-                <!--Login y carrito-->
-                <ul class="col-4 col-md-7 col-lg-3 d-flex align-items-center justify-content-center">
-                    <li class="col-6 col-md-3">
-                        <a href="#login-modal" data-toggle="modal" class="a-circle-link"><img
-                            src="/asset/img/header/icono-login.png" alt="Login"></a>
+                <!--Login -->
+                <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <li class="col-6">
+                        <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
                     </li>
-                    <li class="d-none col-md-3 d-md-block text"><a href="#login-modal" data-toggle="modal">Login</a></li>                        
                 </ul>
-             </div>
-         </header>
+            </div>
+        </header>
             <!--Modal de login-->
                 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
                    <div class="modal-dialog modal-dialog-centered">
@@ -226,8 +224,6 @@
                                                                     <p><label for="">Descripción</label></p> 
                                                                     <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
                                                                     <p><label for="">Especificaciones</label></p> 
-                                                                    <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
-                                                                    <p><label for="">Ficha técnica</label></p> 
                                                                     <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
                                                                 </div> 
                                                                 <div class="form-group guardar">

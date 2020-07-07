@@ -10,40 +10,28 @@
     <!--Logo en el title de la página-->
     <link rel="icon" type="image/png" href="/asset/img/title-page/title-logo.png" />
     <!--Master Stylesheet-->
-    <link rel="stylesheet" href="./css/administrar.css">
+    <link rel="stylesheet" href="/css/administrar.css">
     <title>Moto Style</title>
 </head>
 <body>
     <section id="all-container">
-        <!--Header-->
+         <!--Header-->
         <header class="container-fluid" id="header">
-            <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
-                <!--Logo home-->
-                <figure class="col-5 col-md-4 col-lg-2 ">
-                    <a href="/" class="a-header-logo">
-                        <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
-                    </a>
-                </figure>
-                <!--Searchbar en header-->
-                <div class="searchbar-div d-none d-lg-block">
-                    <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
-                        <div class="search-bar">
-                            <form action="/products" method="GET" class="search-form d-flex">
-                                <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
-                                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>  
-                <!--Login y carrito-->
-                <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
-                    <li class="col-6">
-                        <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
-                    </li>
-                   
-                </ul>
-            </div>
-        </header>
+          <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
+              <!--Logo home-->
+              <figure class="col-5 col-md-4 col-lg-2 ">
+                  <a href="/" class="a-header-logo">
+                      <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
+                  </a>
+              </figure>                
+              <!--Login -->
+              <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
+                  <li class="col-6">
+                      <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
+                  </li>
+              </ul>
+          </div>
+      </header>
             <!--Modal de login-->
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -80,7 +68,7 @@
                                     <h2 class="display-4 text-white o text-center cartel ">Administrador de Productos</h2>
                                   </article>
                                   <article class="col-12">
-                                    <a href="/productAdd"><i class="fas fa-plus-circle"></i>Agregar</a>
+                                    <a class="btn boton-agregar" href="/productAdd"><i class="fas fa-plus-circle"></i>Agregar</a>
                                   </article>
                                   <article class="col-12" >
                                   <table class="table">
@@ -97,58 +85,58 @@
                                         <tr>  
                                             <td>1</td>
                                             <td >Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>2</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>3</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i>></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>4</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>5</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>6</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr> 
                                           <tr>  
                                             <td>7</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr>                                          
                                           <tr>  
                                             <td>8</td>
                                             <td>Yamaha tracer 900</td>                                         
-                                            <td><a href="../products/productDetail.html"> <i class="far fa-eye"></i></a></td>
-                                            <td><a href="/edit.html"> <i class="fas fa-pencil-alt"></i></a></td>
-                                            <td><a href="/add/delete/"><i class="fas fa-trash-alt"></i></a></td>
+                                            <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                                            <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
                                            </tr>                                       
                                       </tbody>
                                     </table> 

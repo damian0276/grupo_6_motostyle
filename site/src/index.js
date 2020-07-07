@@ -11,6 +11,7 @@ const webRoutes = require('./routes/web');
 //const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
 const adminRoutes = require('./routes/admin');
+const userRoutes = require('./routes/user');
 
 //Para usar las rutas
 
@@ -18,6 +19,7 @@ const adminRoutes = require('./routes/admin');
 app.use(webRoutes);
 app.use(productRoutes);
 app.use(adminRoutes);
+app.use(userRoutes);
 
 
 //Levantar servidor

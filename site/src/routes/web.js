@@ -11,6 +11,5 @@ router.get('/', controllerWeb.index);
 router.get('/nosotros', controllerWeb.nosotros);
 router.get('/sucursales', controllerWeb.sucursales);
 router.get('/contacto', controllerWeb.contacto);
-router.get('/register', controllerWeb.register);
 
 module.exports = router;

@@ -9,6 +9,15 @@
 .rows{
     margin-top:63px;
 }
+.header-div{
+    justify-content: space-between !important;
+}
+
+.container-fluid .container article .boton-agregar{
+    background-color: var(--rojo);
+    color: white;
+    margin-bottom: 0.5em;
+}
 .cartel{
     font-size: 1rem;
     background-color: #e70202;
