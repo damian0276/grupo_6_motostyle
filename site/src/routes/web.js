@@ -8,4 +8,5 @@ const controllerWeb = require(path.resolve(__dirname, '..', 'controllers', 'cont
 //Armo mis rutas
 router.get('/', controllerWeb.index);
 router.get('/nosotros', controllerWeb.nosotros);
+router.get('/sucursales', controllerWeb.sucursales);
 module.exports = router;

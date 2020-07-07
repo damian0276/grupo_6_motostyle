@@ -6,7 +6,11 @@ module.exports = {
         res.sendFile(path.resolve(__dirname, '..', 'views','web','index.html'));        
     },
     nosotros: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','nosotros.html'));        
+        res.sendFile(path.resolve(__dirname, '..', 'views','web','nosotros.html'));          
+    },
+    sucursales: function(req,res){
+        res.sendFile(path.resolve(__dirname, '..', 'views','web','sucursales.html')); 
+               
     }
 }
  

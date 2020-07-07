@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
 }
+.sombra{
+    box-shadow: 10px 5px 5px grey;
+    transition: all .2s ease-in-out;
+}
 ul, ol {
     list-style-type: none;
     margin: 0;
@@ -60,12 +64,13 @@ body{
 /*Header*/
 
 header{
-    height: 10vh;
+    height: 60px;
     background-color: var(--rojo);
     position: fixed;
     top: 0px;
     z-index: 1;
     width: 100%;
+    padding: 0 !important;
 }
 header .header-div{
     height: 100%;
@@ -75,6 +80,8 @@ header .header-div{
 }
 .a-header-logo{
     display:block;
+    max-height:60px ;
+    max-width: 140px;
 }
 .a-circle-link{
     box-sizing: content-box;
@@ -91,6 +98,44 @@ header .header-div{
 .a-circle-link img{
     width: 65%;
     display: block;
+}
+header .header-div ul li{
+    padding: 0;
+}
+header .header-div ul li:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+header .header-div ul .text{
+    font-size: 1.5em;
+    padding: 0;
+    color: white;
+    margin-left: 0.5em;
+}
+
+/*Modal*/
+#login-modal .modal-dialog-centered{
+    justify-content: center;
+}
+#login-modal .modal-dialog .modal-content{
+    width: 250px;
+}
+
+#login-modal .modal-dialog .modal-content .modal-body{
+    background-color: var(--gris);
+    border: 2px solid black;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form{
+    font-weight: 700;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form .modal-login-button{
+    background-color: var(--rojo);
+    color: white;
+    width: 70%;
+}
+#login-modal .modal-dialog .modal-content .modal-body .div-form form a{
+    color: black;
 }
 
 /*Nav bar*/
@@ -118,7 +163,7 @@ header .header-div{
   width: 120px;
   margin-left: -120px;
   transition: .3s;
-  margin-top: 10vh;
+  margin-top: 60px;
 }
 .navbar-lateral div .open {
   margin-left: 0;
@@ -130,6 +175,11 @@ header .header-div{
     height: 60px;
     border: 1px solid var(--gris);
 }
+.navbar-lateral div ul li:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
 .navbar-lateral div ul li a{
     color:white;
     width: 100%;
@@ -138,20 +188,13 @@ header .header-div{
     align-items: center;
     justify-content: center;
 }
-.navbar-lateral div ul li ul{
-    display: block;
-}
-.navbar-lateral div ul li:hover >li{
- display: block;
-}
-
 
 input[name='boton']:checked ~ label i{
     transform: rotate(180deg);
 }
 /*Page-container*/
 .page-container{
-    margin-top: 10vh;
+    margin-top: 60px;
 }
 /* Searchbar*/
 .search-bar-back{
@@ -201,20 +244,33 @@ main{
 
 .products-container .products .product-box{
     margin-bottom: 1em;
-    padding: 0 10px;
+    padding: 0 10px;    
 }
-.products-container .products .product-box .card-body{
-    padding: 0;
+.products-container .products .product-box .card:hover{
+    transform: scale(1.02);
 }
-.products-container .products .product-box .card-body .card-title{
+.products-container .products .product-box .card .card-body{
+    padding: 0;    
+    border: 1px solid black;
+}
+.products-container .products .product-box .card .card-body .card-title{
     margin: 0.5em;
+    background-color: var(--beige);
+    padding: 5px;
+}
+.products-container .products .product-box .card .card-body .card-title .product-name{
+    font-weight: bolder;
+}
+
+.products-container .products .product-box .card .card-body p{
+    padding: 5px;
 }
 
 /*Footer*/
 
 footer{
     background-color: var(--rojo);
-    height: 10vh;
+    height: 60px;
 }
 .footer-div{
     height: 100%;
@@ -228,39 +284,43 @@ footer .footer-div .a-circle-link i {
 }
 
 @media(min-width: 768px){
+    header{
+        height: 100px;
+    }
+    .navbar-lateral div .primer-menu{
+        margin-top: 100px;
+    }
+    .a-header-logo{
+        display:block;
+        max-height:95px ;
+        max-width: 200px;
+    }
     header .a-circle-link{
+        min-height: 2em;
+        min-width: 2em;
+    }
+    
+    .page-container{
+        margin-top: 100px;
+    }
+    footer{
+        height: 100px;
+    }
+    footer .footer-div .a-circle-link{
         height: 4em;
         width: 4em;
     }
-    header .header-div ul .text{
-        font-size: 1.5em;
-        padding: 0;
-    }
-    header .header-div ul .text a{
-        color: white;
-    }
-    footer .footer-div .a-circle-link{
-        width: 3em;
-        height: 3em;
-    }
     footer .footer-div .a-circle-link i {
-        font-size: 2em;
+        font-size:2.5em ;
     }
-   
 }
 @media(min-width: 992px){
-    header{
-        height: 15vh;
-    }
-    .navbar-lateral div .primer-menu{
-        margin-top: 15vh;
+    header .a-circle-link{
+        height: 2em;
+        width: 2em;
     }
     .search-bar-back{
         margin-top: 0;
-    }
-    header .a-circle-link{
-        height:2em ;
-        width:2em ;
     }
     .searchbar-div{
         flex-grow: 1;
@@ -270,15 +330,12 @@ footer .footer-div .a-circle-link i {
         margin-top: 20vh;
     }
     .page-container{
-        margin-top: 15vh;
+        margin-top: 100px;
         width: 90%;
         margin-left: 10%;
     }
-    footer .a-circle-link{        
-        height:2em !important ;
-        width:2em !important ;
-    }
-    footer .a-circle-link i{
-        font-size: 1.5em !important;
+    footer .footer-div .a-circle-link{
+        height: 3em;
+        width: 3em;
     }
 }

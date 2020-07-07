@@ -1,0 +1,125 @@
+@import url('/css/master.css');
+
+
+/* Variables */
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+}
+
+/* Titulos */
+.sucursal{
+    text-align: center;
+    font-size: 2em;
+    background: #E70202; 
+    margin: 10 10 10px; 
+    overflow: hidden; 
+    border-radius: 35px 0px 35px 0px; 
+    -moz-border-radius: 35px 0px 35px 0px; 
+    -webkit-border-radius: 35px 0px 35px 0px; 
+    border: 2px solid black;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    background: #E70202; 
+    margin: 10 10 10px; 
+    overflow: hidden; 
+    border-radius: 35px 0px 35px 0px; 
+    -moz-border-radius: 35px 0px 35px 0px; 
+    -webkit-border-radius: 35px 0px 35px 0px; 
+    border: 2px solid black;
+
+}
+
+.card{
+    border: 3px solid black;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card .card-body{
+    background-position: center;
+    border-top: 3px solid black;
+}
+
+.card-title{
+    color: white;
+    text-align: center;
+    background:black; 
+    margin: 10 10 10px; 
+    overflow: hidden; 
+    border-radius: 35px 0px 35px 0px; 
+    -moz-border-radius: 35px 0px 35px 0px; 
+    -webkit-border-radius: 35px 0px 35px 0px; 
+    border: 2px solid black;
+
+}
+ 
+@media(min-width: 768px){
+    .maps{
+        width: 250px;
+        right: 200px;
+    }
+    .header{
+            height: 100px;
+        }
+    .navbar-lateral div .primer-menu{
+            margin-top: 100px;
+        }
+    .a-header-logo{
+            display:block;
+            max-height:95px ;
+            max-width: 200px;
+        }
+    header .a-circle-link{
+            min-height: 2em;
+            min-width: 2em;
+        }
+        
+    .page-container{
+            margin-top: 100px;
+        }
+    footer{
+            height: 100px;
+        }
+    footer .footer-div .a-circle-link{
+            height: 4em;
+            width: 4em;
+        }
+    footer .footer-div .a-circle-link i {
+            font-size:2.5em ;
+        }
+    }
+
+
+@media(min-width: 992px){
+    
+    .maps{
+        width: 400px;
+        right: 200px;
+       
+    }
+    .tigre{
+        margin-top: 10px;
+        border:solid red;
+    }
+    
+   .card-tigre{
+    margin-left: 20px;
+    }
+    .concesionaria{
+        position:absolute;
+        width:550px; 
+        height:300px; 
+        border: 3px solid var(--rojo);
+        background-color: rgba(247, 4, 4, 0.5);
+        margin-top: 50px;
+        margin-left: 550px;
+        margin-bottom: 500px;
+        }
+     
+ }
+
