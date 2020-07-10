@@ -1,5 +1,4 @@
-@import url(./master.css);
-root {
+:root {
     --gris: #C2C2C2;
     --rojo: #E70202;
     --blanco: #ffffff;

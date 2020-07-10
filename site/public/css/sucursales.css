@@ -1,6 +1,3 @@
-@import url('/css/master.css');
-
-
 /* Variables */
 :root {
     --gris: #C2C2C2;
@@ -21,7 +18,7 @@
     -webkit-border-radius: 35px 0px 35px 0px; 
     border: 2px solid black;
 }
-h2{
+.sucursales-h2{
     color: white;
     text-align: center;
     font-size: 1em;
@@ -35,17 +32,17 @@ h2{
 
 }
 
-.card{
+.sucursales-section .card{
     border: 3px solid black;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.card .card-body{
+.sucursales-section .card .card-body{
     background-position: center;
     border-top: 3px solid black;
 }
 
-.card-title{
+.sucursales-section .card-title{
     color: white;
     text-align: center;
     background:black; 

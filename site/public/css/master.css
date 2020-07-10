@@ -1,6 +1,20 @@
 /* fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:wght@300;400;700&display=swap');
 
+/*Stylesheet de las otras páginas*/
+
+@import url('/css/contacto.css');
+@import url('/css/register.css');
+@import url('/css/products.css');
+@import url('/css/productCart.css');
+@import url('/css/administrar.css');
+@import url('/css/edit.css');
+@import url('/css/nosotros.css');
+@import url('/css/passwordRecovery.css');
+@import url('/css/productAdd.css');
+@import url('/css/productDetail.css');
+@import url('/css/sucursales.css');
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Lato', sans-serif;
 }
