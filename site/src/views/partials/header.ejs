@@ -1,0 +1,31 @@
+<header class="container-fluid" id="header">
+    <div class="row justify-content-between justify-content-lg-start align-items-lg-center header-div">
+        <!--Logo home-->
+        <figure class="col-5 col-md-4 col-lg-2 ">
+            <a href="/" class="a-header-logo">
+                <img src="/asset/img/header/ms-logo.png" alt="Logo Moto Style">
+            </a>
+        </figure>
+        <!--Searchbar en header-->
+        <div class="searchbar-div d-none d-lg-block">
+            <div id="searchbar" class="search-bar-back rounded-pill d-none d-lg-block">
+                <div class="search-bar">
+                    <form action="/products" method="GET" class="search-form d-flex">
+                        <input class="search-input rounded-pill" type="text" name="seach" placeholder="Buscá tu próxima moto..">
+                        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>  
+        <!--Login y carrito-->
+        <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
+            <li class="col-6">
+                <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
+            </li>
+            <li class="col-6">
+                <a class="d-flex align-items-center" href="/productCart"><span class="a-circle-link"><img src="/asset/img/header/shop-cart.png" alt="Carrito de compras"></span><span class="d-none d-md-block text">Carrito</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>

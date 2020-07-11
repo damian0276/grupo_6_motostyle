@@ -5,10 +5,15 @@ const path = require('path');
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
+//Seteo del motor de plantillas EJS
+app.set('view engine', 'ejs');
+
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
+
 //Requerir las rutas
 
 const webRoutes = require('./routes/web');
-//const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/user');

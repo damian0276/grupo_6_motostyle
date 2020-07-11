@@ -4,14 +4,14 @@ const fs = require('fs')
 module.exports = {
 
     add: (req,res) =>{
-        res.sendFile(path.resolve(__dirname, '..', 'views','admin','productAdd.html'));
+        res.render(path.resolve(__dirname, '..', 'views','admin','productAdd'));
     },
      edit: (req,res) =>{
     
-       res.sendFile(path.resolve(__dirname,'..','views','admin','edit.html'));
+       res.render(path.resolve(__dirname,'..','views','admin','edit'));
      },
      administrar: (req,res) =>{
-        res.sendFile(path.resolve(__dirname,'..','views','admin','administrar.html'));
+        res.render(path.resolve(__dirname,'..','views','admin','administrar'));
 
      }
     

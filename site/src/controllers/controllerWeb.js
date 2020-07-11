@@ -3,17 +3,17 @@ const fs = require('fs');
 
 module.exports = {
     index: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','index.html'));        
+        res.render(path.resolve(__dirname, '..', 'views','web','index'));        
     },
     nosotros: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','nosotros.html'));          
+        res.render(path.resolve(__dirname, '..', 'views','web','nosotros'));          
     },
     sucursales: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','sucursales.html')); 
+        res.render(path.resolve(__dirname, '..', 'views','web','sucursales')); 
                
     },
     contacto: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','web','contacto.html'));       
+        res.render(path.resolve(__dirname, '..', 'views','web','contacto'));       
     },
      
    }

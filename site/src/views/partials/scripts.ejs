@@ -1,0 +1,15 @@
+<script src="/js/jquery.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        jQuery("input[name='boton']").change(function(){
+            var navbar = $('#primer-menu');
+            if(jQuery(this).is(":checked")){
+                $('#navbar-lateral').addClass("blur");
+                navbar.addClass('open');
+            }
+            else{
+                $('#navbar-lateral').removeClass("blur");
+                navbar.removeClass('open');
+            } });
+        </script>

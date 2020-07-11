@@ -3,12 +3,12 @@ const fs = require('fs')
 
 module.exports = {
     index: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','products','products.html'));
+        res.render(path.resolve(__dirname, '..', 'views','products','products'));
     },
     cart: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','products','productCart.html'));
+        res.render(path.resolve(__dirname, '..', 'views','products','productCart'));
     },
     detail: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','products','productDetail.html'));
+        res.render(path.resolve(__dirname, '..', 'views','products','productDetail'));
     }
 }

@@ -3,10 +3,10 @@ const fs = require('fs');
 
 module.exports = {    
     register: function(req, res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','users','register.html'))
+        res.render(path.resolve(__dirname, '..', 'views','users','register'))
     },
     passwordRecovery: function(req,res){
-        res.sendFile(path.resolve(__dirname, '..', 'views','users','passwordRecovery.html'));   
+        res.render(path.resolve(__dirname, '..', 'views','users','passwordRecovery'));   
     }  
 }
  

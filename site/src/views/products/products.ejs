@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Head-->
+    <%- include('../partials/head') %>
+<body>
+    <section id="all-container">
+        <!--Header-->
+        <%- include('../partials/header') %>
+        <!--Modal de login-->
+        <%- include('../partials/loginModal') %>        
+        <!--NavBar lateral-->
+        <%- include('../partials/navBar') %>      
+        <!--Contenedor-->        
+        <main class="page-container" id="page-container">  
+            <!--Barra de busqueda-->
+            <%- include('../partials/searchBar') %>                             
+            <!--Contenedor de pagina-->
+            <section class="products-container" id="products-container">
+                <!--Titulo-->
+                <div class="titulo-product_div col-12 sombra" id="titulo-product_div">
+                    <h2>Encontrá acá tu moto</h2>
+                </div>
+                <!--Filtros-->
+                <section class="filtros-section text-center w-100" id="filtros-section">
+                    <button class="btn mb-2 boton-menu-filtros sombra d-lg-none" type="button" data-toggle="collapse" data-target="#filtros-div" aria-expanded="false" aria-controls="filtros-div">
+                        Filtros &nbsp; <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="filtros-title d-none d-lg-block text-left mt-4" id="filtros-title">
+                        <h4 class="sombra">Filtros</h4>
+                    </div>
+                    <div class="filtros-div rounded collapse d-lg-block " id="filtros-div">
+                        <div class="d-flex flex-column"> 
+                            <div class="contenedor-flexible">                           
+                                <a class="title-filtro rounded-top text-dark sombra" id="title-filtro-marca" data-toggle="collapse" href="#marcas-collapse" role="button" aria-expanded="false" aria-controls="marcas-collapse">
+                                    Marca <i class="fas fa-caret-down"></i>
+                                </a>                            
+                                <div class="collapse input-div sombra" id="marcas-collapse">
+                                    <div class="checkboxes-filtros pt-2">
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="yamaha" id="yamaha">
+                                            <label for="yamaha">Yamaha</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="honda" id="honda">
+                                            <label for="honda">Honda</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="bmw" id="bmw">
+                                            <label for="bmw">BMW</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="mercedez-benz" id="mercedez-benz">
+                                            <label for="mercedez-benz">Mercedez-benz</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="kawasaki" id="kawasaki">
+                                            <label for="kawasaki">Kawasaki</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="ducati" id="ducati">
+                                            <label for="ducati">Ducati</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="ktm" id="ktm">
+                                            <label for="ktm">KTM</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-flexible">
+                                <a class=" title-filtro text-dark sombra" data-toggle="collapse" href="#cilindrada-collapse" role="button" aria-expanded="false" aria-controls="cilindrada-collapse">
+                                    Cilindrada <i class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="collapse input-div sombra" id="cilindrada-collapse">                                
+                                    <div class="checkboxes-filtros pt-2">
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="600-900" id="600-900">
+                                            <label for="600-900">600-900</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="900-1200" id="900-1200">
+                                            <label for="900-1200">900-1200</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="1200-1500" id="1200-1500">
+                                            <label for="1200-1500">1200-1500</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="1500-1800" id="1500-1800">
+                                            <label for="1500-1800">1500-1800</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="1800-2100" id="1800-2100">
+                                            <label for="1800-2100">1800-2100</label>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-flexible">
+                                <a class=" title-filtro text-dark sombra" data-toggle="collapse" href="#frenos-collapse" role="button" aria-expanded="false" aria-controls="frenos-collapse">
+                                    Frenos <i class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="collapse input-div sombra" id="frenos-collapse">
+                                    <div class="checkboxes-filtros pt-2 ">
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="discoDelantero" id="discoDelantero">
+                                            <label for="discoDelantero">Disco adelante</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="discoDelanteroYTrasero" id="discoDelanteroYTrasero">
+                                            <label for="discoDelanteroYTrasero">Disco adelante y atrás</label>
+                                        </div>
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="dobleDisco" id="dobleDisco">
+                                            <label for="dobleDisco">Doble disco</label>
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-flexible">
+                                <a class="rounded-bottom title-filtro text-dark sombra" id="title-filtro-precio" data-toggle="collapse" href="#precio-collapse" role="button" aria-expanded="false" aria-controls="precio-collapse">
+                                    Precio <i class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="collapse input-div sombra border-bottom border-dark  rounded-bottom" id="precio-collapse">
+                                    <div class="precio-input pt-2 mb-2">
+                                        <span class="d-lg-block">Min u$s<input type="text" name="min" id="min"></span><span class="d-lg-none">&nbsp;-&nbsp;</span><span class="d-lg-block">Max u$s<input type="text" name="max" id="max"></span>
+                                    </div>                                       
+                                 </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    <!--Productos-->
+                <section class="container-fluid">
+                    <div class="row products" id="productos">
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>   
+                        <div class="product-box col-12 col-md-6 col-lg-4">
+                            <article class="card border-dark sombra">
+                                <a href="/productDetail">
+                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
+                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                </div>
+                            </article>
+                        </div>                                                     
+                    </div>                
+                </section>
+            </section>
+        </main>
+            <!--Footer-->
+            <%- include('../partials/footer') %>
+    </section>
+        
+<!--Script de boostrap-->
+<%- include('../partials/scripts') %>
+</body>
+</html>
+        

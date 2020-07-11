@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+<body>
+    <section id="all-container">
+      <!--Header-->
+      <%- include('../partials/headerAdmin') %>
+      <!--Modal de login-->
+      <%- include('../partials/loginModal') %>
+      <!-- Cuerpo -->
+      <main class="container-fluid">                               
+          <!--Administrador de productos-->                          
+          <section class=" container rows">
+            <article class="col-12">
+              <h2 class="display-4 text-white o text-center cartel ">Administrador de Productos</h2>
+            </article>
+            <article class="col-12">
+              <a class="btn boton-agregar" href="/productAdd"><i class="fas fa-plus-circle"></i>Agregar</a>
+            </article>
+            <article class="col-12" >
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ver</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>  
+                      <td>1</td>
+                      <td >Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>2</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>3</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>4</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>5</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>6</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr> 
+                    <tr>  
+                      <td>7</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>                                          
+                    <tr>  
+                      <td>8</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                     </tr>      
+                     <tr>  
+                      <td>9</td>
+                      <td>Yamaha tracer 900</td>                                         
+                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
+                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
+                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
+                     </tr>                                         
+                </tbody>
+              </table> 
+            </article>       
+          </section>                          
+          <a href="/" class="btm btn-primary">Volver</a>
+        </main>                                
+          <!--Footer-->
+          <%- include('../partials/footer.ejs') %>
+      </section> 
+      
+      <!--Script de boostrap-->
+      <%- include('../partials/scripts') %>
+  
+</body>
+</html>

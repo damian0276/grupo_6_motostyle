@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Head-->
+    <%- include('../partials/head') %>
+<body>
+    <section id="all-container">
+        <!--Header-->
+        <%- include('../partials/header') %>
+        <!--Modal de login-->
+        <%- include('../partials/loginModal') %>        
+        <!--NavBar lateral-->
+        <%- include('../partials/navBar') %>     
+        <!--Contenedor-->        
+        <main class="page-container" id="page-container">  
+            <!--Barra de busqueda-->
+            <%- include('../partials/searchBar') %>
+            <section class="contact-container" id="contact-container">
+                <h1 class="contact-title  sombra mt-2" id="contact-title">Contacto</h1>
+                <div class="contact-div  sombra">
+                    <h5>Teléfono:</h5>
+                    <p>0800-111-1111</p>
+                    <h5>Whatsapp</h5>
+                    <p>Sucursal-Belgrano: <a href="tel:+5491144444444">+549-11-4444-4444</a></p>
+                    <p>Sucursal-Centro: <a href="tel:+5491155555555">+549-11-5555-5555</a></p>
+                    <p>Sucursal-Munro: <a href="tel:+5491177777777">+549-11-7777-7777</a></p>
+                    <p>Sucursal-Tigre: <a href="tel:+5491133333333">+549-11-3333-3333</a></p>
+                    <h5>E-mail:</h5>
+                    <p><a href="mailto:info@motostyle.com">info@motostyle.com</a></p>                                        
+                </div>
+                <div class="contact-form-div rounded  sombra" id="contact-form-div">
+                    <h5>Envianos un mensaje</h5>
+                    <form action="/contact" method="get">
+                        <div class="flexing-div-contacts-form" id="flexing-div-contacts-form">
+                            <div class="contact-inputs-div" id="contact-inputs-div">
+                                <input class="rounded-pill border-0" type="text" name="nombre-contacto" id="nombre-contacto" placeholder="Nombre y apellido">
+                                <input class="rounded-pill border-0" type="email" name="email-contacto" id="email-contacto" placeholder="E-mail">
+                                <input class="rounded-pill border-0" type="tel" name="tel-contacto" id="tel-contacto" placeholder="Numero de teléfono">
+                            </div>
+                            <textarea class="rounded border-0" name="mensaje-contacto" id="mensaje-contacto" cols="30" rows="5" placeholder="Escribí tu consulta"></textarea>
+                        </div>
+                        <div class="contact-button-div">
+                            <button class="text-center rounded-pill border-0" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <!--Footer-->
+        <%- include('../partials/footer') %>
+    </section>
+    
+    <!--Script de boostrap-->
+    <%- include('../partials/scripts') %>
+    </body>
+    </html>
+    
