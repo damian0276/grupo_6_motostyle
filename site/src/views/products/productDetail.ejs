@@ -19,15 +19,8 @@
             <!--Producto-->   
             <div class="ch-container">
                 <div class="d-none d-lg-block c-img">
-                    <h1 id="multis">MULTISTRADA 950/950 S</h1>    
-                    <img class="multi" src="/asset/img/productos/Multistrada-950/Multistrada2.jpg"alt="">
-                    <div class="text">
-                        <p>Con la nueva Multistrada 950 se puede experimentar la belleza del viaje todos los días,
-                            gracias a la combinación de emociones de conducción de Ducati y su versatilidad que la
-                            hacen ideal para cada uso. El peso limitado y la altura del asiento de 840 mm aseguran
-                            agilidad y facilidad de manejo, mientras que el equipamiento tecnológico avanzado garantiza
-                            la máxima seguridad en todas las condiciones. </p>
-                    </div>
+                    <h1 id="multis"><%= moto.modelo %></h1>    
+                    <img class="multi" src="/asset/img/productos/<%= moto.imagenPortada %>"alt="<%= moto.modelo %>">                    
                 </div>
                     <!--fotos-->
                     <section class="productDetail-section" id="productDetail-section">
@@ -39,22 +32,22 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
                                     <figure>
-                                        <a href="/productDetail.html"><img src="/asset/img/productos/Multistrada-950/frente.jpg" alt=""></a>
+                                        <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/Multistrada-950/trasera.jpg" alt="">
+                                        <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                     </figure> 
                                 </div>
                                 <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/Multistrada-950/tablero.jpg" alt="">
+                                        <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/Multistrada-950/entera.jpg" alt="">
+                                        <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                     </figure>
                                 </div>
                             </div>
@@ -62,28 +55,28 @@
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
                                         <figure>
-                                            <img src="/asset/img/productos/Multistrada-950/frente.jpg" alt="">
+                                            <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/Multistrada-950/trasera.jpg" alt="">
+                                            <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/Multistrada-950/tablero.jpg" alt="">
+                                            <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/Multistrada-950/entera.jpg" alt="">
+                                            <img src="/asset/img/productos/<%= moto.imagenPortada %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
@@ -106,7 +99,7 @@
                             
                             <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    De tamaño compacto y elegante: Combina a la perfección las características sobresalientes de las otras versiones de la familia, pero se destaca por su forma más compacta y delgada. La luz delantera es única, mientras que los nuevos deflectores laterales y el tanque de 20 litros realzan el carácter vanguardista de la nueva Multistrada 950, lo que la convierte en una encarnación del diseño y estilo puramente italianos.
+                                    <%= moto.descripcion %>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +113,7 @@
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    El Ducati Safety Pack incluye ABS y control de tracción Ducati (DTC); se mejoró con IMU Bosch, que permite el uso de ABS en las curvas y garantiza una mayor seguridad y un rendimiento notable. La nueva Multistrada 950 también cuenta con Ducati Traction Control, que analiza los datos obtenidos a través de los sensores de velocidad instalados en las ruedas, para ajustar el deslizamiento de la rueda trasera, cuando sea necesario
+                                    <%= moto.especificaciones %>
                                 </div>
                             </div>
                         </div>
@@ -134,37 +127,38 @@
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <table class="table table-sm table-dark">
+                                    <table class="table table-sm">
                                         <tbody>
                                             <tr>                                                
-                                                <td >Marca</td>
+                                                <td>Marca</td>
                                                 <td></td>
-                                                <td class="barra">Ducati</td>
+                                                <td class="barra"><%= moto.marca %></td>
                                             </tr>
                                             <tr>                                                
-                                                <td >Modelo</td>
+                                                <td>Modelo</td>
                                                 <td></td>
-                                                <td class="barra" >Multistrada</td>
+                                                <td class="barra" ><%= moto.modelo %></td>
                                             </tr> 
                                             <tr>                                                
-                                                <td >Color</td>
+                                                <td>Color</td>
                                                 <td></td>
-                                                <td class="barra" >Blanco</td>
+                                                <td class="barra" ><%= moto.color %></td>
                                             </tr>  
                                             <tr>                                                
-                                                <td >Stock</td>
+                                                <td>Stock</td>
                                                 <td></td>
-                                                <td class="barra">3</td>
+                                                <td class="barra"><%= moto.stock %></td>
                                             </tr> 
                                             <tr>                                                
-                                                <td >Cilindrada</td>
+                                                <td>Cilindrada</td>
                                                 <td></td>
-                                                <td class="barra">950</td>
+                                                <td class="barra"><%= moto.cilindrada %></td>
                                             </tr> 
                                             <tr>                                                
-                                                <td >Frenos</td>
+                                                <td>Frenos</td>
                                                 <td></td>
-                                                <td class="barra">Doble disco</td>
+                                                <td class="barra"><%if(moto.frenos == 'discodelantero'){%>Disco Delantero
+                                                    <%} else if (moto.frenos == 'dobledisco'){%>Doble Disco<%}else{%>Disco delantero y trasero<%}%></td>
                                             </tr>                                            
                                         </tbody>
                                     </table>

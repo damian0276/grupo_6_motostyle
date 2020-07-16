@@ -7,6 +7,6 @@ const controllerProduct = require(path.resolve(__dirname, '..', 'controllers', '
 
 router.get('/products', controllerProduct.index)
 router.get('/productCart', controllerProduct.cart)
-router.get('/productDetail', controllerProduct.detail)
+router.get('/productDetail/:id', controllerProduct.detail)
 
 module.exports = router;
