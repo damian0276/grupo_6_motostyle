@@ -133,105 +133,21 @@
                     <!--Productos-->
                 <section class="container-fluid">
                     <div class="row products" id="productos">
-                        <div class="product-box col-12 col-md-6 col-lg-4">
+                        <% motos.forEach(moto =>{%>
+                        <div class="product-box col-12 col-md-6 col-lg-4">                            
                             <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
+                                <a href="/productDetail/<%=moto.id%>">
+                                    <img src="/asset/img/productos/<%=moto.imagenPortada%>" class="card-img-top" alt="<%=moto.modelo%>">
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.modelo%></span><span class="product-price"><% if(moto.moneda == 'peso'){%>$
+                                    <%} else if (moto.moneda == 'dolar'){%>u$s<%}else{%>€<%}%>
+                                        <%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></h5>
+                                    <p class="d-none d-lg-block"><%= moto.descripcion%></p>
                                 </div>
                             </article>
-                        </div>
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>   
-                        <div class="product-box col-12 col-md-6 col-lg-4">
-                            <article class="card border-dark sombra">
-                                <a href="/productDetail">
-                                    <img src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" class="card-img-top" alt="yamaha tracer 900">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name">Yamaha Tracer 900</span> <span class="product-price">u$s30.000</span></h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam odio officiis dolores vel culpa provident. Iste error odit consequatur quibusdam aperiam eveniet, ducimus commodi voluptatum illo explicabo eum. Corporis!</p>
-                                </div>
-                            </article>
-                        </div>                                                     
+                        </div> 
+                         <%});%>                                                         
                     </div>                
                 </section>
             </section>
