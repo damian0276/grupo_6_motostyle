@@ -140,9 +140,7 @@
                                     <img src="/asset/img/productos/<%=moto.imagenPortada%>" class="card-img-top" alt="<%=moto.modelo%>">
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.modelo%></span><span class="product-price"><% if(moto.moneda == 'peso'){%>$
-                                    <%} else if (moto.moneda == 'dolar'){%>u$s<%}else{%>€<%}%>
-                                        <%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></h5>
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.modelo%></span><span class="product-price"><%= moto.moneda%> <%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></h5>
                                     <p class="d-none d-lg-block"><%= moto.descripcion%></p>
                                 </div>
                             </article>

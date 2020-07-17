@@ -22,76 +22,24 @@
                 <thead>
                   <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
                     <th scope="col">Ver</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Borrar</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <% motos.forEach(moto =>{%>
                   <tr>  
-                      <td>1</td>
-                      <td >Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>2</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>3</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>4</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>5</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>6</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> 
-                    <tr>  
-                      <td>7</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                    </tr>                                          
-                    <tr>  
-                      <td>8</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                     </tr>      
-                     <tr>  
-                      <td>9</td>
-                      <td>Yamaha tracer 900</td>                                         
-                      <td><a href="/productDetail"> <i class="far fa-eye"></i></a></td>
-                      <td><a href="/edit"> <i class="fas fa-pencil-alt"></i></a></td>
-                      <td><a href="/delete"><i class="fas fa-trash-alt"></i></a></td>
-                     </tr>                                         
+                    <td><%= moto.id%></td>
+                    <td><%= moto.marca %></td>  
+                    <td><%= moto.modelo %></td>                                         
+                    <td><a href="/productDetail/<%= moto.id %>"> <i class="far fa-eye"></i></a></td>
+                    <td><a href="/edit/<%= moto.id%>"> <i class="fas fa-pencil-alt"></i></a></td>
+                    <td><a href="/delete/<%=moto.id%>"><i class="fas fa-trash-alt"></i></a></td>
+                  </tr> 
+                <% }); %>                                       
                 </tbody>
               </table> 
             </article>       
