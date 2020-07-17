@@ -31,20 +31,20 @@
                         <div class="contenedor mt-1 ">            
                             <div class="formulario">
                                 <div class="formu">
-                                    <form action="#" method="POST" enctype="multipart/form-data">
+                                    <form action="/administrar/create" method="POST" enctype="multipart/form-data">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Marcas</label>
                                             </div>
                                             <select name="marca" class="custom-select" id="inputGroupSelect01">
                                                 <option selected disabled>Seleccionar</option>
-                                                <option value="yamaha">Yamaha</option>
-                                                <option value="honda">Honda</option>
-                                                <option value="bmw">BMW</option>
-                                                <option value="mercedezbenz">Mercedes Benz</option>
-                                                <option value="kawasaki">Kawasaki</option>
-                                                <option value="ducati">Ducati</option>
-                                                <option value="ktm">KTM</option>
+                                                <option value="Yamaha">Yamaha</option>
+                                                <option value="Honda">Honda</option>
+                                                <option value="BMW">BMW</option>
+                                                <option value="Mercedez-Benz">Mercedes Benz</option>
+                                                <option value="Kawasaki">Kawasaki</option>
+                                                <option value="Ducati">Ducati</option>
+                                                <option value="KTM">KTM</option>
                                             </select>
                                         </div>
                                         <div class="input-group mb-3">
@@ -77,9 +77,9 @@
                                             </div>
                                             <select name="frenos" class="custom-select" id="inputGroupSelect01">
                                                 <option selected disabled>Seleccionar</option>
-                                                <option value="discodelantero">Disco delantero</option>
-                                                <option value="discodelanteroytrasero">Disco delantero y trasero</option>
-                                                <option value="dobledisco">Doble disco</option>                                                
+                                                <option value="Disco delantero">Disco delantero</option>
+                                                <option value="Disco delantero y trasero">Disco delantero y trasero</option>
+                                                <option value="Doble disco">Doble disco</option>                                                
                                             </select>
                                         </div>
                                         <div class="input-group">
@@ -97,9 +97,9 @@
                                                 <div class="form-group btc">                                            
                                                     <select name="moneda" class="custom-select" id="validationCustom04" required>
                                                         <option selected disable>Elije una moneda...</option>
-                                                        <option value="dolar">Dolar</option>
-                                                        <option value="peso">Peso</option>
-                                                        <option value="euro">Euro</option>
+                                                        <option value="u$s">Dolar</option>
+                                                        <option value="$">Peso</option>
+                                                        <option value="€">Euro</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -132,34 +132,33 @@
                             <div class="paso2 row">
                                 <h4 class="texth4" >Vista previa</h4>  
                                 <!-- imagen portada -->
-                                <div class="fotop">
-                                    <figure class=" col-12 col-md-6 col-lg-7  ">
-                                        <h4>Imagen de la portada</h4>
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                                                                  
-                                        <div class="custom-file">
-                                            <input type="file" name="imagenPortada" class="botonImg" >
-                                        </div>
+                                <form action="/administrar/create" method="POST" enctype="multipart/form-data"></form>
+                                    <div class="fotop">
+                                        <figure class=" col-12 col-md-6 col-lg-7  ">
+                                            <h4>Imagen de la portada</h4>
+                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                           <div class="custom-file">
+                                            <input type="file" name="imagenPortada" class="botonImg">
+                                        </figure>
+                                    </div>                                
+                                    <figure class=" col-12 col-md-6 col-lg-3 foto ">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">
+                                        <input type="file" name="imagen1" class="botonImg" >
                                     </figure>
-                                </div>                                
-                                <figure class=" col-12 col-md-6 col-lg-3 foto ">
-                                    <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">
-                                </figure>
-                                <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                    <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa3.jpg" alt="imagen">
-                                </figure>
-                                <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                    <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="imagen">
-                                </figure>
-                                <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                    <img class="w-100 border-1 p-1" src="./asset/img/productos/yamaha-tracer-900/frente.jpg" alt="imagen">
-                                </figure>
-                                <div class="col-12">                                                     
-                                    <form action="#" method="POST" enctype="multipart/form-data">
+                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa3.jpg" alt="imagen">
+                                        <input type="file" name="imagen2" class="botonImg" >
+                                    </figure>
+                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="imagen">
+                                        <input type="file" name="imagen3" class="botonImg" >
+                                    </figure>
+                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/frente.jpg" alt="imagen">
+                                        <input type="file" name="imagen4" class="botonImg" >
+                                    </figure>
+                                    <div class="col-12">                                                
                                         <div class="custom--file">
-                                            <div class="custom-file">
-                                                <input type="file" name="imagen[]" multiple class="botonImg">
-                                            </div>
-                                            <div class="texta col-12 w-100  ">
+                                            <div class="texta col-12 w-100">
                                                 <p><label for="descripcion">Descripción</label></p> 
                                                 <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
                                                 <p><label for="especificaciones">Especificaciones</label></p> 
@@ -170,8 +169,8 @@
                                                 <button type="submit" class="btm">Guardar</button>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>                                   
                             </div>
                         </div>
                     </div>
