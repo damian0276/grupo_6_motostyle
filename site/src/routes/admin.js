@@ -19,9 +19,9 @@ const controllerAdmin = require(path.resolve(__dirname, '..', 'controllers', 'co
 
 router.get('/administrar', controllerAdmin.administrar);
 router.get('/productAdd', controllerAdmin.add);
-router.get('/edit', controllerAdmin.edit);
-router.post('/administrar/createUno', controllerAdmin.createUno);
-router.post('/administrar/createDos',upload.single(), controllerAdmin.createDos);
+router.get('/edit/:id', controllerAdmin.edit);
+router.put('/edit/:id',upload.any(), controllerAdmin.update);
+router.post('/administrar/create',upload.any(), controllerAdmin.create);
 
 
 

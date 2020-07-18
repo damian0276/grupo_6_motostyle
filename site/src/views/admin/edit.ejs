@@ -15,78 +15,66 @@
             <div class="solapas">
                 <div class="titulo col-12">
                     <h3>Carga Nuevos Productos</h3>
-                </div>
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#paso1" role="tab" aria-controls="paso1" aria-selected="true">Paso 1</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#paso2" role="tab" aria-controls="paso2" aria-selected="false">Paso 2</a>
-                    </li>                  
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="paso1" role="tabpanel" aria-labelledby="home-tab">
-                        <!-- Aca empiesa el paso 1 -->
-                        <!-- Botones -->         
-                        <div class="contenedor mt-1 ">            
-                            <div class="formulario">
-                                <div class="formu">
-                                    <form action="/administrar/create" method="POST" enctype="multipart/form-data">
+                </div>                
+                <div>
+                    <form method="POST" action="/edit/<%= moto.id%>?_method=PUT" enctype="multipart/form-data">
+                        <div>                                                
+                            <!-- Botones -->         
+                            <div class="contenedor mt-1 ">            
+                                <div class="formulario">
+                                    <div class="formu">                                    
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Marcas</label>
                                             </div>
-                                            <select name="marca" class="custom-select" id="inputGroupSelect01">
-                                                <option selected disabled>Seleccionar</option>
-                                                <option value="Yamaha">Yamaha</option>
-                                                <option value="Honda">Honda</option>
-                                                <option value="BMW">BMW</option>
-                                                <option value="Mercedez-Benz">Mercedes Benz</option>
-                                                <option value="Kawasaki">Kawasaki</option>
-                                                <option value="Ducati">Ducati</option>
-                                                <option value="KTM">KTM</option>
+                                            <select name="marca" class="custom-select" id="inputGroupSelect01">                                                
+                                                <option value="Yamaha" <%= moto.marca == "Yamaha" ? "selected" : null %> >Yamaha</option>
+                                                <option value="Honda" <%= moto.marca == "Honda" ? "selected" : null %>>Honda</option>
+                                                <option value="BMW" <%= moto.marca == "BMW" ? "selected" : null %>>BMW</option>
+                                                <option value="Mercedez-Benz" <%= moto.marca == "Mercedez-Benz" ? "selected" : null %>>Mercedes Benz</option>
+                                                <option value="Kawasaki" <%= moto.marca == "Kawasaki" ? "selected" : null %>>Kawasaki</option>
+                                                <option value="Ducati" <%= moto.marca == "Ducati" ? "selected" : null %>>Ducati</option>
+                                                <option value="KTM" <%= moto.marca == "KTM" ? "selected" : null %>>KTM</option>
                                             </select>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text ">Modelo</span>
                                             </div>
-                                            <textarea name="modelo" class="form-control" aria-label="With textarea"></textarea>
+                                            <textarea name="modelo" class="form-control" aria-label="With textarea"><%=moto.modelo%></textarea>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Color</label>
                                             </div>
                                             <select name="color" class="custom-select" id="inputGroupSelect01">
-                                                <option selected disabled>Seleccionar</option>
-                                                <option value="rojo">Rojo</option>
-                                                <option value="negro">Negro</option>
-                                                <option value="azul">Azul</option>
-                                                <option value="gris">Gris</option>
+                                                <option <%= moto.marca == "rojo" ? "selected" : null %> value="rojo">Rojo</option>
+                                                <option <%= moto.marca == "negro" ? "selected" : null %> value="negro">Negro</option>
+                                                <option <%= moto.marca == "azul" ? "selected" : null %> value="azul">Azul</option>
+                                                <option <%= moto.marca == "gris" ? "selected" : null %> value="gris">Gris</option>
                                             </select>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cilindrada</span>
                                             </div>
-                                            <textarea name="cilindrada" class="form-control" aria-label="With textarea"></textarea>
+                                            <input value="<%= moto.cilindrada%>" class="form-control" type="number" name="cilindrada" id="cilindrada">
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Frenos</label>
                                             </div>
                                             <select name="frenos" class="custom-select" id="inputGroupSelect01">
-                                                <option selected disabled>Seleccionar</option>
-                                                <option value="Disco delantero">Disco delantero</option>
-                                                <option value="Disco delantero y trasero">Disco delantero y trasero</option>
-                                                <option value="Doble disco">Doble disco</option>                                                
+                                                <option <%= moto.marca == "Disco delantero" ? "selected" : null %> value="Disco delantero">Disco delantero</option>
+                                                <option <%= moto.marca == "Disco delantero y trasero" ? "selected" : null %> value="Disco delantero y trasero">Disco delantero y trasero</option>
+                                                <option <%= moto.marca == "Doble disco" ? "selected" : null %> value="Doble disco">Doble disco</option>                                                
                                             </select>
                                         </div>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cantidad</span>
                                             </div>
-                                            <input class="form-control" type="number" name="stock" id="stock">
+                                            <input value="<%= moto.stock%>" class="form-control" type="number" name="stock" id="stock">
                                         </div>                                        
                                         <hr>
                                         <!-- Precio -->
@@ -96,84 +84,78 @@
                                                 <h6>Moneda</h6>
                                                 <div class="form-group btc">                                            
                                                     <select name="moneda" class="custom-select" id="validationCustom04" required>
-                                                        <option selected disable>Elije una moneda...</option>
-                                                        <option value="u$s">Dolar</option>
-                                                        <option value="$">Peso</option>
-                                                        <option value="€">Euro</option>
+                                                        <option <%= moto.moneda == "u$s" ? "selected" : null %> value="u$s">Dolar</option>
+                                                        <option <%= moto.moneda == "$" ? "selected" : null %> value="$">Peso</option>
+                                                        <option <%= moto.moneda == "€" ? "selected" : null %> value="€">Euro</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div>
                                                 <h6>IVA</h6>
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control" name="iva" required value="">
+                                                    <input value="<%= moto.iva%>" type="number" class="form-control" name="iva" required value="">
                                                 </div>
                                             </div>
                                             <div>
-                                                <h6 >Bruto</h6>
-                                                <div class="form-group">                                                    
-                                                    <input type="number" class="form-control" name="bruto" required value="">
+                                                <h6>Bruto</h6>
+                                                <div class="form-group">
+                                                    <input value="<%= moto.bruto%>" type="number" class="form-control" name="bruto" required value="">
                                                 </div>
                                             </div>                                                       
                                         </div>
-                                        <hr>
-                                        <div class="form-group ">
-                                            <a href="/administrar" class="btm btn-primary">Volver</a>
-                                            <button type="submit" class="btm">Guardar</button>                                                   
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>                           
+                                        <hr>                                  
+                                    </div>
+                                </div>                           
+                            </div>
                         </div>
-                    </div>
-                    <!-- Aca empieza el paso 2 -->
-                    <div class="tab-pane fade" id="paso2" role="tabpanel" aria-labelledby="profile-tab">
                         <div clas="container-fluid">
-                            <div class="paso2 row">
-                                <h4 class="texth4" >Vista previa</h4>  
-                                <!-- imagen portada -->
-                                <form action="/administrar/create" method="POST" enctype="multipart/form-data"></form>
+                                <div class="paso2 row">
+                                    <!-- imagen portada -->                                
                                     <div class="fotop">
                                         <figure class=" col-12 col-md-6 col-lg-7  ">
                                             <h4>Imagen de la portada</h4>
-                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">                                                           <div class="custom-file">
+                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagenPortada%>" alt="imagen"> 
+                                            <input type="hidden" name="oldImagenPortada"  value="<%= moto.imagenPortada%>">
                                             <input type="file" name="imagenPortada" class="botonImg">
                                         </figure>
                                     </div>                                
                                     <figure class=" col-12 col-md-6 col-lg-3 foto ">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa2.jpg" alt="imagen">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen1%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen1"  value="<%= moto.imagen1%>">
                                         <input type="file" name="imagen1" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/completa3.jpg" alt="imagen">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen2%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen2"  value="<%= moto.imagen2%>">
                                         <input type="file" name="imagen2" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/costado.jpg" alt="imagen">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen3%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen3"  value="<%= moto.imagen3%>">
                                         <input type="file" name="imagen3" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/yamaha-tracer-900/frente.jpg" alt="imagen">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen4%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen4"  value="<%= moto.imagen4%>">
                                         <input type="file" name="imagen4" class="botonImg" >
                                     </figure>
                                     <div class="col-12">                                                
                                         <div class="custom--file">
                                             <div class="texta col-12 w-100">
                                                 <p><label for="descripcion">Descripción</label></p> 
-                                                <textarea name="descripcion" id="descripcion" cols="35" rows="8"></textarea>
+                                                <textarea name="descripcion" id="descripcion" cols="35" rows="8"><%= moto.descripcion%></textarea>
                                                 <p><label for="especificaciones">Especificaciones</label></p> 
-                                                <textarea name="especificaciones" id="especificaciones" cols="35" rows="8"></textarea>
+                                                <textarea name="especificaciones" id="especificaciones" cols="35" rows="8"><%= moto.especificaciones%></textarea>
                                             </div> 
                                             <div class="form-group guardar">
                                                 <a href="/administrar" class="btm btn-primary">Volver</a>
                                                 <button type="submit" class="btm">Guardar</button>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>                                   
-                            </div>
-                        </div>
-                    </div>
+                                    </div>                                                                  
+                                </div>
+                        </div>                        
+                    </form>    
                 </div>                      
             </div>              
         </section>        
