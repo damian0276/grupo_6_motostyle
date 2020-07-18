@@ -10,7 +10,7 @@
 }
 .solapas{
     /* background-color: white; */
-    margin-top: 9vh;
+    margin-top: 65px;
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -101,11 +101,8 @@ h6{
 
 .solapas{
     /* background-color: white; */
-    margin-top: 7vh;
+    margin-top: 100px;
  
-}
-.titulo{
-    margin-top: 14vh;
 }
 }
 /* desctop */
