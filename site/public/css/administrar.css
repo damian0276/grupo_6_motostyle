@@ -4,7 +4,12 @@
     --blanco: #ffffff;
     --beige: #aba58a;
    }
-
+a{
+    color: inherit;    
+}
+a:hover{
+    color: inherit;
+}
 .rows{
     margin-top:63px;
 }
@@ -35,6 +40,14 @@
 .table tr{
     background-color: #aba58a;   
        
+}
+.table tbody tr td .btn-table{
+    border: 0;
+    background-color: inherit;
+    color:rgb(41, 96, 248);
+}
+.table tbody tr td .btn-table:hover{
+    color: rgb(28, 6, 128);
 }
 .btm{
     background-color: #e70202;

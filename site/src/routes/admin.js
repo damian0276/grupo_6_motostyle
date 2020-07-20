@@ -22,6 +22,7 @@ router.get('/productAdd', controllerAdmin.add);
 router.get('/edit/:id', controllerAdmin.edit);
 router.put('/edit/:id',upload.any(), controllerAdmin.update);
 router.post('/administrar/create',upload.any(), controllerAdmin.create);
+router.delete('/delete/:id', controllerAdmin.destroy);
 
 
 

@@ -27,7 +27,7 @@
                         <div class="photos-box"> 
                             <div class="bike-name" id="bike-name">
                                 <h2 class="d-none d-lg-block">Esta moto te esta esperando...</h2>
-                                <h4 class="d-lg-none">Multistrada 950 -Ducati</h4> 
+                                <h4 class="d-lg-none"><%= moto.modelo%> -<%= moto.marca %></h4> 
                             </div>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
@@ -84,11 +84,23 @@
                         </div> 
                     </div>
                     <div class="carroFuego">
-                        <a href="#" class="icon float-right"><img src="/asset/img/productos/shopping-cart.png" alt="Agregar al carrito"></a>
+                        <a href="/productCart/<%= moto.id%>" class="icon float-right"><img src="/asset/img/productos/shopping-cart.png" alt="Agregar al carrito"></a>
                     </div>
                     <!--Menú acordeon-->
                     <div class="accordion" id="accordionExample">
                         <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseprice" aria-expanded="true" aria-controls="collapseOne">
+                                        Precio
+                                    </button>
+                                </h2>
+                            </div>                            
+                            <div id="collapseprice" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                  <%= moto.moneda%> <%=(moto.bruto * moto.iva)/100 + moto.bruto %>
+                                </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

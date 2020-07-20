@@ -8,7 +8,8 @@ module.exports = {
         res.render(path.resolve(__dirname, '..', 'views','products','products'),{motos});
     },
     cart: function(req,res){
-        res.render(path.resolve(__dirname, '..', 'views','products','productCart'));
+        let motoAComprar = motos.find(moto => moto.id == req.params.id)
+        res.render(path.resolve(__dirname, '..', 'views','products','productCart'), {moto : motoAComprar});
     },
     detail: function(req,res){
         let motoAMostrar = motos.find(moto => moto.id == req.params.id);

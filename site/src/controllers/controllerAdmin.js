@@ -63,5 +63,10 @@ module.exports = {
   }}
     fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),JSON.stringify(motosUpdate, null, 2));
     res.redirect('/administrar');
+  },
+  destroy: (req, res) =>{
+    let motosFinal = motos.filter(moto => moto.id != req.params.id)
+    fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),JSON.stringify(motosFinal, null, 2));
+    res.redirect('/administrar');
   }  
 }
