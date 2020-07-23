@@ -1,0 +1,60 @@
+/*titulos*/
+.datosmotocomprada #title{
+    margin-top: 50px;
+    color: black;
+    margin-bottom: 20px;
+    background-color: rgba(99, 91, 91, 0.363);
+  
+
+}
+
+.datosmotocomprada #title2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+
+}
+
+.datosmotocomprada{
+    margin-top: 20px;
+    color:red;
+    
+}
+ 
+
+/*botones*/
+.bottoncomprar{
+    margin-top:50px;
+    margin-bottom: 20px;
+}
+
+/*Datos para completar tarjeta de crédito*/
+.containerventamoto{
+    margin-right: 50px;
+    width:50%;
+    border: solid black;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 7px;
+}
+
+.containerventamoto .credit-card-div .credit-group .form-control::-webkit-input-placeholder { color:white; } 
+
+.containerventamoto .credit-card-div .credit-group .form-control:-moz-placeholder { /* Firefox 18- */ color: white; } 
+
+.containerventamoto .credit-card-div .credit-group .form-control::-moz-placeholder { /* Firefox 19+ */ color: white; } 
+
+.containerventamoto .credit-card-div .credit-group .form-control:-ms-input-placeholder { color: white; }
+
+.containerventamoto .credit-card-div .credit-group .form-control{
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+
+}
+.containerventamoto .credit-group .custom-select{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+}
+
+
+

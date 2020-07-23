@@ -14,6 +14,7 @@
 @import url('/css/productAdd.css');
 @import url('/css/productDetail.css');
 @import url('/css/sucursales.css');
+@import url('/css/confirmacioncompra.css');
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Lato', sans-serif;

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Head-->
+       <%- include('../partials/head') %>
+<body>
+    <section id="all-container">
+        <!--Header-->
+        <%- include('../partials/header') %>
+        <!--Modal de login-->
+        <%- include('../partials/loginModal') %>       
+        <!--NavBar lateral-->
+        <%- include('../partials/navBar') %> 
+        <!--Contenedor de la página-->
+        <main class="page-container" id="page-container">
+            <!--Barra de busqueda-->
+            <%- include('../partials/searchBar') %>
+            <!--Datos que vienen cargados de login y carrito-->
+            <div class="datosmotocomprada">
+              <h2 id="title">ESTAS A PASOS DE SUBIRTE A TU MOTO NUEVA...</h2>
+              <h5 id="title2">Verificá que los datos sean correctos:</h5>
+              <h5>Nombre completo:    </h5>
+              <h5>Modelo:   <%=moto.modelo%></h5>
+              <h5>Costo:    <%=moto.moneda%><%=moto.bruto%></h5>
+              <h5>Formulario:    <%=moto.moneda%>500</h5>
+              <h5 id="title2">Para abonar con tarjeta completa los siguientes datos:</h5>
+            </div>
+            <!--Completar datos de la tarjeta-->
+            <div class="containerventamoto">
+            <form action="#" class="credit-card-div">                
+                    <div class="credit-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre como figura en la tarjeta" required="required" value="">
+                    </div>	
+                    <div class="credit-group">
+                            <input type="text" class="form-control" name="numero" placeholder="Número de tarjeta" required="required" value="">
+                    </div>
+                    <div class="credit-group">
+                        <input type="text" class="form-control" name="CCV" placeholder="Código de seguridad" required="required" value="">
+                    </div>
+                    <div class="credit-group">
+                        <select  name="cuotas" class="custom-select" id="cuotascard" required>
+                                              <option selected disabled value="#">Tarjeta</option>
+                                              <option value="Visa">Visa</option>
+                                              <option value="Mastercad">Mastercard</option>
+                                              <option value="Amex">Amex</option>
+                                              <option value="Cabal">Cabal</option>
+                        </select>
+                    </div>
+                    <div class="credit-group">
+                        <select  name="date" class="custom-select" id="datecard" required>
+                                              <option selected disabled value="#">Mes de vencimiento</option>
+                                              <option value="01">Enero</option>
+                                              <option value="02">Febrero </option>
+                                              <option value="03">Marzo</option>
+                                              <option value="04">Abril</option>
+                                              <option value="05">Mayo</option>
+                                              <option value="06">Junio</option>
+                                              <option value="07">Julio</option>
+                                              <option value="08">Augosto</option>
+                                              <option value="09">Septiembre</option>
+                                              <option value="10">Octubre</option>
+                                              <option value="11">Noviembre</option>
+                                              <option value="12">Deciembre</option> 
+                        </select>
+                    </div>
+                    <div class="credit-group">
+                        <select  name="date" class="custom-select" id="datecard" required>
+                                              <option selected disabled value="#">Año de vencimiento</option>
+                                              <option value="17">2020</option>
+                                              <option value="18">2021 </option>
+                                              <option value="19">2022</option>
+                                              <option value="20">2023</option>
+                                              <option value="21">2024</option>
+                                              <option value="22">2025</option>
+                        </select>
+                    </div>
+                        <div class="credit-group">
+                        <select  name="cuotas" class="custom-select" id="cuotascard" required>
+                                              <option selected disabled value="#">Elija cantidad de cuotas</option>
+                                              <option value="1">1 cuota</option>
+                                              <option value="6">6 cuotas</option>
+                                              <option value="12">12 cuotas</option>
+                                              <option value="18">18 cuotas</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="bottoncomprar">
+                 <a class="btn btn-danger" href="#" role="button">Aceptar</a>
+                 <button class="btn btn-secondary" type="submit">Cancelar</button>
+            </div>     
+            </form>
+            <div class="datosmotocomprada">
+            <h5 id="title2">Si queres realizar un depósito o transferencia, te enviamos los datos por mail.</h5>
+            <a class="btn btn-secondary" href="#" role="button">Solicitar datos</a>
+            </div>
+            <!--Mapa-->
+            <section class="map-section w-100 white-back" id="map-section">
+                <div class="title-map w-100" id="title-map">
+                    <h4>Tu concesionario más cercano:</h4>
+                </div>
+                <div class="map-div w-100" id="map-div">
+                    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.1866261820574!2d-58.445864885197125!3d-34.54882986210211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb436efe09303%3A0xfb39818e7624ac76!2sDigital%20House!5e0!3m2!1ses-419!2sar!4v1593543699353!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </section>    
+        </main>
+        <!--Footer-->
+        <%- include('../partials/footer') %> 
+    </section>
+<!--Script de boostrap-->
+<%- include('../partials/scripts') %>   
+</body>
+</html>

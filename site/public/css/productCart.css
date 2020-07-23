@@ -78,6 +78,26 @@
     height: 3em;
 }
 
+/*carritovacio, texto encima de la foto*/ 
+
+.carritovacio .imgvacio {
+    width: 70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    }
+    
+    .carritovacio .frase{
+       text-transform: uppercase;
+       text-align: center;
+       font-size:1em;
+       color: white;
+       position:absolute;
+       top:10%;
+       margin-left: 10px;
+       background-color: rgba(0, 0, 0, 0.616);
+    }
+
 /*Map section*/
 
 .page-container .map-section{

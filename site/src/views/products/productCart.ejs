@@ -117,14 +117,21 @@
                         <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/productCart"><span>Vaciar Carrito</span></a>
                     </div>
                     <div class="div-button-cart pl-1 w-50" id="button-buy">
-                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/product-cart/buy"><span>Comprar</span></a>
+                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/buy/<%=moto.id%>"><span>Comprar</span></a>
                     </div>
                 </div>
             <% } else {%>
-                <h1>No tenés ninguna moto en el carrito</h1>
-                <a href="/products"> Comprá una moto acá raton</a>
+            <figure>
+                <div class="carritovacio">
+                   <img class="imgvacio" src="/asset/img/carrito/carritovacio.png"alt="foto moto">
+                     <div class="frase">
+                        <h1>En cada kilometro... hay una historia.</h1>
+                         <a href="/products"> No tenes una moto en el carrtio...Te esperamos.</a>
+                     </div>
+                </div>
+            </figure>    
             <% } %>
-                <!--Publicidad-->
+                <!--Publicidad--> 
                 <aside class="publicidad d-none d-lg-block sombra" id="publicidad">
                     <figure>
                         <img src="/asset/img/publicidad/herreria-leke.jpg" alt="publicidad">
