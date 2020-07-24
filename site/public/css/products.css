@@ -40,6 +40,9 @@
 .products-container .filtros-section .filtros-div div .input-div .precio-input input{
     width: 4em;
 }
+.products-container .card-img-top{
+   height: 200px;
+}
 
 @media(min-width: 992px){
     .products-container .filtros-section .filtros-title h4{
