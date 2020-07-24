@@ -136,6 +136,7 @@
                         <% motos.forEach(moto =>{%>
                         <div class="product-box col-12 col-md-6 col-lg-4">                            
                             <article class="card border-dark sombra">
+                                <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.marca%></span></h5>
                                 <a href="/productDetail/<%=moto.id%>">
                                     <img src="/asset/img/productos/<%=moto.imagenPortada%>" class="card-img-top" alt="<%=moto.modelo%>">
                                 </a>
