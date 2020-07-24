@@ -81,20 +81,20 @@
 /*carritovacio, texto encima de la foto*/ 
 
 .carritovacio .imgvacio {
-    width: 70%;
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     }
     
     .carritovacio .frase{
-       text-transform: uppercase;
+       width: 100%;
+       text-transform: uppercase, 1em;
        text-align: center;
        font-size:1em;
        color: white;
-       position:absolute;
-       top:10%;
-       margin-left: 10px;
+       position:relative;
+       top:1px;
        background-color: rgba(0, 0, 0, 0.616);
     }
 
@@ -133,5 +133,46 @@
        top: 3em;
        right: 50px;
    }
-}
+   .carritovacio .imgvacio {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top:10%;
+    }
 
+    .carritovacio .frase{
+        width: 20%;
+        text-transform: uppercase;
+        text-size-adjust: 4em;
+        text-align: center;
+        font-size:1em;
+        color: white;
+        margin-top: 35%;
+        position:absolute;
+        background-color: rgba(0, 0, 0, 0.616);
+     }
+    
+}
+@media(min-width: 768px){
+
+.carritovacio .imgvacio {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top:10%;
+    }
+.carritovacio .frase{
+        width: 97.5%;
+        text-transform: uppercase;
+        text-size-adjust: 4em;
+        text-align: center;
+        font-size:1em;
+        color: white;
+        margin-top: 35%;
+        position:absolute;
+        background-color: rgba(0, 0, 0, 0.616);
+     }
+ 
+}

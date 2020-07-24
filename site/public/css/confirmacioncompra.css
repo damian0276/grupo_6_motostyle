@@ -31,7 +31,7 @@
 /*Datos para completar tarjeta de crédito*/
 .containerventamoto{
     margin-right: 50px;
-    width:50%;
+    width:100%;
     border: solid black;
     background-color: rgba(0, 0, 0, 0.616);
     border-radius: 7px;
