@@ -10,5 +10,5 @@ const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'con
 router.get('/register', controllerUser.register);
 router.get('/passwordRecovery', controllerUser.passwordRecovery);
 router.get('/buy/:id', controllerUser.buy); 
-
+router.post('/register', controllerUser.create);
 module.exports = router;

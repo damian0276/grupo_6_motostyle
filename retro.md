@@ -48,6 +48,46 @@ Chequear el funcionamiento de lo recién programado antes de iniciar con el sigu
 
 No tenemos que trabajar los 3 en una misma tarea la cual pueda realizarse por 1 integrante.
 
+# Retrospectiva Spint 4
+
+## Comenzar a hacer
+
+
+
+
+
+## Hacer más
+
+Empezar a implementar más prolijidad en el código.
+Tomarnos el tiempo de colocar títulos, comentarios y nombres útiles, para que cualquier programador que quiera leer o continuar el código, puedo hacerlo sin inconvenientes.
+
+
+
+## Continuar haciendo
+
+Organizarnos mediante el tablero y repartirnos las tareas más eficazmente.
+
+La comunicación; hablar seguido, a coordinar mejor y a reunirnos más veces.
+
+La investigación individual y aporte al grupo para mejorar las prácticas mediante un consenso unánime. 
+Comprensión y apoyo con cada uno del grupo.
+
+## Hacer menos
+
+No trabajar directamente sobre el "master" para evitar crear conflictos. 
+
+
+## Dejar de hacer
+
+No tenemos que trabajar los 3 en una misma tarea la cual pueda realizarse por 1 integrante.
+
+No chequear el funcionamiento de lo recién programado antes de iniciar con el siguiente código, revisando que no altere las demás vistas.
+
+
+
+
+
+
 
 
 
