@@ -20,17 +20,64 @@
                     </div>           
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
                     <form class="rounded" action="/register" method="POST">
-                        <div class="text-center"><label for="nombre">Nombre</label></div>
-                        <div class="text-center"><input class="rounded-pill text-center border-0 mb-2" type="text" name="firstName" id="firstName-input"></div>
-                        <div class="text-center"><label for="apellido">Apellido</label></div>
-                        <div class="text-center"><input class="rounded-pill text-center border-0 mb-2" type="text" name="lastName" id="lastName-input"></div>
-                        <div class="text-center"><label for="email">Email</label></div>
-                        <div class="text-center"><input class="rounded-pill text-center border-0 mb-2" type="email" name="email" id="email-input"></div>
-                        <div class="text-center"><label for="password">Contraseña</label></div>
-                        <div class="text-center"><input class="rounded-pill text-center border-0 mb-2" type="password" name="password" id="password-input"></div>
-                        <div class="text-center"><label for="repassword">Confirma contraseña</label></div>
-                        <div class="text-center"><input class="rounded-pill text-center border-0 mb-2" type="password" name="confirmPassword" id="confirmPassword-input"></div>
-                        <div class="text-center mt-2"><button class="modal-login-button rounded-pill border-0" type="submit">Registrate</button></div>
+                        <div class="text-center">
+                            <label for="nombre">Nombre</label>
+                            <% if(typeof(errors) != 'undefined' && errors.firstName){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.firstName.msg %>
+                                </div>
+                             <%}%>
+                        </div>
+                        <div class="text-center">
+                            <input class="rounded-pill text-center border-0 mb-2" type="text" name="firstName" id="firstName-input" value="<%= typeof old != 'undefined' ? old.firstName : '' %>">
+                        </div>
+                        <div class="text-center">
+                            <label for="apellido">Apellido</label>
+                            <% if(typeof(errors) != 'undefined' && errors.lastName){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.lastName.msg %>
+                                </div>
+                             <%}%>
+                        </div>
+                        <div class="text-center">
+                            <input class="rounded-pill text-center border-0 mb-2" type="text" name="lastName" id="lastName-input"value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
+                        </div>
+                        <div class="text-center">
+                            <label for="email">Email</label>
+                            <% if(typeof(errors) != 'undefined' && errors.email){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.email.msg %>
+                                </div>
+                             <%}%>
+                        </div>
+                        <div class="text-center">
+                            <input class="rounded-pill text-center border-0 mb-2" type="email" name="email" id="email-input"value="<%= typeof old != 'undefined' ? old.email : '' %>">
+                        </div>
+                        <div class="text-center">
+                            <label for="password">Contraseña</label>
+                            <% if(typeof(errors) != 'undefined' && errors.password){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.password.msg %>
+                                </div>
+                             <%}%>
+                        </div>
+                        <div class="text-center">
+                            <input class="rounded-pill text-center border-0 mb-2" type="password" name="password" id="password-input">
+                        </div>
+                        <div class="text-center">
+                            <label for="repassword">Confirma contraseña</label>
+                            <% if(typeof(errors) != 'undefined' && errors.confirmPassword){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.confirmPassword.msg %>
+                                </div>
+                             <%}%>
+                        </div>
+                        <div class="text-center">
+                            <input class="rounded-pill text-center border-0 mb-2" type="password" name="confirmPassword" id="confirmPassword-input">
+                        </div>
+                        <div class="text-center mt-2">
+                            <button class="modal-login-button rounded-pill border-0" type="submit">Registrate</button>
+                        </div>
                     </form>
                 </div>
                 <div class="beneficios-div mt-2" id="beneficios-div">

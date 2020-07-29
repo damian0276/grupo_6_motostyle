@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const { runInContext } = require('vm');
+const db = require('../database/models');
+const User = db.User;
+const registerAuth = require("../middlewares/route/registerAuth");
+const {
+    check,
+    validationResult,
+    body
+} = require('express-validator');
+
 
 //Debo requerir nuestro controlador
 const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'controllerUser'));
@@ -10,5 +18,7 @@ const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'con
 router.get('/register', controllerUser.register);
 router.get('/passwordRecovery', controllerUser.passwordRecovery);
 router.get('/buy/:id', controllerUser.buy); 
-router.post('/register', controllerUser.create);
+router.post('/register', registerAuth, controllerUser.create);
+
+
 module.exports = router;
