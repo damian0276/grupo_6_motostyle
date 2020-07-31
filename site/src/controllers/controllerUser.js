@@ -31,8 +31,8 @@ module.exports = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            password:bcrypt.hashSync(req.body.password, 10)
-        
+            image: req.file.filename,
+            password:bcrypt.hashSync(req.body.password, 10)        
         }
         //return res.send(user)   
 
