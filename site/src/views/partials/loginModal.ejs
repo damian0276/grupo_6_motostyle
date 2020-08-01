@@ -7,9 +7,21 @@
                 </button>
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
                     <form action="/login" method="POST">
-                        <div class="text-center"><label for="user">Usuario</label></div>
-                        <div class="text-center"><input class="rounded-pill border-0 mb-2" type="text" name="user" id="user-input"></div>
-                        <div class="text-center"><label for="password">Contraseña</label></div>
+                        <div class="text-center"><label for="email">Email</label>
+                            <% if(typeof(errors) != 'undefined' && errors.email){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.email.msg %>
+                                </div>
+                            <%}%>
+                        </div>
+                        <div class="text-center"><input class="rounded-pill border-0 mb-2" type="email" name="email" id="user-input"></div>
+                        <div class="text-center"><label for="password">Contraseña</label>
+                            <% if(typeof(errors) != 'undefined' && errors.password){%>
+                                <div class="text-danger text-center">
+                                  <%= errors.password.msg %>
+                                </div>
+                             <%}%>
+                        </div>
                         <div class="text-center"><input class="rounded-pill border-0 mb-2" type="password" name="password" id="password-input"></div>
                         <div class="text-center mt-2"><button class="modal-login-button rounded-pill border-0" type="submit">Iniciar sesión</button></div>
                         <div class="text-center mt-3"><a class="modal-login-button rounded-pill" href="/register">Creá tu usuario</a></div>

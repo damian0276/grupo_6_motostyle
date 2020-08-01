@@ -50,5 +50,18 @@ module.exports = {
         })
      // return res.send(errors);
       }
+   },
+   login : (req,res)=>{
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+        res.send('no hay errores');
+        //Logica si no hay errores
+    }else{
+       
+        return res.render(path.resolve(__dirname, '../views/web/index'), {
+            errors: errors.mapped(),  old: req.body,
+            motos
+            })
+    }
    }
 }
