@@ -4,7 +4,6 @@ const path = require('path');
 const db = require('../database/models');
 const User = db.User;
 const registerAuth = require("../middlewares/route/registerAuth");
-const registerAuth2 = require("../middlewares/route/registerAuth2");
 const {
     check,
     validationResult,
@@ -32,7 +31,7 @@ const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'con
 router.get('/register', controllerUser.register);
 router.get('/passwordRecovery', controllerUser.passwordRecovery);
 router.get('/buy/:id', controllerUser.buy); 
-router.post('/register', /*registerAuth2,*/ upload.single('avatar'),registerAuth,  controllerUser.create);
+router.post('/register', upload.single('avatar'),registerAuth, controllerUser.create);
 
 
 module.exports = router;

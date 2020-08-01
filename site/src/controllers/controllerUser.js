@@ -41,10 +41,13 @@ module.exports = {
         .catch(err=>res.send(err))
         //return res.send(errors);
     }else{
-
-    return res.render(path.resolve(__dirname, '../views/users/register'), {
+        fs.unlink(path.resolve(__dirname, '../../public/asset/img/users/'+ req.file.filename),(err) => {
+            if (err){console.log(err)};
+            //console.log('../../public/asset/img/users/'+ req.file.filename + ' fue borrada');
+        });
+        return res.render(path.resolve(__dirname, '../views/users/register'), {
         errors: errors.mapped(),  old: req.body
-      })
+        })
      // return res.send(errors);
       }
    }

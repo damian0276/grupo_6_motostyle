@@ -32,6 +32,9 @@ module.exports = [
             return false   // Si retorno un false si se muestra el error
         }    
     }).withMessage('Las contraseñas deben ser iguales'), 
+    //para el login, validacion de pass y usuario
+    //body('email').custom(async (value,{req}) => Array.from(await User.findAll()).filter(usuario => usuario.email == value && bcrypt.compareSync(req.body.password,usuario.password)).length > 0 ? Promise.reject("Credenciales Inválidas") : true),
+
     body('email').custom(async value => Array.from(await User.findAll()).filter(usuario => usuario.email == value).length > 0 ? Promise.reject("Usuario Existente"): true),
     body('avatar').custom((value, {req}) =>{
         if(req.file != undefined){
