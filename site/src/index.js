@@ -4,7 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookie = require("cookie-parser");
-const sessionMiddleware = (require('./middlewares/aplication/sessionMiddleware'))
+const accessMiddleware = (require('./middlewares/aplication/accessMiddleware'))
 
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
@@ -26,11 +26,11 @@ app.use(session({
     saveUninitialized : true
 }));
 
-//Middleware para poner en res.locals al user en req.session y en res.cookies
-app.use(sessionMiddleware);
-
 //Usamos cookie-parser
 app.use(cookie());
+
+//Middleware para poner en session al usuario en la cookie
+app.use(accessMiddleware);
 
 //Requerir las rutas
 

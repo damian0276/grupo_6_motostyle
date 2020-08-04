@@ -9,6 +9,7 @@ const {
     validationResult,
     body
 } = require('express-validator');
+const { on } = require('process');
 
 
 let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
@@ -60,9 +61,11 @@ module.exports = {
             let userLogueado = user;
             delete userLogueado.password;
             req.session.user = userLogueado;
+            //console.log('asdasd' + req.body.rememberme);
             if(req.body.rememberme){
                 //Crear la cookie de ese usuario
-                res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24} )
+                res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+                //console.log('asdasd' + ' ' +req.cookies.email);
               }
            res.redirect('/');
         })
@@ -76,10 +79,8 @@ module.exports = {
     }
    },
    logOut: (req,res) => {
-       delete req.session.user;
-       if(res.cookie.email){
-           delete res.cookie.email
-       }
-       res.redirect('/');
+        req.session.destroy();
+        res.cookie('email',null,{maxAge: -1});
+        res.redirect('/');
    }
 }
