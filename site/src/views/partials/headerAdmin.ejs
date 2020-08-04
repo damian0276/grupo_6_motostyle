@@ -8,9 +8,13 @@
         </figure>                
         <!--Login -->
         <ul class="col-4 col-md-6 col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
-            <li class="col-6">
-                <a class="d-flex align-items-center" href="#login-modal" data-toggle="modal"><span class="a-circle-link"><img src="/asset/img/header/icono-login.png" alt="Login"></span><span class="d-none d-md-block text">Login</span></a>
-            </li>
+            <div class="dropdown">
+                <a class="d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="a-circle-link"><img class="rounded-circle avatar-header" src="/asset/img/users/<%= user.image %>" alt="Login"></span><span class="d-none    d-md-block text"><%= user.firstName %></span></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/user/profile/<%= user.id%>">Perfil</a>
+                    <a class="dropdown-item" href="/logOut">Cerrar sesión</a>
+                  </div>
+            </div>
         </ul>
     </div>
 </header>

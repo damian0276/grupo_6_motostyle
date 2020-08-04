@@ -115,6 +115,11 @@ header .header-div{
     width: 65%;
     display: block;
 }
+.a-circle-link .avatar-header{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 header .header-div ul li{
     padding: 0;
 }

@@ -52,11 +52,21 @@ module.exports = {
      // return res.send(errors);
       }
    },
-   login : (req,res)=>{
+    login : (req,res)=>{
     let errors = validationResult(req);
     if(errors.isEmpty()){
-        res.send('no hay errores');
-        //Logica si no hay errores
+        User.findOne({where:{email:req.body.email}})
+            .then(user => {
+            let userLogueado = user;
+            delete userLogueado.password;
+            req.session.user = userLogueado;
+            if(req.body.rememberme){
+                //Crear la cookie de ese usuario
+                res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24} )
+              }
+           res.redirect('/');
+        })
+            .catch(err => res.send(err));
     }else{
        
         return res.render(path.resolve(__dirname, '../views/web/index'), {
@@ -64,5 +74,12 @@ module.exports = {
             motos
             })
     }
+   },
+   logOut: (req,res) => {
+       delete req.session.user;
+       if(res.cookie.email){
+           delete res.cookie.email
+       }
+       res.redirect('/');
    }
 }

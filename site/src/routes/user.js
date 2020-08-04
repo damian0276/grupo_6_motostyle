@@ -35,5 +35,6 @@ router.get('/passwordRecovery', controllerUser.passwordRecovery);
 router.get('/buy/:id', controllerUser.buy); 
 router.post('/register', upload.single('avatar'),registerAuth, controllerUser.create);
 router.post('/login',loginAuth,controllerUser.login);
+router.get('/logOut', controllerUser.logOut)
 
 module.exports = router;
