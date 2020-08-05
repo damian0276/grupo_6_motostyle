@@ -33,12 +33,12 @@ module.exports = {
             lastName: req.body.lastName,
             email: req.body.email,
             image: req.file.filename,
-            password:bcrypt.hashSync(req.body.password, 10)        
+            password:bcrypt.hashSync(req.body.password, 10)      
         }
         //return res.send(user)   
 
         User.create(user)
-        .then(()=>res.redirect("/"))
+        .then(()=>res.redirect("/login"))
         .catch(err=>res.send(err))
         //return res.send(errors);
     }else{
@@ -54,7 +54,7 @@ module.exports = {
       }
    },
     login : (req,res)=>{
-    let errors = validationResult(req);
+    let errors = validationResult(req); 
     if(errors.isEmpty()){
         User.findOne({where:{email:req.body.email}})
             .then(user => {
@@ -72,7 +72,7 @@ module.exports = {
             .catch(err => res.send(err));
     }else{
        
-        return res.render(path.resolve(__dirname, '../views/web/index'), {
+        return res.render(path.resolve(__dirname, '../views/users/login'), {
             errors: errors.mapped(),  old: req.body,
             motos
             })
@@ -82,5 +82,30 @@ module.exports = {
         req.session.destroy();
         res.cookie('email',null,{maxAge: -1});
         res.redirect('/');
+   },
+   profile: function(req, res){
+          
+    res.render(path.resolve(__dirname, '..', 'views','users','profile')) 
+   
+   },
+   loginViews: function(req, res){
+    res.render(path.resolve(__dirname, '..', 'views','users','login'))
+   },
+   update:function(req, res){
+    let userAModificar = res.locals.user;
+   User.update({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    adress:req.body.adress,
+    dni:req.body.dni,
+    telephone:req.body.telephone,
+    image: req.file? req.file.filename:req.body.oldAvatar
+   },{
+        where:{
+            id:userAModificar.id 
+        }
+    })
+    res.render(path.resolve(__dirname, '..', 'views','users','profile')) //siempre a lo último
    }
+   
 }

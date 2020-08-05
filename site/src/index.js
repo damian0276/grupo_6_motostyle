@@ -39,6 +39,8 @@ const productRoutes = require('./routes/products');
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/user');
 
+
+
 //Para usar las rutas
 
 //app.use(userRoutes);
@@ -46,6 +48,7 @@ app.use(webRoutes);
 app.use(productRoutes);
 app.use(adminRoutes);
 app.use(userRoutes);
+
 
 
 //Levantar servidor

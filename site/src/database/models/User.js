@@ -16,6 +16,14 @@ module.exports = (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull:false
         },
+        adress:{
+            type:DataTypes.STRING, 
+            
+        },
+        telephone:{
+            type:DataTypes.STRING,
+         
+        },
         email:{
             type: DataTypes.STRING,
             allowNull:false,
@@ -39,4 +47,4 @@ module.exports = (sequelize, DataTypes)=>{
  
     let User= sequelize.define(alias, cols, config)
     return User;
-} 
+}

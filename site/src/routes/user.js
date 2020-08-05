@@ -36,5 +36,7 @@ router.get('/buy/:id', controllerUser.buy);
 router.post('/register', upload.single('avatar'),registerAuth, controllerUser.create);
 router.post('/login',loginAuth,controllerUser.login);
 router.get('/logOut', controllerUser.logOut)
-
+router.get('/user/profile/:id', controllerUser.profile);
+router.get('/login', controllerUser.loginViews); 
+router.put("/user/update/:id",controllerUser.update);
 module.exports = router;
