@@ -1,11 +1,12 @@
 
-.register-section .div-form form {
+.page-containerprofile .profile .div-form form {
     background-color:rgba(0, 0, 0, 0)!important;
     color: white;
     border:none
 
 }
-.register-section {
+.page-containerprofile .profile {
+margin-top: 100px;
 background: #333333;  
 background: -webkit-linear-gradient(to right, #dd1818, #333333),url("/asset/img/users/fondoprofile2.jpg"); 
 background: linear-gradient(to right, #dd18183f, #333333), url("/asset/img/users/fondoprofile2.jpg");

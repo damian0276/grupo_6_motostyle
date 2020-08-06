@@ -3,17 +3,17 @@
     <!--Head-->
     <%- include('../partials/head') %>
 <body>
-    <section id="all-container">
         <!--Header-->
         <%- include('../partials/header') %>
         <!--NavBar lateral-->
         <%- include('../partials/navBar') %>     
         <!--Contenedor-->        
-        <main class="page-container" id="page-container">  
+        <main class="login-container" id="login-container">  
             <!--Barra de busqueda-->
-            <%- include('../partials/searchBar') %>                
-        <section class="containerlogin">
-            <form action="/login" method="POST" class="boxlogin"> 
+            <%- include('../partials/searchBar') %> 
+        <!--Comienza el formulario-->        
+           <form action="/login" method="POST" class="boxlogin"> 
+           <div class="absolute">
            <h2 class="text-center"><br>LOGIN<br></h2> 
            <div class="text-center"><label for="email">Email</label>
             <% if(typeof(errors) != 'undefined' && errors.email){%>
@@ -21,7 +21,7 @@
                   <%= errors.email.msg %>
                 </div>
             <%}%>
-        </div>
+           </div>
         <div class="text-center"><input class="rounded-pill border-0 mb-2 text-center type="email" name="email" id="user-input"></div>
         <div class="text-center"><label for="password">Contraseña</label>
             <% if(typeof(errors) != 'undefined' && errors.password){%>
@@ -32,15 +32,17 @@
         </div>
         <div class="text-center"><input class="rounded-pill border-0 mb-2 text-center" type="password" name="password" id="password-input"></div>
         <!--<div class="text-center mt-2"><input class="mr-2" type="checkbox" name="rememberme" id="rememberme"><label for="rememberme"> Recordame</label> </div>-->
-        <div class="text-center mt-2"><button class="modal-login-button rounded-pill border-0" type="submit">Iniciar sesión</button></div>
-        <div class="text-center mt-3"><a class="modal-login-button rounded-pill" href="/register">Creá tu usuario</a></div>
-<!--<div class="text-center mt-3"><a href="/passwordRecovery">Olvidé mi contraseña</a></div> -->
-      <iframe class="miVideo d-none d-lg-block c-img" src="https://www.youtube.com/embed/b9TI-KKkmpk" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        <div class="text-center mt-2"><button class="login-button btn btn-light rounded-pill border-0" type="submit">Iniciar sesión</button></div>
+        <div class="text-center mt-3"><a class="login-button rounded-pill" href="/register">Creá tu usuario</a></div>
+ <!--<div class="text-center mt-3"><a href="/passwordRecovery">Olvidé mi contraseña</a></div> -->
+</div>
+<video onloadedmetadata=this.muted=true autoplay loop>
+    <source src="../asset/img/users/video.mp4">
+</video>    
     </form>
     </main>
         <!--Footer-->
         <%- include('../partials/footer') %> 
-    </section>
 <!--Script de boostrap-->
 <%- include('../partials/scripts') %>   
 </body>
