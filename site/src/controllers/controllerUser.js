@@ -62,11 +62,11 @@ module.exports = {
             delete userLogueado.password;
             req.session.user = userLogueado;
             //console.log('asdasd' + req.body.rememberme);
-            if(req.body.rememberme){
-                //Crear la cookie de ese usuario
-                res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
-                //console.log('asdasd' + ' ' +req.cookies.email);
-              }
+            // if(req.body.rememberme){
+            //     //Crear la cookie de ese usuario
+            //     res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+            //     //console.log('asdasd' + ' ' +req.cookies.email);
+            //   }
            res.redirect('/');
         })
             .catch(err => res.send(err));
