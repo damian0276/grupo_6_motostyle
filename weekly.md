@@ -38,7 +38,7 @@
 
 ## Qué se hizo la semana pasada?
 
-- Comenzamos con el sprint 4 y realizamos las validaciones con espress validator en register y login. 
+- Comenzamos con el sprint 4 y realizamos las validaciones con express validator en register y login. 
 
 
 ## Impedimentos
