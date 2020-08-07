@@ -33,3 +33,20 @@
 
 - Formulario de registración.
 - creación de la base de datos con la tabla de usuarios.
+
+# Semana 3
+
+## Qué se hizo la semana pasada?
+
+- Comenzamos con el sprint 4 y realizamos las validaciones con espress validator en register y login. 
+
+
+## Impedimentos
+
+- Inconveniente con la password. No podiamos realizar su validación (problemas con la cantidad de los caracteres en la base de datos).
+- No pudimos dejar funcionando el botón de "recordame".
+
+## Qué se va a hacer esta semana?
+
+- Creación de las páginas "Profile" y "Login".
+- Aplicamos los middleware de rutas y aplicaciones.

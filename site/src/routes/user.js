@@ -5,6 +5,8 @@ const db = require('../database/models');
 const User = db.User;
 const registerAuth = require("../middlewares/route/registerAuth");
 const loginAuth = require("../middlewares/route/loginAuth");
+const loggedOnly = require("../middlewares/route/loggedOnly");
+const guestOnly = require("../middlewares/route/guestOnly");
 
 const {
     check,
@@ -30,13 +32,13 @@ const upload = multer({ storage });
 const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'controllerUser'));
 
 //Armo mis rutas
-router.get('/register', controllerUser.register);
-router.get('/passwordRecovery', controllerUser.passwordRecovery);
-router.get('/buy/:id', controllerUser.buy); 
+router.get('/register', guestOnly ,controllerUser.register);
+router.get('/passwordRecovery',loggedOnly, controllerUser.passwordRecovery);
+router.get('/buy/:id',loggedOnly, controllerUser.buy); 
 router.post('/register', upload.single('avatar'),registerAuth, controllerUser.create);
 router.post('/login',loginAuth,controllerUser.login);
-router.get('/logOut', controllerUser.logOut)
-router.get('/user/profile/:id', controllerUser.profile);
-router.get('/login', controllerUser.loginViews); 
-router.put("/user/update/:id",controllerUser.update);
+router.get('/logOut',loggedOnly, controllerUser.logOut)
+router.get('/user/profile/:id',loggedOnly, controllerUser.profile);
+router.get('/login', guestOnly, controllerUser.loginViews); 
+router.put("/user/update/:id", controllerUser.update);
 module.exports = router;

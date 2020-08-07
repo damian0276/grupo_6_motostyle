@@ -21,6 +21,7 @@ video{
     .login-container{
         background-color:black;
         position: relative;
+     
     }
     
     video{
@@ -30,6 +31,7 @@ video{
     }
     
     .absolute{
+        z-index: 1;
         background-color: rgba(0, 0, 0, 0);
         color: white;
         width: 100%;

@@ -11,3 +11,4 @@ router.get('/productCart/:id?',loggedOnly, controllerProduct.cart);
 router.get('/productDetail/:id', controllerProduct.detail);
 
 module.exports = router;
+

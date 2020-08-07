@@ -14,7 +14,6 @@ module.exports = (req,res,next) => {
             delete userLogueado.password;            
             //console.log(userLogueado);
             res.locals.user = userLogueado;
-            console.log('asdasd22222222222' +' '+ res.locals.user);
             return next();
             })
             .catch(err => res.send(err));
