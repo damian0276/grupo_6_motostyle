@@ -50,3 +50,20 @@
 
 - Creación de las páginas "Profile" y "Login".
 - Aplicamos los middleware de rutas y aplicaciones.
+
+# Semana 4
+
+## Qué se hizo la semana pasada?
+
+- Puesta a punto del sprint 4 y entrega. 
+
+## Impedimentos
+
+- Inconveniente con las cookies y el update de los usuarios. 
+
+
+## Qué se va a hacer esta semana?
+
+- Diagramar base de datos.  
+- Actualizar tablero de trello.
+
