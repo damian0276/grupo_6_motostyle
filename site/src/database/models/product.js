@@ -9,8 +9,7 @@ let alias = "Product"
         },
         brandId:{
             type: DataTypes.INTEGER,
-            Key: true,
-            autoIncrement: true,
+            foreignKey:true,
             allowNull:false
         },
         model:{
@@ -19,8 +18,7 @@ let alias = "Product"
         },
        colorId:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
+            foreignKey:true,
             allowNull:false
         },
        CC:{
