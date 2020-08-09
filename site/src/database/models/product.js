@@ -1,8 +1,15 @@
+module.exports = (sequelize, DataTypes)=>{
 let alias = "Product"
     let cols = {
-        brandId:{
+        id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
+            allowNull:false
+        },
+        brandId:{
+            type: DataTypes.INTEGER,
+            Key: true,
             autoIncrement: true,
             allowNull:false
         },
@@ -11,36 +18,39 @@ let alias = "Product"
             allowNull:false
         },
        colorId:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
             allowNull:false
         },
        CC:{
             brakes:DataTypes.STRING, 
+            allowNull:false
             
         },
         stock:{
-            type:DataTypes.STRING,
-         
+            type:DataTypes.INTEGER,
+            allowNull:false
         },
-        descrotion:{
+        description:{
             type: DataTypes.STRING,
             allowNull:false,
-            unique:true
+            
         },
         coin:{
             type: DataTypes.STRING,
-            unique:true
+            allowNull:false,
         },
         spacification:{
             type: DataTypes.STRING,
             allowNull:false
         },
-        iva: DataTypes.STRING,
-        profile: DataTypes.INTEGER,
+        iva: DataTypes.INTEGER,
+     
 
     }
     let config= {
-       tableName:"users"  
+       tableName:"product"  
    }
  
     let Product= sequelize.define(alias, cols, config)
