@@ -45,16 +45,22 @@ let alias = "Product"
             foreingKey:"colorId"
         })
         Product.belongsTo(models.Brand,{
-        as:"brand",
-        foreingKey:"brandId"
+            as:"brand",
+            foreingKey:"brandId"
         })  
         Product.belongsToMany(models.Image,{
-        as:"image",
-        through:"imagenProduct",
-        foreingKey:"productId",
-        otherKey:"imageId"
+            as:"image",
+            through:"imagenProduct",
+            foreingKey:"productId",
+            otherKey:"imageId"
+        })
+        Product.belongsToMany(models.User,{
+            as:"user",
+            through:"cartProduct",
+            foreingKey:"productId",
+            otherKey:"userId"
         })      
-}
+    }
 return Product;
 }
 
