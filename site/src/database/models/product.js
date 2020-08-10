@@ -11,8 +11,8 @@ let alias = "Product"
             type: DataTypes.STRING, 
             allowNull:false
         },
-        CC:{
-            brakes:DataTypes.STRING, 
+        cc:{
+            type:DataTypes.STRING, 
             allowNull:false
         },
         stock:{
@@ -43,11 +43,11 @@ let alias = "Product"
         Product.belongsTo(models.Color,{
             as:"Color",
             foreingKey:"colorId"
-        }),
+        })
         Product.belongsTo(models.Brand,{
         as:"brand",
         foreingKey:"brandId"
-        }),    
+        })  
         Product.belongsToMany(models.Image,{
         as:"image",
         through:"imagenProduct",
