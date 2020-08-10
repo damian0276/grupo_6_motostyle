@@ -7,24 +7,13 @@ let alias = "Product"
             autoIncrement: true,
             allowNull:false
         },
-        brandId:{
-            type: DataTypes.INTEGER,
-            foreignKey:true,
-            allowNull:false
-        },
         model:{
-            type: DataTypes.STRING,
+            type: DataTypes.STRING, 
             allowNull:false
         },
-       colorId:{
-            type: DataTypes.INTEGER,
-            foreignKey:true,
-            allowNull:false
-        },
-       CC:{
+        CC:{
             brakes:DataTypes.STRING, 
             allowNull:false
-            
         },
         stock:{
             type:DataTypes.INTEGER,
@@ -32,8 +21,7 @@ let alias = "Product"
         },
         description:{
             type: DataTypes.STRING,
-            allowNull:false,
-            
+            allowNull:false, 
         },
         coin:{
             type: DataTypes.STRING,
@@ -44,13 +32,29 @@ let alias = "Product"
             allowNull:false
         },
         iva: DataTypes.INTEGER,
-     
-
     }
     let config= {
-       tableName:"product"  
+       tableName:"products"  
    }
  
     let Product= sequelize.define(alias, cols, config)
-    return Product;
+
+    Product.associate=function(models){
+        Product.belongsTo(models.Color,{
+            as:"Color",
+            foreingKey:"colorId"
+        }),
+        Product.belongsTo(models.Brand,{
+        as:"brand",
+        foreingKey:"brandId"
+        }),    
+        Product.belongsToMany(models.Image,{
+        as:"image",
+        through:"imagenProduct",
+        foreingKey:"productId",
+        otherKey:"imageId"
+        })      
 }
+return Product;
+}
+
