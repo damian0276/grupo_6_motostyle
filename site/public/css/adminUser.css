@@ -1,0 +1,13 @@
+:root {
+    --gris: #C2C2C2;
+    --rojo: #E70202;
+    --blanco: #ffffff;
+    --beige: #aba58a;
+   }
+
+.cuerpo{
+    min-height: 686px;
+}
+.tablaAdmin{
+    min-height: 470px;
+}

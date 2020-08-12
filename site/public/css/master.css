@@ -17,6 +17,7 @@
 @import url('/css/confirmacioncompra.css');
 @import url('/css/profile.css');
 @import url('/css/login.css');
+@import url('/css/adminUser.css');
 h1, h2, h3, h4, h5, h6{
     font-family: 'Lato', sans-serif;
 }
