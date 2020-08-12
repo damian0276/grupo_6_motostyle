@@ -3,6 +3,9 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 const adminOnly = require('../middlewares/route/adminOnly');
+const sudoOnly = require('../middlewares/route/sudoOnly');
+const db = require('../database/models');
+const User = db.User;
 
 //Aquí dispongo lo referido al nombre del arhivo y a donde se va a guardar
 const storage = multer.diskStorage({
@@ -25,9 +28,9 @@ router.put('/edit/:id',upload.any(),adminOnly, controllerAdmin.update);
 router.post('/administrar/create',upload.any(),adminOnly, controllerAdmin.create);
 router.delete('/delete/:id',adminOnly, controllerAdmin.destroy);
 
-
-
-
-
+//Rutas para administrar usuaruios
+router.get('/adminUser', sudoOnly, controllerAdmin.adminUser);
+router.put('/editUserProfile/:id', sudoOnly,controllerAdmin.editUserProfile);
+router.delete('/deleteUser/:id', sudoOnly,controllerAdmin.deleteUser);
 
 module.exports = router;

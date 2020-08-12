@@ -92,8 +92,7 @@ module.exports = {
     res.render(path.resolve(__dirname, '..', 'views','users','login'))
    },
    update:function(req, res){
-    let userAModificar = res.locals.user;
-   User.update({
+    let updateUser = User.update({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     adress:req.body.adress,
@@ -102,10 +101,20 @@ module.exports = {
     image: req.file? req.file.filename:req.body.oldAvatar
    },{
         where:{
-            id:userAModificar.id 
+            id: req.params.id 
         }
     })
-    res.render(path.resolve(__dirname, '..', 'views','users','profile')) //siempre a lo último
+    let userToLog = User.findByPk(req.params.id)
+    Promise.all([updateUser, userToLog])
+    .then(([confirm, user]) => {
+        //console.log(user);
+        let userLogueado = user;
+        delete userLogueado.password;
+        res.locals.user = userLogueado;//preguntar a los profes porque no se actualiza el locals
+        req.session.user = userLogueado;
+        res.render(path.resolve(__dirname, '..', 'views','users','profile'))
+    }) //siempre a lo último
+    .catch(err => res.send(err))   
    }
    
 }

@@ -16,6 +16,9 @@
             </article>
             <article class="col-12">
               <a class="btn boton-agregar" href="/productAdd"><i class="fas fa-plus-circle"></i>Agregar</a>
+              <% if(user.profile == 9){ %> 
+              <a class="btn boton-agregar" href="/adminUser">Administrar Usuarios</a>
+              <% }%>
             </article>
             <article class="col-12" >
             <table class="table">

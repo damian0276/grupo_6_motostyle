@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
+const User = db.User
 
 let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
 
@@ -68,5 +70,39 @@ module.exports = {
     let motosFinal = motos.filter(moto => moto.id != req.params.id)
     fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),JSON.stringify(motosFinal, null, 2));
     res.redirect('/administrar');
-  }  
+  },
+  adminUser:(req,res)=>{
+    User.findAll()
+    .then(function (users){
+      res.render(path.resolve(__dirname, '..', 'views','admin','adminUser'),{users});
+      
+    })
+    .catch(error=>res.send(error)
+    )    
+  },
+  editUserProfile:(req,res)=>{
+    User.update({
+      profile:req.body.profile
+      },
+      {
+      where : {
+      id : req.params.id
+      }
+      })
+      .then(plato =>{
+      res.redirect('/adminUser')
+      })
+      .catch(error => res.send(error));  
+  },
+  deleteUser:(req,res) => {
+    User.destroy({
+        where : {
+           id:  req.params.id
+        },
+        force : true 
+    })
+    .then(confirm =>{
+        res.redirect('/adminUser');
+    })  
+  }
 }

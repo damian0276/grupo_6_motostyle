@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+<body>
+    <section id="all-container">
+      <!--Header-->
+      <%- include('../partials/headerAdmin') %>
+      <!--Modal de login-->
+      <%- include('../partials/loginModal') %>
+      <!-- Cuerpo -->
+      <main class="container-fluid">                               
+          <!--Administrador de productos-->                          
+          <section class=" container rows">
+            <article class="col-12">
+              <h2 class="display-4 text-white o text-center cartel ">Administrador de Usuarios</h2>
+            </article>
+            
+            <article class="col-12" >
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Categoría</th>                    
+                    <th scope="col">Borrar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% users.forEach(user =>{%>
+                  <tr>                      
+                    <td><%=user.id %> </td>
+                    <td><%= user.firstName%></td>  
+                    <td><%= user.lastName%></td> 
+                    <td>
+                      <form action="/editUserProfile/<%=user.id%>?_method=PUT" method="POST">
+                        <select name="profile" id="profile">
+                          <option <%= user.profile ==1 ? 'selected': null  %>  value="1">Comprador</option>
+                          <option <%= user.profile ==2 ? 'selected': null  %>  value="2">Vendedor</option>
+                          <option <%= user.profile ==9 ? 'selected': null  %>  value="9">Administrador</option>
+                        </select>
+                        <button class="btn-table" type="submit"><i class="fas fa-pencil-alt"></i></button>
+                      </form>
+                    </td>                   
+                    <td>
+                      <form action="/deleteUser/<%=user.id%>?_method=DELETE" method="post">       
+                        <button class="btn-table" type="submit"><i class="fas fa-trash-alt"></i></button>             
+                      </form>
+                    </td>
+                  </tr> 
+                  <% }); %>                                     
+                </tbody>
+              </table> 
+            </article>       
+          </section>                          
+          <a href="/administrar" class="btm btn-primary">Volver</a>
+        </main>                                
+          <!--Footer-->
+          <%- include('../partials/footer.ejs') %>
+      </section> 
+      
+      <!--Script de boostrap-->
+      <%- include('../partials/scripts') %>
+  
+</body>
+</html>
