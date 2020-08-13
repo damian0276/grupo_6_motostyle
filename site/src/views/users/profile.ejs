@@ -18,7 +18,7 @@
              <!--Datos del usuario-->     
                              
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
-                    <form class="rounded" action="/user/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form class="rounded contenedor-datos-user" action="/user/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                
             <!--Actualizar avatar-->          
                      <div class ="avatarprofile">
@@ -26,7 +26,7 @@
                      </div>  
                         <div class="text-center">
                             <input class="rounded-pill text-center border-0 mb-2" type="file" name="avatar" id="avatar-input">
-                            <input type="hidden" name="oldAvatar"  value="<%= user.image%>">
+                            <input type="hidden" name="oldAvatar" value="<%= user.image%>">
                         </div>
             <!--Actualizar nombre-->             
                         <div class="text-center">

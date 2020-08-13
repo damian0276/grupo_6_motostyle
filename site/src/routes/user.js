@@ -40,5 +40,5 @@ router.post('/login',loginAuth,controllerUser.login);
 router.get('/logOut',loggedOnly, controllerUser.logOut)
 router.get('/user/profile/:id',loggedOnly, controllerUser.profile);
 router.get('/login', guestOnly, controllerUser.loginViews); 
-router.put("/user/update/:id", controllerUser.update);
+router.put("/user/update/:id", upload.single('avatar'), controllerUser.update);
 module.exports = router;

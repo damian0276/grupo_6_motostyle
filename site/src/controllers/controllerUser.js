@@ -62,11 +62,11 @@ module.exports = {
             delete userLogueado.password;
             req.session.user = userLogueado;
             //console.log('asdasd' + req.body.rememberme);
-            // if(req.body.rememberme){
-            //     //Crear la cookie de ese usuario
-            //     res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
-            //     //console.log('asdasd' + ' ' +req.cookies.email);
-            //   }
+            if(req.body.rememberme){
+                //Crear la cookie de ese usuario
+                res.cookie('email', userLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+                //console.log('asdasd' + ' ' +req.cookies.email);
+              }
            res.redirect('/');
         })
             .catch(err => res.send(err));
@@ -83,38 +83,37 @@ module.exports = {
         res.cookie('email',null,{maxAge: -1});
         res.redirect('/');
    },
-   profile: function(req, res){
-          
-    res.render(path.resolve(__dirname, '..', 'views','users','profile')) 
+   profile: function(req, res){          
+        res.render(path.resolve(__dirname, '..', 'views','users','profile')) 
    
    },
    loginViews: function(req, res){
-    res.render(path.resolve(__dirname, '..', 'views','users','login'))
+        res.render(path.resolve(__dirname, '..', 'views','users','login'))
    },
-   update:function(req, res){
-    let updateUser = User.update({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    adress:req.body.adress,
-    dni:req.body.dni,
-    telephone:req.body.telephone,
-    image: req.file? req.file.filename:req.body.oldAvatar
-   },{
-        where:{
-            id: req.params.id 
-        }
-    })
-    let userToLog = User.findByPk(req.params.id)
-    Promise.all([updateUser, userToLog])
-    .then(([confirm, user]) => {
-        //console.log(user);
-        let userLogueado = user;
-        delete userLogueado.password;
-        res.locals.user = userLogueado;//preguntar a los profes porque no se actualiza el locals
-        req.session.user = userLogueado;
-        res.render(path.resolve(__dirname, '..', 'views','users','profile'))
-    }) //siempre a lo último
-    .catch(err => res.send(err))   
-   }
-   
+    update:function(req, res){
+        User.update({
+         firstName: req.body.firstName,
+         lastName: req.body.lastName,
+         adress:req.body.adress,
+         dni:req.body.dni,
+         telephone:req.body.telephone,
+         image: req.file? req.file.filename:req.body.oldAvatar
+        },{
+             where:{
+                 id: req.params.id 
+             }
+        })
+        .then(confirm => confirm)
+        .catch(err => res.send(err))
+        setTimeout(function(){
+            User.findByPk(req.params.id)
+            .then(user =>{
+                res.locals.user = undefined;
+                res.locals.user = user;
+                delete res.locals.user.password
+                res.render(path.resolve(__dirname, '..', 'views','users','profile'))
+            })
+        }, 10)
+    }    
+    
 }
