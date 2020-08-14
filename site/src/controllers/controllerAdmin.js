@@ -89,7 +89,7 @@ module.exports = {
       id : req.params.id
       }
       })
-      .then(plato =>{
+      .then(confirm =>{
       res.redirect('/adminUser')
       })
       .catch(error => res.send(error));  
@@ -104,5 +104,14 @@ module.exports = {
     .then(confirm =>{
         res.redirect('/adminUser');
     })  
+  },
+  userShow: (req, res) =>{
+    User.findByPk(req.params.id)
+      .then(user => {
+        //return console.log(user);
+        res.render(path.resolve(__dirname, '..', 'views','admin','adminUserShow'), {userToShow : user}) 
+      })
+      .catch(err => res.send(err))
+    
   }
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Head-->
+    <%- include('../partials/head') %>
+<body>
+    <section class="register-container">
+        <!--Header-->
+        <%- include('../partials/header') %>
+        <!--Modal de login-->
+        <%- include('../partials/loginModal') %>       
+        <!--NavBar lateral-->
+        <%- include('../partials/navBar') %> 
+        <main class="page-containerprofile" id="page-containerprofile">
+            <!--Barra de busqueda-->
+            <%- include('../partials/searchBar') %>
+            <section class="profile" id="profile">
+                <h4 class="register-title mt-2" id="register-title"></i></h4>
+             <!--Datos del usuario-->     
+                             
+                <div class="div-form d-flex flex-column align-items-center" id="div-form">
+                    <section class="rounded contenedor-datos-user">
+               
+            <!--Actualizar avatar-->          
+                     <div class ="avatarprofile">
+                        <img class='img-circle' src='/asset/img/users/<%= userToShow.image %>'/> 
+                     </div> 
+            <!--Actualizar nombre-->             
+                        <div class="text-center">
+                            <label for="firstName">Nombre:</label> 
+                        </div> 
+                        <div class="text-center">
+                            <p class="text-user-info"><%= userToShow.firstName  %> </p>
+                        </div>
+            <!--Actualizar apellido-->             
+                        <div class="text-center">
+                            <label for="lastName">Apellido:</label>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-user-info"><%= userToShow.lastName  %> </p>
+                        </div>
+                        <div class="text-center">
+            <!--Actualizar dni-->                
+                            <label for="dni">DNI:</label>
+                        </div> 
+                        <div class="text-center"> 
+                            <% if(userToShow.dni){ %> 
+                                <p class="text-user-info"><%= userToShow.dni  %> </p>
+                            <% } else{ %>
+                                <p class="text-user-info">El usuario no ingresó su DNI</p>
+                            <% } %> 
+                        </div>
+            <!--Actualizar adress-->            
+                        <div class="text-center">
+                            <label for="adress">Dirección:</label>
+                        </div>
+                        <div class="text-center">
+                            <% if(userToShow.adress){ %> 
+                                <p class="text-user-info"><%= userToShow.adress  %> </p>
+                            <% } else{ %>
+                                <p class="text-user-info">El usuario no ingresó su dirección</p>
+                            <% } %> 
+                        </div>
+            <!--Actualizar número de teléfono-->            
+                        <div class="text-center">
+                            <label for="telephone">Número de teléfono:</label>
+                        </div>
+                        <div class="text-center">
+                            <% if(userToShow.telephone){ %> 
+                                <p class="text-user-info"><%= userToShow.telephone  %> </p>
+                            <% } else{ %>
+                                <p class="text-user-info">El usuario no ingresó su teléfono</p>
+                            <% } %> 
+                        </div>
+                    </section>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-info" href="/adminUser">Volver</a>
+                </div>
+                <div class="beneficios-div mt-2" id="beneficios-div">
+                    <h5>Disfrutá de nuestros beneficios</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, tenetur nesciunt eligendi praesentium recusandae voluptatibus itaque. Itaque dolores mollitia dicta, aliquid ea blanditiis eos vitae sint ex ab molestiae, quae, voluptatibus voluptas nisi. Rem, similique? Repellendus, atque itaque assumenda fuga tempore deserunt veritatis rem reiciendis officia minima a alias porro ut nulla, totam vero vel qui voluptate quis aliquam commodi nostrum blanditiis odio. Molestiae provident quis totam et sit molestias facilis inventore blanditiis alias nemo aliquam, impedit magni saepe laborum ipsam, illum recusandae non iure iste perspiciatis, modi culpa fuga rem sint? Optio commodi suscipit eius ducimus eaque, quaerat ex.</p>
+                </div>
+            </section>
+        </main>
+        <!--Footer-->
+        <%- include('../partials/footer') %>
+    </section>
+    <!--Script de boostrap-->
+    <%- include('../partials/scripts') %>
+</body>
+</html>

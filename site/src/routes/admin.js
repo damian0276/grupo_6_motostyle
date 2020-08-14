@@ -30,7 +30,8 @@ router.delete('/delete/:id',adminOnly, controllerAdmin.destroy);
 
 //Rutas para administrar usuaruios
 router.get('/adminUser', sudoOnly, controllerAdmin.adminUser);
-router.put('/editUserProfile/:id', sudoOnly,controllerAdmin.editUserProfile);
-router.delete('/deleteUser/:id', sudoOnly,controllerAdmin.deleteUser);
+router.put('/editUserProfile/:id', sudoOnly, controllerAdmin.editUserProfile);
+router.delete('/deleteUser/:id', sudoOnly, controllerAdmin.deleteUser);
+router.get('/adminUserDetail/:id', sudoOnly, controllerAdmin.userShow);
 
 module.exports = router;

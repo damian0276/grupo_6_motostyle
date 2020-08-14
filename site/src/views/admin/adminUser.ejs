@@ -22,7 +22,8 @@
                     <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
-                    <th scope="col">Categoría</th>                    
+                    <th scope="col">Categoría</th>  
+                    <th scope="col">Detalle</th>
                     <th scope="col">Borrar</th>
                   </tr>
                 </thead>
@@ -41,7 +42,8 @@
                         </select>
                         <button class="btn-table" type="submit"><i class="fas fa-pencil-alt"></i></button>
                       </form>
-                    </td>                   
+                    </td>
+                    <td><a class="btn-table" href="/adminUserDetail/<%= user.id %>"> <i class="far fa-eye btn-table"></i></a></td>                   
                     <td>
                       <form action="/deleteUser/<%=user.id%>?_method=DELETE" method="post">       
                         <button class="btn-table" type="submit"><i class="fas fa-trash-alt"></i></button>             
