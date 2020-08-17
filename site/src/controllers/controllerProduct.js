@@ -1,18 +1,38 @@
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+const db = require('../database/models');
+const Product = db.Product
 
-let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
+
+
+
 
 module.exports = {
     index: function(req,res){
-        res.render(path.resolve(__dirname, '..', 'views','products','products'),{motos});
+        Product.findAll()
+            .then(
+                bikes =>{
+                    res.render(path.resolve(__dirname, '..', 'views','products','products'),{bikes});
+                }
+            )
+            .catch(err => res.send(err))
     },
     cart: function(req,res){
-        let motoAComprar = motos.find(moto => moto.id == req.params.id)
-        res.render(path.resolve(__dirname, '..', 'views','products','productCart'), {moto : motoAComprar});
+            Product.findByPk(req.params.id)
+                .then(
+                    bike =>{
+                        res.render(path.resolve(__dirname, '..', 'views','products','productCart'), {bike})
+                    }
+                )
+                .catch(err => res.send(err))        
     },
     detail: function(req,res){
-        let motoAMostrar = motos.find(moto => moto.id == req.params.id);
-        res.render(path.resolve(__dirname, '..', 'views','products','productDetail'), {moto: motoAMostrar});
+        Product.findByPk(req.params.id)
+                .then(
+                    bike =>{
+                        res.render(path.resolve(__dirname, '..', 'views','products','productDetail'), {bike})
+                    }
+                )
+                .catch(err => res.send(err)) 
     }
 }

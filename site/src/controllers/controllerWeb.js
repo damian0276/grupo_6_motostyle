@@ -1,11 +1,20 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
+const Product = db.Product
 
-let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
+
 
 module.exports = {
     index: function(req,res){
-        res.render(path.resolve(__dirname, '..', 'views','web','index'), {motos});        
+        Product.findAll()
+            .then(
+                bikes =>{
+                    res.render(path.resolve(__dirname, '..', 'views','web','index'),{bikes});
+                }
+            )
+            .catch(err => res.send(err))
+               
     },
     nosotros: function(req,res){
         res.render(path.resolve(__dirname, '..', 'views','web','nosotros'));          
