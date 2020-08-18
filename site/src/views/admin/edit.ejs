@@ -17,7 +17,7 @@
                     <h3>Editor de  Productos</h3>
                 </div>                
                 <div>
-                    <form method="POST" action="/edit/<%= moto.id%>?_method=PUT" enctype="multipart/form-data">
+                    <form method="POST" action="/edit/<%= bike.id%>?_method=PUT" enctype="multipart/form-data">
                         <div>                                                
                             <!-- Botones -->         
                             <div class="contenedor mt-1 ">            
@@ -27,54 +27,54 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Marcas</label>
                                             </div>
-                                            <select name="marca" class="custom-select" id="inputGroupSelect01">                                                
-                                                <option value="Yamaha" <%= moto.marca == "Yamaha" ? "selected" : null %> >Yamaha</option>
-                                                <option value="Honda" <%= moto.marca == "Honda" ? "selected" : null %>>Honda</option>
-                                                <option value="BMW" <%= moto.marca == "BMW" ? "selected" : null %>>BMW</option>
-                                                <option value="Mercedez-Benz" <%= moto.marca == "Mercedez-Benz" ? "selected" : null %>>Mercedes Benz</option>
-                                                <option value="Kawasaki" <%= moto.marca == "Kawasaki" ? "selected" : null %>>Kawasaki</option>
-                                                <option value="Ducati" <%= moto.marca == "Ducati" ? "selected" : null %>>Ducati</option>
-                                                <option value="KTM" <%= moto.marca == "KTM" ? "selected" : null %>>KTM</option>
+                                            <select name="brand" class="custom-select" id="inputGroupSelect01">                                                
+                                                <option value="1" <%= bike.brand.name == "Yamaha" ? "selected" : null %> >Yamaha</option>
+                                                <option value="2" <%= bike.brand.name == "Honda" ? "selected" : null %>>Honda</option>
+                                                <option value="3" <%= bike.brand.name == "BMW" ? "selected" : null %>>BMW</option>
+                                                <option value="4" <%= bike.brand.name == "Mercedez-Benz" ? "selected" : null %>>Mercedes Benz</option>
+                                                <option value="5" <%= bike.brand.name == "Kawasaki" ? "selected" : null %>>Kawasaki</option>
+                                                <option value="6" <%= bike.brand.name == "Ducati" ? "selected" : null %>>Ducati</option>
+                                                <option value="7" <%= bike.brand.name == "KTM" ? "selected" : null %>>KTM</option>
                                             </select>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text ">Modelo</span>
                                             </div>
-                                            <textarea name="modelo" class="form-control" aria-label="With textarea"><%=moto.modelo%></textarea>
+                                            <textarea name="model" class="form-control" aria-label="With textarea"><%=bike.model%></textarea>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Color</label>
                                             </div>
                                             <select name="color" class="custom-select" id="inputGroupSelect01">
-                                                <option <%= moto.marca == "rojo" ? "selected" : null %> value="rojo">Rojo</option>
-                                                <option <%= moto.marca == "negro" ? "selected" : null %> value="negro">Negro</option>
-                                                <option <%= moto.marca == "azul" ? "selected" : null %> value="azul">Azul</option>
-                                                <option <%= moto.marca == "gris" ? "selected" : null %> value="gris">Gris</option>
+                                                <option <%= bike.color.name == "Rojo" ? "selected" : null %> value="1">Rojo</option>
+                                                <option <%= bike.color.name == "Negro" ? "selected" : null %> value="2">Negro</option>
+                                                <option <%= bike.color.name == "Azul" ? "selected" : null %> value="3">Azul</option>
+                                                <option <%= bike.color.name == "Gris" ? "selected" : null %> value="4">Gris</option>
                                             </select>
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cilindrada</span>
                                             </div>
-                                            <input value="<%= moto.cilindrada%>" class="form-control" type="number" name="cilindrada" id="cilindrada">
+                                            <input value="<%= bike.cc%>" class="form-control" type="number" name="cc" id="cilindrada">
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Frenos</label>
                                             </div>
-                                            <select name="frenos" class="custom-select" id="inputGroupSelect01">
-                                                <option <%= moto.marca == "Disco delantero" ? "selected" : null %> value="Disco delantero">Disco delantero</option>
-                                                <option <%= moto.marca == "Disco delantero y trasero" ? "selected" : null %> value="Disco delantero y trasero">Disco delantero y trasero</option>
-                                                <option <%= moto.marca == "Doble disco" ? "selected" : null %> value="Doble disco">Doble disco</option>                                                
+                                            <select name="brakes" class="custom-select" id="inputGroupSelect01">
+                                                <option <%= bike.brakes == "Disco delantero" ? "selected" : null %> value="Disco delantero">Disco delantero</option>
+                                                <option <%= bike.brakes == "Disco delantero y trasero" ? "selected" : null %> value="Disco delantero y trasero">Disco delantero y trasero</option>
+                                                <option <%= bike.brakes == "Doble disco" ? "selected" : null %> value="Doble disco">Doble disco</option>                                                
                                             </select>
                                         </div>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cantidad</span>
                                             </div>
-                                            <input value="<%= moto.stock%>" class="form-control" type="number" name="stock" id="stock">
+                                            <input value="<%= bike.stock%>" class="form-control" type="number" name="stock" id="stock">
                                         </div>                                        
                                         <hr>
                                         <!-- Precio -->
@@ -83,23 +83,23 @@
                                             <div>   
                                                 <h6>Moneda</h6>
                                                 <div class="form-group btc">                                            
-                                                    <select name="moneda" class="custom-select" id="validationCustom04" required>
-                                                        <option <%= moto.moneda == "u$s" ? "selected" : null %> value="u$s">Dolar</option>
-                                                        <option <%= moto.moneda == "$" ? "selected" : null %> value="$">Peso</option>
-                                                        <option <%= moto.moneda == "€" ? "selected" : null %> value="€">Euro</option>
+                                                    <select name="coin" class="custom-select" id="validationCustom04" required>
+                                                        <option <%= bike.coin == "u$s" ? "selected" : null %> value="u$s">Dolar</option>
+                                                        <option <%= bike.coin == "$" ? "selected" : null %> value="$">Peso</option>
+                                                        <option <%= bike.coin == "€" ? "selected" : null %> value="€">Euro</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div>
                                                 <h6>IVA</h6>
                                                 <div class="form-group">
-                                                    <input value="<%= moto.iva%>" type="number" class="form-control" name="iva" required value="">
+                                                    <input value="<%= bike.iva%>" type="number" class="form-control" name="iva" required>
                                                 </div>
                                             </div>
                                             <div>
                                                 <h6>Bruto</h6>
                                                 <div class="form-group">
-                                                    <input value="<%= moto.bruto%>" type="number" class="form-control" name="bruto" required value="">
+                                                    <input value="<%= bike.gross%>" type="number" class="form-control" name="gross" required>
                                                 </div>
                                             </div>                                                       
                                         </div>
@@ -114,38 +114,38 @@
                                     <div class="fotop">
                                         <figure class=" col-12 col-md-6 col-lg-7  ">
                                             <h4>Imagen de la portada</h4>
-                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagenPortada%>" alt="imagen"> 
-                                            <input type="hidden" name="oldImagenPortada"  value="<%= moto.imagenPortada%>">
+                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[0].name%>" alt="imagen"> 
+                                            <input type="hidden" name="oldImagenPortada"  value="<%= bike.image[0].name%>">
                                             <input type="file" name="imagenPortada" class="botonImg">
                                         </figure>
                                     </div>                                
                                     <figure class=" col-12 col-md-6 col-lg-3 foto ">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen1%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen1"  value="<%= moto.imagen1%>">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[1].name%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen1"  value="<%= bike.image[1].name%>">
                                         <input type="file" name="imagen1" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen2%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen2"  value="<%= moto.imagen2%>">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[2].name%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen2"  value="<%= bike.image[2].name%>">
                                         <input type="file" name="imagen2" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen3%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen3"  value="<%= moto.imagen3%>">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[3].name%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen3"  value="<%= bike.image[3].name%>">
                                         <input type="file" name="imagen3" class="botonImg" >
                                     </figure>
                                     <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= moto.imagen4%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen4"  value="<%= moto.imagen4%>">
+                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[4].name%>" alt="imagen">
+                                        <input type="hidden" name="oldImagen4"  value="<%= bike.image[4].name%>">
                                         <input type="file" name="imagen4" class="botonImg" >
                                     </figure>
                                     <div class="col-12">                                                
                                         <div class="custom--file">
                                             <div class="texta col-12 w-100">
-                                                <p><label for="descripcion">Descripción</label></p> 
-                                                <textarea name="descripcion" id="descripcion" cols="35" rows="8"><%= moto.descripcion%></textarea>
-                                                <p><label for="especificaciones">Especificaciones</label></p> 
-                                                <textarea name="especificaciones" id="especificaciones" cols="35" rows="8"><%= moto.especificaciones%></textarea>
+                                                <p><label for="description">Descripción</label></p> 
+                                                <textarea name="description" id="descripcion" cols="35" rows="8"><%= bike.description%></textarea>
+                                                <p><label for="specification">Especificaciones</label></p> 
+                                                <textarea name="specification" id="especificaciones" cols="35" rows="8"><%= bike.specification%></textarea>
                                             </div> 
                                             <div class="form-group guardar">
                                                 <a href="/administrar" class="btm btn-primary">Volver</a>

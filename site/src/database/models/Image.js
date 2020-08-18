@@ -17,7 +17,7 @@
     };
     const Image = sequelize.define(alias,cols,config)
     Image.associate = function(models){
-        Image.belongsTo(models.Product,{
+        Image.belongsToMany(models.Product,{
             as:'products',
             through:'imageProduct',
             foreignKey: 'imageId',

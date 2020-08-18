@@ -23,12 +23,12 @@ module.exports = (sequelize,DataTypes) =>{
     //Asocio tabla brands con la tabla products
     const ImageProduct = sequelize.define(alias,cols,config)
     ImageProduct.associate = function(models){
-        ImageProduct.hasMany(models.Product,{
+        ImageProduct.belongsTo(models.Product,{
             as:'products',            
             foreignKey: 'productId',
             
         }),
-        ImageProduct.hasOne(models.Image,{
+        ImageProduct.belongsTo(models.Image,{
             as: 'images',
             foreignKey: 'imageId'
         })

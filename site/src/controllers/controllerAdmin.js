@@ -13,7 +13,7 @@ module.exports = {
       res.render(path.resolve(__dirname, '..', 'views','admin','productAdd'));
   },
    administrar: (req,res) =>{
-     Product.findAll()
+     Product.findAll({include: ['brand']})
      .then(bikes => {
       res.render(path.resolve(__dirname,'..','views','admin','administrar'), {bikes});
      })
@@ -29,17 +29,17 @@ module.exports = {
       imagesIds.push(file.id);
     });
     let nuevaMoto = await Product.create({
-      marca: req.body.marca,
-      modelo: req.body.modelo,
-      color: req.body.color,
-      cilindrada: req.body.cilindrada,
-      frenos: req.body.frenos,
+      brandId: req.body.brand,
+      model: req.body.model,
+      colorId: req.body.color,
+      cc: req.body.cc,
+      brakes: req.body.brakes,
       stock: req.body.stock,
       iva: req.body.iva,
-      bruto: req.body.bruto,      
-      moneda: req.body.moneda,
-      descripcion: req.body.descripcion,
-      especificaciones: req.body.especificaciones
+      gross: req.body.gross,      
+      coin: req.body.coin,
+      description: req.body.description,
+      specification: req.body.specification
     })
     imagesIds.forEach(async imageId =>{
       ImageProduct.create({
@@ -50,25 +50,26 @@ module.exports = {
     return res.redirect('/administrar');
   },
   edit: (req,res) =>{
-    Product.findByPk(req.params.id)
+    Product.findByPk(req.params.id,{include: ['brand', 'color', 'image']})
       .then(bike=>{
+        //return res.send(bike)
         res.render(path.resolve(__dirname,'..','views','admin','edit'),{bike})
       })     
      
   },
   update:async (req, res) => {
      await Product.update({
-        marca: req.body.marca,
-        modelo: req.body.modelo,
-        color: req.body.color,
-        cilindrada: req.body.cilindrada,
-        frenos: req.body.frenos,
-        stock: req.body.stock,
-        iva: req.body.iva,
-        bruto: req.body.bruto,      
-        moneda: req.body.moneda,
-        descripcion: req.body.descripcion,
-        especificaciones: req.body.especificaciones
+      brandId: req.body.brand,
+      model: req.body.model,
+      color: req.body.color,
+      cc: req.body.cc,
+      brakes: req.body.brakes,
+      stock: req.body.stock,
+      iva: req.body.iva,
+      gross: req.body.gross,      
+      coin: req.body.coin,
+      description: req.body.description,
+      specification: req.body.specification
       },
       {
         where:{
@@ -109,7 +110,7 @@ module.exports = {
         })
       })   
       deletedImagesIds.forEach(async deletedImageId =>{
-        ImageProduct.destroy({where:{imageId:deletedImageId}})
+        ImageProduct.destroy({where:{imageId:deletedImageId}})//como hacer el destroy de las imagenes y de las imagenProduct
       })
     }
 
@@ -126,10 +127,14 @@ module.exports = {
    
   return  res.redirect('/administrar');
   },
-  destroy: (req, res) =>{
-    Product.destroy({where:{id:req.params.id}})
-    
-  return  res.redirect('/administrar');
+  destroy: async (req, res) =>{
+    let imagesToDestroyIds = await ImageProduct.findAll({where:{productId:req.params.id}})    
+    imagesToDestroyIds.forEach( async fila =>{
+       await Image.destroy({where:{id:fila.imageId}})
+    })   
+    await ImageProduct.destroy({where:{id:req.params.id}})
+    await Product.destroy({where:{id:req.params.id}})// Preguntar como borrar cosas con relaciones----------------------------------
+     return res.redirect('/administrar');
   },
   adminUser:(req,res)=>{
     User.findAll()

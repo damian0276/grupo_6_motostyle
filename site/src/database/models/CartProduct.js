@@ -31,10 +31,19 @@ module.exports = (sequelize,DataTypes) =>{
         }
     }
     let config = {
-        tableName: 'brands'
+        tableName: 'cartProduct'
     }
-    //Asocio tabla brands con la tabla products
     const CartProduct = sequelize.define(alias,cols,config)
 
-    return CartProduct;
+    CartProduct.associate=function(models){
+        CartProduct.belongsTo(models.User,{
+            as: "User",
+            foreingKey: "userId"
+        })
+        CartProduct.belongsTo(models.Product,{
+            as: "Product",
+            foreingKey: "productId"
+        })
     }
+    return CartProduct;
+}

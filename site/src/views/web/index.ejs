@@ -23,18 +23,17 @@
                 </div>
                 <section class="container-fluid">
                     <div class="row products" id="productos">
-                        <% for(let i = 1; i < 7; i++){%>
+                        <% for(let i = 0; i < bikes.length ; i++){%>
                             <div class="product-box col-12 col-md-6 col-lg-4">                            
                                 <article class="card border-dark sombra">
-                                    <h5><span class="product-name"><%=motos[i].marca%></span></h5>
-                                    <a href="/productDetail/<%=motos[i].id%>">
-                                        <img src="/asset/img/productos/<%=motos[i].imagenPortada%>" class="card-img-top" alt="<%=motos[i].modelo%>">
+                                    <h5><span class="product-name"><%=bikes[i].brand.name%></span></h5>
+                                    <a href="/productDetail/<%=bikes[i].id%>">
+                                        <img src="/asset/img/productos/<%= bikes[i].image[0].name%>" class="card-img-top" alt="<%=bikes[i].model%>">
                                     </a>
                                     <div class="card-body">
-                                        <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=motos[i].modelo%></span><span class="product-price"><% if(motos[i].moneda == 'peso'){%>$
-                                        <%} else if (motos[i].moneda == 'dolar'){%>u$s<%}else{%>€<%}%>
-                                            <%=(motos[i].bruto * motos[i].iva)/100 + motos[i].bruto %></span></h5>
-                                        <p class="d-none d-lg-block"><%= motos[i].descripcion%></p>
+                                        <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bikes[i].model%></span><span class="product-price"><%= bikes[i].coin%> <%=((bikes[i].gross * bikes[i].iva)/100 + bikes[i].gross).toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                                            ".") %></span></h5>
+                                        <p class="d-none d-lg-block"><%= bikes[i].description%></p>
                                     </div>
                                 </article>
                             </div> 

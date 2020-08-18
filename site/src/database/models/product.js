@@ -15,6 +15,14 @@ let alias = "Product"
             type:DataTypes.STRING, 
             allowNull:false
         },
+        brandId: {
+            type: DataTypes.INTEGER,
+            allowNull:false
+        },
+        colorId:{
+            type: DataTypes.INTEGER,
+            allowNull:false
+        },
         stock:{
             type:DataTypes.INTEGER,
             allowNull:false
@@ -27,11 +35,19 @@ let alias = "Product"
             type: DataTypes.STRING,
             allowNull:false,
         },
-        spacification:{
+        specification:{
             type: DataTypes.STRING,
             allowNull:false
         },
         iva: DataTypes.INTEGER,
+        brakes: {
+            type: DataTypes.STRING,
+            allowNull:false
+        },
+        gross:{
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }
     let config= {
        tableName:"products"  
@@ -41,7 +57,7 @@ let alias = "Product"
 
     Product.associate=function(models){
         Product.belongsTo(models.Color,{
-            as:"Color",
+            as:"color",
             foreingKey:"colorId"
         })
         Product.belongsTo(models.Brand,{
@@ -50,7 +66,7 @@ let alias = "Product"
         })  
         Product.belongsToMany(models.Image,{
             as:"image",
-            through:"imagenProduct",
+            through:"imageProduct",
             foreingKey:"productId",
             otherKey:"imageId"
         })

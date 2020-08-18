@@ -21,12 +21,12 @@ const upload = multer({ storage })
 
 const controllerAdmin = require(path.resolve(__dirname, '..', 'controllers', 'controlleradmin'));
 
-router.get('/administrar',adminOnly, controllerAdmin.administrar);
-router.get('/productAdd',adminOnly, controllerAdmin.add);
-router.get('/edit/:id',adminOnly, controllerAdmin.edit);
-router.put('/edit/:id',upload.any(),adminOnly, controllerAdmin.update);
-router.post('/administrar/create',upload.any(),adminOnly, controllerAdmin.create);
-router.delete('/delete/:id',adminOnly, controllerAdmin.destroy);
+router.get('/administrar', controllerAdmin.administrar);
+router.get('/productAdd', controllerAdmin.add);
+router.get('/edit/:id', controllerAdmin.edit);
+router.put('/edit/:id',upload.any(), controllerAdmin.update);
+router.post('/administrar/create',upload.any(), controllerAdmin.create);
+router.delete('/delete/:id', controllerAdmin.destroy);
 
 //Rutas para administrar usuaruios
 router.get('/adminUser', sudoOnly, controllerAdmin.adminUser);

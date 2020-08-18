@@ -7,9 +7,12 @@ const Product = db.Product
 
 module.exports = {
     index: function(req,res){
-        Product.findAll()
+        Product.findAll({
+            include:['brand', 'image']
+        })
             .then(
                 bikes =>{
+                    //return res.send(bikes)
                     res.render(path.resolve(__dirname, '..', 'views','web','index'),{bikes});
                 }
             )
