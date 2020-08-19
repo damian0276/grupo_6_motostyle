@@ -31,7 +31,7 @@ CREATE TABLE `brands` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (1,'Yamaha',NULL,NULL,NULL),(2,'Honda',NULL,NULL,NULL),(3,'BMW',NULL,NULL,NULL),(4,'Mercedes Benz',NULL,NULL,NULL),(5,'Kawasaki',NULL,NULL,NULL),(6,'Ducati',NULL,NULL,NULL),(7,'KTM',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +93,7 @@ CREATE TABLE `colors` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,6 +102,7 @@ CREATE TABLE `colors` (
 
 LOCK TABLES `colors` WRITE;
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
+INSERT INTO `colors` VALUES (1,'Rojo',NULL,NULL,NULL),(2,'Negro',NULL,NULL,NULL),(3,'Azul',NULL,NULL,NULL),(4,'Gris',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `colors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +125,7 @@ CREATE TABLE `imageproduct` (
   KEY `imageProduct_fk_0_productId` (`productId`),
   CONSTRAINT `imageProduct_fk_0_imageId` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`),
   CONSTRAINT `imageProduct_fk_0_productId` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,6 +134,7 @@ CREATE TABLE `imageproduct` (
 
 LOCK TABLES `imageproduct` WRITE;
 /*!40000 ALTER TABLE `imageproduct` DISABLE KEYS */;
+INSERT INTO `imageproduct` VALUES (2,16,1,'2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(3,17,1,'2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(4,19,1,'2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(5,18,1,'2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(6,21,2,'2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(7,22,2,'2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(8,23,2,'2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(9,24,2,'2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(10,25,2,'2020-08-18 01:38:21','2020-08-18 01:38:21',NULL);
 /*!40000 ALTER TABLE `imageproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +153,7 @@ CREATE TABLE `images` (
   `deletedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,6 +162,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (16,'moto-1597711362618.jpg','2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(17,'moto-1597711362634.jpg','2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(18,'moto-1597711362645.jpg','2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(19,'moto-1597711362692.jpg','2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(20,'moto-1597711362666.jpg','2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(21,'moto-1597714701128.jpg','2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(22,'moto-1597714701134.jpg','2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(23,'moto-1597714701144.jpg','2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(24,'moto-1597714701146.jpg','2020-08-18 01:38:21','2020-08-18 01:38:21',NULL),(25,'moto-1597714701148.jpg','2020-08-18 01:38:21','2020-08-18 01:38:21',NULL);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +178,7 @@ CREATE TABLE `products` (
   `brandId` int(11) NOT NULL,
   `model` varchar(100) NOT NULL,
   `colorId` int(11) NOT NULL,
-  `CC` varchar(100) NOT NULL,
+  `cc` varchar(100) NOT NULL,
   `brakes` varchar(100) NOT NULL,
   `stock` int(11) NOT NULL,
   `description` varchar(1000) NOT NULL,
@@ -190,7 +194,7 @@ CREATE TABLE `products` (
   KEY `products_fk_0_colorId` (`colorId`),
   CONSTRAINT `products_fk_0_brandId` FOREIGN KEY (`brandId`) REFERENCES `brands` (`id`),
   CONSTRAINT `products_fk_0_colorId` FOREIGN KEY (`colorId`) REFERENCES `colors` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,6 +203,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,1,'Tracer 900',1,'900','Doble disco',1,'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd','u$s','asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',21,150000,'2020-08-18 00:42:42','2020-08-18 00:42:42',NULL),(2,2,'Cg Titanaaaaa',3,'1500','Disco delantero',3,'qrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqr','$','qrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqr',21,150000,'2020-08-18 01:38:21','2020-08-18 01:39:03',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +240,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'China','Fernandes','chinafernandess@gmail.com',NULL,'$2a$10$T14dnJfBsfYTXiLJo4kvIuxB/Of80JyATuon.d.BY67or2WMf4v5a','avatar-1596552826812.jpg',1,'2020-08-04 14:53:46','2020-08-04 14:53:46',NULL,NULL,NULL),(2,'Vanesa','asdasdadasd','asdadd@asdsa.com',NULL,'$2a$10$ceV3dYbJKwUoSzJ3XQZIDe4TCdF1ZTja5JHlPlK5soMnN8C5h5OJC','avatar-1596600664641.jpg',1,'2020-08-05 04:11:04','2020-08-05 04:11:04',NULL,NULL,NULL),(3,'Vanesa','Fernandes','vanesafernandes@gmail.com',NULL,'$2a$10$TtJFlmS1MtP.7hJqN9YtA..UlqB61mBe/ci6OK3VY/fnJQShSz6i6','avatar-1596713451144.jpg',1,'2020-08-06 11:30:51','2020-08-06 11:30:51',NULL,NULL,NULL),(4,'Damian','Loria','damian0276@gmail.com',NULL,'$2a$10$Wki5k4Qm0SCSgN099fzs9eyIsjRj6J5SiO8nHukG5d6n6ItQtdiOC','avatar-1596761715971.jpg',1,'2020-08-07 00:55:16','2020-08-07 00:55:16',NULL,NULL,NULL),(5,'Leandro','Corbalan','leke@digitalhouse.com',NULL,'$2a$10$KDW9DKXi3Fem.e57p2VuD.aDZXOOFpTN0naWmgVEjEi/XuIGryeNy','avatar-1596762352149.jpg',1,'2020-08-07 01:05:52','2020-08-07 01:05:52',NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'China','Fernandes','chinafernandess@gmail.com',NULL,'$2a$10$T14dnJfBsfYTXiLJo4kvIuxB/Of80JyATuon.d.BY67or2WMf4v5a','avatar-1596552826812.jpg',1,'2020-08-04 14:53:46','2020-08-04 14:53:46',NULL,NULL,NULL),(3,'Vanesa','Fernandes','vanesafernandes@gmail.com',NULL,'$2a$10$TtJFlmS1MtP.7hJqN9YtA..UlqB61mBe/ci6OK3VY/fnJQShSz6i6','avatar-1596713451144.jpg',1,'2020-08-06 11:30:51','2020-08-06 11:30:51',NULL,NULL,NULL),(4,'Damian','Loria','damian0276@gmail.com',NULL,'$2a$10$Wki5k4Qm0SCSgN099fzs9eyIsjRj6J5SiO8nHukG5d6n6ItQtdiOC','avatar-1596761715971.jpg',2,'2020-08-12 02:11:56','2020-08-07 00:55:16',NULL,NULL,NULL),(5,'Leandro','Corbalan','leke@digitalhouse.com','222222','$2a$10$KDW9DKXi3Fem.e57p2VuD.aDZXOOFpTN0naWmgVEjEi/XuIGryeNy','avatar-1596762352149.jpg',9,'2020-08-12 21:50:34','2020-08-07 01:05:52',NULL,'51654654','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -248,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-08 18:59:54
+-- Dump completed on 2020-08-17 22:55:52
