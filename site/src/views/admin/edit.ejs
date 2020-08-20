@@ -112,33 +112,26 @@
                                 <div class="paso2 row">
                                     <!-- imagen portada -->                                
                                     <div class="fotop">
-                                        <figure class=" col-12 col-md-6 col-lg-7  ">
-                                            <h4>Imagen de la portada</h4>
-                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[0].name%>" alt="imagen"> 
-                                            <input type="hidden" name="oldImagenPortada"  value="<%= bike.image[0].name%>">
-                                            <input type="file" name="imagenPortada" class="botonImg">
+                                        <% bike.image.forEach(image => { %>
+                                            <% if (image.coverImage == 1) { %>
+                                            <figure class=" col-12 col-md-6 col-lg-7  ">
+                                                <h4>Imagen de la portada</h4>
+                                                <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model %> "> 
+                                                <input type="hidden" name="oldImagenPortada"  value="<%= image.name%>">
+                                                <input type="file" name="imagenPortada" class="botonImg">
+                                            </figure>
+                                            <% } %>
+                                        <% }) %>
+                                    </div>
+                                    <% bike.image.forEach(image => { %>
+                                        <% if (image.coverImage != 1) { %>                                                           
+                                        <figure class=" col-12 col-md-6 col-lg-3 foto ">
+                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model%>">
+                                            <input type="hidden" name="oldImagen1"  value="<%= image.name%>">
+                                            <input type="file" name="imagen1" class="botonImg" >
                                         </figure>
-                                    </div>                                
-                                    <figure class=" col-12 col-md-6 col-lg-3 foto ">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[1].name%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen1"  value="<%= bike.image[1].name%>">
-                                        <input type="file" name="imagen1" class="botonImg" >
-                                    </figure>
-                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[2].name%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen2"  value="<%= bike.image[2].name%>">
-                                        <input type="file" name="imagen2" class="botonImg" >
-                                    </figure>
-                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[3].name%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen3"  value="<%= bike.image[3].name%>">
-                                        <input type="file" name="imagen3" class="botonImg" >
-                                    </figure>
-                                    <figure class=" col-12 col-md-6 col-lg-3 foto">
-                                        <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= bike.image[4].name%>" alt="imagen">
-                                        <input type="hidden" name="oldImagen4"  value="<%= bike.image[4].name%>">
-                                        <input type="file" name="imagen4" class="botonImg" >
-                                    </figure>
+                                        <% } %>
+                                    <% }) %> 
                                     <div class="col-12">                                                
                                         <div class="custom--file">
                                             <div class="texta col-12 w-100">

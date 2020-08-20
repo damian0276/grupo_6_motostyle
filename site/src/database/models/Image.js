@@ -11,6 +11,10 @@
             type: DataTypes.STRING(500),
             allowNull:false
         },
+        coverImage:{
+            type: DataTypes.INTEGER,
+            allowNull:false
+        }
     }
     let config = {
         tableName:'images'

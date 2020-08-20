@@ -23,10 +23,19 @@ module.exports = {
 
     let imagesIds = [];
     req.files.forEach(async image =>{ 
+      if(image.fieldname == 'imagenPortada'){
       let file = await Image.create({
-        name: image.filename
+        name: image.filename,
+        coverImage: 1
       })
       imagesIds.push(file.id);
+      } else {
+        let file = await Image.create({
+          name: image.filename,
+          coverImage: 0
+        })
+        imagesIds.push(file.id);
+      }
     });
     let nuevaMoto = await Product.create({
       brandId: req.body.brand,
@@ -58,19 +67,19 @@ module.exports = {
      
   },
   update:async (req, res) => {
-     await Product.update({
-      brandId: req.body.brand,
-      model: req.body.model,
-      color: req.body.color,
-      cc: req.body.cc,
-      brakes: req.body.brakes,
-      stock: req.body.stock,
-      iva: req.body.iva,
-      gross: req.body.gross,      
-      coin: req.body.coin,
-      description: req.body.description,
-      specification: req.body.specification
-      },
+    await Product.update({
+     brandId: req.body.brand,
+     model: req.body.model,
+     color: req.body.color,
+     cc: req.body.cc,
+     brakes: req.body.brakes,
+     stock: req.body.stock,
+     iva: req.body.iva,
+     gross: req.body.gross,      
+     coin: req.body.coin,
+     description: req.body.description,
+     specification: req.body.specification
+    },
       {
         where:{
           id:req.params.id
@@ -78,63 +87,78 @@ module.exports = {
       }    
       )
     if(req.files){
-      let imagesIds = [];
-      let deletedImagesIds = [];
       req.files.forEach(async image =>{ 
-        let file = await Image.create({
-          name: image.filename
-        })
         switch (image.fieldname){
-          case 'imagenPortada': let imagenPortada = await  Image.destroy({where:{name:req.body.oldImagenPortada}})
-                                deletedImagesIds.push(imagenPortada.id);
+          case 'imagenPortada': {
+            let imagenPortada = await  Image.findOne({where:{name:req.body.oldImagenPortada}})
+            await ImageProduct.destroy({where: {imageId: imagenPortada.id}})
+            await Image.destroy({where: {id: imagenPortada.id}})
+            let newImagenPortada = await Image.create({name: image.filename, coverImage:1})
+            await ImageProduct.create({
+              productId : req.params.id,
+              imageId: newImagenPortada.id
+            })
+          }
           break;
-          case 'imagen1': let imagen1 = await Image.destroy({where:{name:req.body.oldImagen1}})
-                          deletedImagesIds.push(imagen1.id);
+          case 'imagen1': {
+            let imagen1 = await  Image.findOne({where:{name:req.body.oldImagen1}})
+            await ImageProduct.destroy({where: {imageId: imagen1.id}})
+            await Image.destroy({where: {id: imagen1.id}})
+            let newImagen1 = await Image.create({name: image.filename})
+            await ImageProduct.create({
+              productId : req.params.id,
+              imageId: newImagen1.id
+            })
+          }
           break;
-          case 'imagen2': let imagen2 = await Image.destroy({where:{name:req.body.oldImagen2}})
-                          deletedImagesIds.push(imagen2.id);
+          case 'imagen2': {
+            let imagen2 = await  Image.findOne({where:{name:req.body.oldImagen2}})
+            await ImageProduct.destroy({where: {imageId: imagen2.id}})
+            await Image.destroy({where: {id: imagen2.id}})
+            let newImagen2 = await Image.create({name: image.filename})
+            await ImageProduct.create({
+              productId : req.params.id,
+              imageId: newImagen2.id
+            })
+          }
           break;
-          case 'imagen3': let imagen3 = await Image.destroy({where:{name:req.body.oldImagen3}})
-                          deletedImagesIds.push(imagen3.id);
+          case 'imagen3': {
+            let imagen3 = await  Image.findOne({where:{name:req.body.oldImagen3}})
+            await ImageProduct.destroy({where: {imageId: imagen3.id}})
+            await Image.destroy({where: {id: imagen3.id}})
+            let newImagen3 = await Image.create({name: image.filename})
+            await ImageProduct.create({
+              productId : req.params.id,
+              imageId: newImagen3.id
+            })
+          }
           break;
-          case 'imagen4': let imagen4 = await Image.destroy({where:{name:req.body.oldImagen4}})
-                         deletedImagesIds.push(imagen4.id);
+          case 'imagen4': {
+            let imagen4 = await  Image.findOne({where:{name:req.body.oldImagen4}})
+            await ImageProduct.destroy({where: {imageId: imagen4.id}})
+            await Image.destroy({where: {id: imagen4.id}})
+            let newImagen4 = await Image.create({name: image.filename})
+            await ImageProduct.create({
+              productId : req.params.id,
+              imageId: newImagen4.id
+            })
+          }
           break;
-        }
-        imagesIds.push(file.id);
-      })
-      imagesIds.forEach(async imageId =>{
-        ImageProduct.create({
-          productId: req.params.id,
-          imageId: imageId
-        })
-      })   
-      deletedImagesIds.forEach(async deletedImageId =>{
-        ImageProduct.destroy({where:{imageId:deletedImageId}})//como hacer el destroy de las imagenes y de las imagenProduct
-      })
+        }        
+      })     
     }
-
-
-    
-  // let oldImages = [req.body.oldImagenPortada, req.body.oldImagen1, req.body.oldImagen2, req.body.oldImagen3, req.body.oldImagen4]
-  // for(let i = 0; i < oldImages.length; i++){
-  // if(req.files[i]){
-  //   fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ oldImages[i]),(err) => {
-  //     if (err){console.log(err)};
-  //     console.log('../../public/asset/img/productos/'+ oldImages[i] + ' fue borrada');
-  //   });
-  // }}
    
   return  res.redirect('/administrar');
   },
   destroy: async (req, res) =>{
     let imagesToDestroyIds = await ImageProduct.findAll({where:{productId:req.params.id}})    
+    await ImageProduct.destroy({where:{productId:req.params.id}, force:true})
     imagesToDestroyIds.forEach( async fila =>{
-       await Image.destroy({where:{id:fila.imageId}})
+      //console.log('Lekeeee' + fila.imageId);
+      await Image.destroy({where:{id:fila.imageId}, force:true})
     })   
-    await ImageProduct.destroy({where:{id:req.params.id}})
     await Product.destroy({where:{id:req.params.id}})// Preguntar como borrar cosas con relaciones----------------------------------
-     return res.redirect('/administrar');
+    return res.redirect('/administrar');
   },
   adminUser:(req,res)=>{
     User.findAll()
