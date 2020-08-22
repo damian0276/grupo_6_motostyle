@@ -9,7 +9,6 @@ const {
     validationResult,
     body
 } = require('express-validator');
-const { on } = require('process');
 
 
 let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));

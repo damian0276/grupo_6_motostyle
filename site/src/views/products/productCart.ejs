@@ -18,28 +18,28 @@
             <section class="cart-section" id="cart-section">
                 <% if(bike){ %>
                 <div class="photos-box sombra"> 
-                    <div class="bike-name" id="bike-name">
-                        <h2><%= bike.model%></h2>
+                    <div class="bike-name" id="bike-name"> 
+                        <h2><%= bike.model%></h2> 
                     </div>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
                             <figure>
-                                <img src="/asset/img/productos/<%= bike.imagen1%>" alt="<%= bike.model%>">
+                                <img src="/asset/img/productos/<%= imagesNoCover[0].name%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                         <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= bike.imagen2%>" alt="<%= bike.model%>">
+                                <img src="/asset/img/productos/<%= imagesNoCover[1].name%>" alt="<%= bike.model%>">
                             </figure> 
                         </div>
                         <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= bike.imagen3%>" alt="<%= bike.model%>">
+                                <img src="/asset/img/productos/<%= imagesNoCover[2].name%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                         <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= bike.imagen4%>" alt="<%= bike.model%>">
+                                <img src="/asset/img/productos/<%= imagesNoCover[3].name%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                     </div>
@@ -47,28 +47,28 @@
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
                                 <figure>
-                                    <img src="/asset/img/productos/<%= bike.imagen1%>" alt="<%= bike.model%>">
+                                    <img src="/asset/img/productos/<%= imagesNoCover[0].name%>" alt="<%= bike.model%>">
                                 </figure> 
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= bike.imagen2%>" alt="<%= bike.model%>">
+                                    <img src="/asset/img/productos/<%= imagesNoCover[1].name%>" alt="<%= bike.model%>">
                                 </figure> 
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= bike.imagen3%>" alt="<%= bike.model%>">
+                                    <img src="/asset/img/productos/<%= imagesNoCover[2].name%>" alt="<%= bike.model%>">
                                 </figure>
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= bike.imagen4%>" alt="<%= bike.model%>">
+                                    <img src="/asset/img/productos/<%= imagesNoCover[3].name%>" alt="<%= bike.model%>">
                                 </figure>
                             </a>
                         </li>

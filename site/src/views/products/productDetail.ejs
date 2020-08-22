@@ -18,10 +18,14 @@
             
             <!--Producto-->   
             <div class="ch-container">
-                <div class="d-none d-lg-block c-img">
-                    <h1 id="multis"><%= bike.model %></h1>    
-                    <img class="multi" src="/asset/img/productos/<%= bike.coverImage %>"alt="<%= bike.model %>">                    
-                </div>
+                <div class="d-none d-lg-block c-img"> 
+                    <h1 id="multis"><%= bike.model %></h1>
+                    <% for( let i = 0; i < bike.image.length; i++ ) { %>
+                        <% if (bike.image[i].coverImage == 1) { %>
+                            <img class="multi" src="/asset/img/productos/<%= bike.image[i].name %>"alt="<%= bike.model %>">                    
+                        <% } %>
+                    <% } %>   
+                </div>  
                     <!--fotos-->
                     <section class="productDetail-section" id="productDetail-section">
                         <div class="photos-box"> 
@@ -32,22 +36,22 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
                                     <figure>
-                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
+                                        <img src="/asset/img/productos/<%= imagesNoCover[0].name %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
+                                        <img src="/asset/img/productos/<%= imagesNoCover[1].name %>" alt="">
                                     </figure> 
                                 </div>
                                 <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
+                                        <img src="/asset/img/productos/<%= imagesNoCover[2].name %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
+                                        <img src="/asset/img/productos/<%= imagesNoCover[3].name %>" alt="">
                                     </figure>
                                 </div>
                             </div>
@@ -55,28 +59,28 @@
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
                                         <figure>
-                                            <img src="/asset/img/productos/<%= bike.imagen1 %>" alt="">
+                                            <img src="/asset/img/productos/<%= imagesNoCover[0].name %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= bike.imagen2 %>" alt="">
+                                            <img src="/asset/img/productos/<%= imagesNoCover[1].name %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= bike.imagen3 %>" alt="">
+                                            <img src="/asset/img/productos/<%= imagesNoCover[2].name %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= bike.imagen4 %>" alt="">
+                                            <img src="/asset/img/productos/<%= imagesNoCover[3].name %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
@@ -144,7 +148,7 @@
                                             <tr>                                                
                                                 <td>Marca</td>
                                                 <td></td>
-                                                <td class="barra"><%= bike.brandId %></td>
+                                                <td class="barra"><%= bike.brand.name %></td>
                                             </tr>
                                             <tr>                                                
                                                 <td>Modelo</td>
@@ -154,7 +158,7 @@
                                             <tr>                                                
                                                 <td>Color</td>
                                                 <td></td>
-                                                <td class="barra" ><%= bike.colorId %></td>
+                                                <td class="barra" ><%= bike.color.name %></td>
                                             </tr>  
                                             <tr>                                                
                                                 <td>Stock</td>
