@@ -133,16 +133,16 @@
                     <!--Productos-->
                 <section class="container-fluid">
                     <div class="row products" id="productos">
-                        <% motos.forEach(moto =>{%>
+                        <% bikes.forEach(bike =>{%>
                         <div class="product-box col-12 col-md-6 col-lg-4">                            
                             <article class="card border-dark sombra">
-                                <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.marca%></span></h5>
-                                <a href="/productDetail/<%=moto.id%>">
-                                    <img src="/asset/img/productos/<%=moto.imagenPortada%>" class="card-img-top" alt="<%=moto.modelo%>">
+                                <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.brandId%></span></h5>
+                                <a href="/productDetail/<%=bike.id%>">
+                                    <img src="/asset/img/productos/<%=bike.coverImage%>" class="card-img-top" alt="<%=bike.model%>">
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=moto.modelo%></span><span class="product-price"><%= moto.moneda%> <%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></h5>
-                                    <p class="d-none d-lg-block"><%= moto.descripcion%></p>
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.model%></span><span class="product-price"><%= bike.coin%> <%=(bike.gross * bike.iva)/100 + bike.gross %></span></h5>
+                                    <p class="d-none d-lg-block"><%= bike.description%></p>
                                 </div>
                             </article>
                         </div> 

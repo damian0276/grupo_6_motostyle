@@ -19,35 +19,35 @@
             <!--Producto-->   
             <div class="ch-container">
                 <div class="d-none d-lg-block c-img">
-                    <h1 id="multis"><%= moto.modelo %></h1>    
-                    <img class="multi" src="/asset/img/productos/<%= moto.imagenPortada %>"alt="<%= moto.modelo %>">                    
+                    <h1 id="multis"><%= bike.model %></h1>    
+                    <img class="multi" src="/asset/img/productos/<%= bike.coverImage %>"alt="<%= bike.model %>">                    
                 </div>
                     <!--fotos-->
                     <section class="productDetail-section" id="productDetail-section">
                         <div class="photos-box"> 
                             <div class="bike-name" id="bike-name">
                                 <h2 class="d-none d-lg-block">Esta moto te esta esperando...</h2>
-                                <h4 class="d-lg-none"><%= moto.modelo%> -<%= moto.marca %></h4> 
+                                <h4 class="d-lg-none"><%= bike.model %> -<%= bike.brand %></h4> 
                             </div>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
                                     <figure>
-                                        <img src="/asset/img/productos/<%= moto.imagen1 %>" alt="">
+                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= moto.imagen2 %>" alt="">
+                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
                                     </figure> 
                                 </div>
                                 <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= moto.imagen3 %>" alt="">
+                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
                                     </figure>
                                 </div>
                                 <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
                                     <figure class="pre-image-figure">
-                                        <img src="/asset/img/productos/<%= moto.imagen4 %>" alt="">
+                                        <img src="/asset/img/productos/<%= bike.images %>" alt="">
                                     </figure>
                                 </div>
                             </div>
@@ -55,28 +55,28 @@
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
                                         <figure>
-                                            <img src="/asset/img/productos/<%= moto.imagen1 %>" alt="">
+                                            <img src="/asset/img/productos/<%= bike.imagen1 %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= moto.imagen2 %>" alt="">
+                                            <img src="/asset/img/productos/<%= bike.imagen2 %>" alt="">
                                         </figure> 
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= moto.imagen3 %>" alt="">
+                                            <img src="/asset/img/productos/<%= bike.imagen3 %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="nav-item w-25" role="presentation">
                                     <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
                                         <figure class="pre-image-figure">
-                                            <img src="/asset/img/productos/<%= moto.imagen4 %>" alt="">
+                                            <img src="/asset/img/productos/<%= bike.imagen4 %>" alt="">
                                         </figure>
                                     </a>
                                 </li>
@@ -84,7 +84,7 @@
                         </div> 
                     </div>
                     <div class="carroFuego">
-                        <a href="/productCart/<%= moto.id%>" class="icon float-right"><img src="/asset/img/productos/shopping-cart.png" alt="Agregar al carrito"></a>
+                        <a href="/productCart/<%= bike.id%>" class="icon float-right"><img src="/asset/img/productos/shopping-cart.png" alt="Agregar al carrito"></a>
                     </div>
                     <!--Menú acordeon-->
                     <div class="accordion" id="accordionExample">
@@ -98,7 +98,7 @@
                             </div>                            
                             <div id="collapseprice" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                  <%= moto.moneda%> <%=(moto.bruto * moto.iva)/100 + moto.bruto %>
+                                  <%= bike.coin%> <%=(bike.gross * bike.iva)/100 + bike.gross%>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
@@ -111,7 +111,7 @@
                             
                             <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <%= moto.descripcion %>
+                                    <%= bike.description %>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <%= moto.especificaciones %>
+                                    <%= bike.specification %>
                                 </div>
                             </div>
                         </div>
@@ -144,32 +144,32 @@
                                             <tr>                                                
                                                 <td>Marca</td>
                                                 <td></td>
-                                                <td class="barra"><%= moto.marca %></td>
+                                                <td class="barra"><%= bike.brandId %></td>
                                             </tr>
                                             <tr>                                                
                                                 <td>Modelo</td>
                                                 <td></td>
-                                                <td class="barra" ><%= moto.modelo %></td>
+                                                <td class="barra" ><%= bike.model %></td>
                                             </tr> 
                                             <tr>                                                
                                                 <td>Color</td>
                                                 <td></td>
-                                                <td class="barra" ><%= moto.color %></td>
+                                                <td class="barra" ><%= bike.colorId %></td>
                                             </tr>  
                                             <tr>                                                
                                                 <td>Stock</td>
                                                 <td></td>
-                                                <td class="barra"><%= moto.stock %></td>
+                                                <td class="barra"><%= bike.stock %></td>
                                             </tr> 
                                             <tr>                                                
                                                 <td>Cilindrada</td>
                                                 <td></td>
-                                                <td class="barra"><%= moto.cilindrada %></td>
+                                                <td class="barra"><%= bike.cc %></td>
                                             </tr> 
                                             <tr>                                                
                                                 <td>Frenos</td>
                                                 <td></td>
-                                                <td class="barra"><%= moto.frenos %></td>
+                                                <td class="barra"><%= bike.brakes %></td>
                                             </tr>                                            
                                         </tbody>
                                     </table>

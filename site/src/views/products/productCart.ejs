@@ -16,30 +16,30 @@
             <%- include('../partials/searchBar') %>
             <!--Carrito de compras-->
             <section class="cart-section" id="cart-section">
-                <% if(moto){ %>
+                <% if(bike){ %>
                 <div class="photos-box sombra"> 
                     <div class="bike-name" id="bike-name">
-                        <h2><%= moto.modelo%></h2>
+                        <h2><%= bike.model%></h2>
                     </div>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="photo1" role="tabpanel" aria-labelledby="home-tab">
                             <figure>
-                                <img src="/asset/img/productos/<%= moto.imagen1%>" alt="<%= moto.modelo%>">
+                                <img src="/asset/img/productos/<%= bike.imagen1%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                         <div class="tab-pane fade" id="photo2" role="tabpanel" aria-labelledby="profile-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= moto.imagen2%>" alt="<%= moto.modelo%>">
+                                <img src="/asset/img/productos/<%= bike.imagen2%>" alt="<%= bike.model%>">
                             </figure> 
                         </div>
                         <div class="tab-pane fade" id="photo3" role="tabpanel" aria-labelledby="contact-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= moto.imagen3%>" alt="<%= moto.modelo%>">
+                                <img src="/asset/img/productos/<%= bike.imagen3%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                         <div class="tab-pane fade" id="photo4" role="tabpanel" aria-labelledby="contact-tab">
                             <figure class="pre-image-figure">
-                                <img src="/asset/img/productos/<%= moto.imagen4%>" alt="<%= moto.modelo%>">
+                                <img src="/asset/img/productos/<%= bike.imagen4%>" alt="<%= bike.model%>">
                             </figure>
                         </div>
                     </div>
@@ -47,28 +47,28 @@
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0 active" id="photo1-tab" data-toggle="tab" href="#photo1" role="tab" aria-controls="photo1" aria-selected="true">
                                 <figure>
-                                    <img src="/asset/img/productos/<%= moto.imagen1%>" alt="<%= moto.modelo%>">
+                                    <img src="/asset/img/productos/<%= bike.imagen1%>" alt="<%= bike.model%>">
                                 </figure> 
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo2-tab" data-toggle="tab" href="#photo2" role="tab" aria-controls="photo2" aria-selected="true">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= moto.imagen2%>" alt="<%= moto.modelo%>">
+                                    <img src="/asset/img/productos/<%= bike.imagen2%>" alt="<%= bike.model%>">
                                 </figure> 
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo3-tab" data-toggle="tab" href="#photo3" role="tab" aria-controls="photo3" aria-selected="false">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= moto.imagen3%>" alt="<%= moto.modelo%>">
+                                    <img src="/asset/img/productos/<%= bike.imagen3%>" alt="<%= bike.model%>">
                                 </figure>
                             </a>
                         </li>
                         <li class="nav-item w-25" role="presentation">
                             <a class="nav-link p-0" id="photo4-tab" data-toggle="tab" href="#photo4" role="tab" aria-controls="photo4" aria-selected="false">
                                 <figure class="pre-image-figure">
-                                    <img src="/asset/img/productos/<%= moto.imagen4%>" alt="<%= moto.modelo%>">
+                                    <img src="/asset/img/productos/<%= bike.imagen4%>" alt="<%= bike.model%>">
                                 </figure>
                             </a>
                         </li>
@@ -103,21 +103,21 @@
                         </div>
                     </div>                    
                     <div class="w-md-25 prices-div" id="prices-div">
-                        <p class="d-flex justify-content-between"><span><%= moto.moneda %></span><span><%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></p>
-                        <p class="d-flex justify-content-between"><span><%= moto.moneda %></span><span><%=(((moto.bruto * moto.iva)/100 + moto.bruto)*6)/100 %></span></p>
-             <!--       <p class="d-flex justify-content-between"><span><%= moto.moneda %></span><span>100</span></p> -->
-                        <p class="d-flex justify-content-between"><span><%= moto.moneda %></span><span>500</span></p>
+                        <p class="d-flex justify-content-between"><span><%= bike.coin %></span><span><%=(bike.gross * bike.iva)/100 + bike.gross %></span></p>
+                        <p class="d-flex justify-content-between"><span><%= bike.coin %></span><span><%=(((bike.gross * bike.iva)/100 + bike.gross)*6)/100 %></span></p>
+             <!--       <p class="d-flex justify-content-between"><span><%= bike.coin %></span><span>100</span></p> -->
+                        <p class="d-flex justify-content-between"><span><%= bike.coin %></span><span>500</span></p>
                     </div>                    
                 </div>    
                 <div class="final-price-div white-back border-top border-dark sombra" id="final-price-div">
-                    <p class="d-flex justify-content-end" style="font-size:1.5em"><span>Total:<%= moto.moneda%> <%=(moto.bruto * moto.iva)/100 + moto.bruto %></span></p>
+                    <p class="d-flex justify-content-end" style="font-size:1.5em"><span>Total:<%= bike.coin%> <%=(bike.gross * bike.iva)/100 + bike.gross %></span></p>
                 </div> 
                 <div class="buttons-cart w-100 d-flex" id="buttons-cart">
                     <div class="div-button-cart pr-1 w-50" id="button-reset">
                         <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/productCart"><span>Vaciar Carrito</span></a>
                     </div>
                     <div class="div-button-cart pl-1 w-50" id="button-buy">
-                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/buy/<%=moto.id%>"><span>Comprar</span></a>
+                        <a class="d-flex align-items-center justify-content-center text-dark font-weight-bolder sombra  button-cart w-100" href="/buy/<%=bike.id%>"><span>Comprar</span></a>
                     </div>
                 </div>
             <% } else {%>
