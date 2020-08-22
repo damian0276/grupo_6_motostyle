@@ -123,14 +123,12 @@
                                             <% } %>
                                         <% }) %>
                                     </div>
-                                    <% bike.image.forEach(image => { %>
-                                        <% if (image.coverImage != 1) { %>                                                           
+                                    <% imagesNoCover.forEach(image => { %>
                                         <figure class=" col-12 col-md-6 col-lg-3 foto ">
                                             <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model%>">
-                                            <input type="hidden" name="oldImagen1"  value="<%= image.name%>">
-                                            <input type="file" name="imagen1" class="botonImg" >
+                                            <input type="hidden" name="oldImagen<%= numOld += 1 %>"  value="<%= image.name%>">
+                                            <input type="file" name="imagen<%= numInput += 1 %>" class="botonImg" >
                                         </figure>
-                                        <% } %>
                                     <% }) %> 
                                     <div class="col-12">                                                
                                         <div class="custom--file">

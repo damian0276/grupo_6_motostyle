@@ -50,10 +50,10 @@ module.exports = {
       description: req.body.description,
       specification: req.body.specification
     })
-    imagesIds.forEach(async imageId =>{
+    imagesIds.forEach(async id =>{
       ImageProduct.create({
         productId: nuevaMoto.id,
-        imageId: imageId
+        imageId: id
       })
     })    
     return res.redirect('/administrar');
@@ -61,8 +61,12 @@ module.exports = {
   edit: (req,res) =>{
     Product.findByPk(req.params.id,{include: ['brand', 'color', 'image']})
       .then(bike=>{
-        //return res.send(bike)
-        res.render(path.resolve(__dirname,'..','views','admin','edit'),{bike})
+        let numInput = 0;
+        let numOld = 0;
+        //return res.send(bike.image)
+        let imagesNoCover = bike.image.filter(image => image.coverImage != 1)
+        //return res.send(imagesNoCover)
+        res.render(path.resolve(__dirname,'..','views','admin','edit'),{bike, imagesNoCover,numInput, numOld})
       })     
      
   },
@@ -97,6 +101,10 @@ module.exports = {
             await ImageProduct.create({
               productId : req.params.id,
               imageId: newImagenPortada.id
+            })            
+            fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ req.body.oldImagenPortada),(err) => {
+              if (err){console.log(err)};
+              console.log('../../public/asset/img/productos/'+ req.body.oldImagenPortada + ' fue borrada');
             })
           }
           break;
@@ -104,10 +112,14 @@ module.exports = {
             let imagen1 = await  Image.findOne({where:{name:req.body.oldImagen1}})
             await ImageProduct.destroy({where: {imageId: imagen1.id}})
             await Image.destroy({where: {id: imagen1.id}})
-            let newImagen1 = await Image.create({name: image.filename})
+            let newImagen1 = await Image.create({name: image.filename, coverImage:0})
             await ImageProduct.create({
               productId : req.params.id,
               imageId: newImagen1.id
+            })
+            fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ req.body.oldImagen1),(err) => {
+              if (err){console.log(err)};
+              console.log('../../public/asset/img/productos/'+ req.body.oldImagen1 + ' fue borrada');
             })
           }
           break;
@@ -115,10 +127,14 @@ module.exports = {
             let imagen2 = await  Image.findOne({where:{name:req.body.oldImagen2}})
             await ImageProduct.destroy({where: {imageId: imagen2.id}})
             await Image.destroy({where: {id: imagen2.id}})
-            let newImagen2 = await Image.create({name: image.filename})
+            let newImagen2 = await Image.create({name: image.filename, coverImage:0})
             await ImageProduct.create({
               productId : req.params.id,
               imageId: newImagen2.id
+            })            
+            fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ req.body.oldImagen2),(err) => {
+              if (err){console.log(err)};
+              console.log('../../public/asset/img/productos/'+ req.body.oldImagen2 + ' fue borrada');
             })
           }
           break;
@@ -126,10 +142,14 @@ module.exports = {
             let imagen3 = await  Image.findOne({where:{name:req.body.oldImagen3}})
             await ImageProduct.destroy({where: {imageId: imagen3.id}})
             await Image.destroy({where: {id: imagen3.id}})
-            let newImagen3 = await Image.create({name: image.filename})
+            let newImagen3 = await Image.create({name: image.filename, coverImage:0})
             await ImageProduct.create({
               productId : req.params.id,
               imageId: newImagen3.id
+            })            
+            fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ req.body.oldImagen3),(err) => {
+              if (err){console.log(err)};
+              console.log('../../public/asset/img/productos/'+ req.body.oldImagen3 + ' fue borrada');
             })
           }
           break;
@@ -137,14 +157,18 @@ module.exports = {
             let imagen4 = await  Image.findOne({where:{name:req.body.oldImagen4}})
             await ImageProduct.destroy({where: {imageId: imagen4.id}})
             await Image.destroy({where: {id: imagen4.id}})
-            let newImagen4 = await Image.create({name: image.filename})
+            let newImagen4 = await Image.create({name: image.filename, coverImage:0})
             await ImageProduct.create({
               productId : req.params.id,
               imageId: newImagen4.id
+            })            
+            fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ req.body.oldImagen4),(err) => {
+              if (err){console.log(err)};
+              console.log('../../public/asset/img/productos/'+ req.body.oldImagen4 + ' fue borrada');
             })
           }
           break;
-        }        
+        }      
       })     
     }
    
@@ -154,10 +178,14 @@ module.exports = {
     let imagesToDestroyIds = await ImageProduct.findAll({where:{productId:req.params.id}})    
     await ImageProduct.destroy({where:{productId:req.params.id}, force:true})
     imagesToDestroyIds.forEach( async fila =>{
-      //console.log('Lekeeee' + fila.imageId);
+      let imageToPhysicalErase = await Image.findOne({where:{id:fila.imageId}})
+      fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/'+ imageToPhysicalErase.name),(err) => {
+        if (err){console.log(err)};
+        console.log('../../public/asset/img/productos/'+ imageToPhysicalErase.name + ' fue borrada');
+      })
       await Image.destroy({where:{id:fila.imageId}, force:true})
     })   
-    await Product.destroy({where:{id:req.params.id}})// Preguntar como borrar cosas con relaciones----------------------------------
+    await Product.destroy({where:{id:req.params.id}})
     return res.redirect('/administrar');
   },
   adminUser:(req,res)=>{
@@ -183,16 +211,20 @@ module.exports = {
       })
       .catch(error => res.send(error));  
   },
-  deleteUser:(req,res) => {
-    User.destroy({
+  deleteUser: async (req,res) => {
+    let deletedUser = await User.findOne({where:{id:req.params.id}})
+    //return res.send(deletedUser)
+    await User.destroy({
         where : {
            id:  req.params.id
         },
         force : true 
     })
-    .then(confirm =>{
-        res.redirect('/adminUser');
-    })  
+    fs.unlink(path.resolve(__dirname, '../../public/asset/img/users/'+ deletedUser.image),(err) => {
+      if (err){console.log(err)};
+      console.log('../../public/asset/img/users/'+ deletedUser.image + ' fue borrada');
+    })
+    return res.redirect('/adminUser');
   },
   userShow: (req, res) =>{
     User.findByPk(req.params.id)
