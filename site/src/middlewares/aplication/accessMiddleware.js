@@ -19,5 +19,5 @@ module.exports = (req,res,next) => {
             })
             .catch(err => res.send(err));
     }
-    setTimeout(()=>next(),10);
+    setTimeout(()=>next(),100);
 }
