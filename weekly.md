@@ -23,11 +23,10 @@
 - Realizamos correcciones de las vistas. Agregamos carrito vacío.
 - Finalización de sprint 3.
 
-
 ## Impedimentos
 
 - Inconveniente con la rama master
-- Problemas con la carga de productos, que se solucionó colocando todo en un solo formulario. 
+- Problemas con la carga de productos, que se solucionó colocando todo en un solo formulario.
 
 ## Qué se va a hacer esta semana?
 
@@ -38,8 +37,7 @@
 
 ## Qué se hizo la semana pasada?
 
-- Comenzamos con el sprint 4 y realizamos las validaciones con express validator en register y login. 
-
+- Comenzamos con el sprint 4 y realizamos las validaciones con express validator en register y login.
 
 ## Impedimentos
 
@@ -55,15 +53,30 @@
 
 ## Qué se hizo la semana pasada?
 
-- Puesta a punto del sprint 4 y entrega. 
+- Puesta a punto del sprint 4 y entrega.
 
 ## Impedimentos
 
-- Inconveniente con las cookies y el update de los usuarios. 
-
+- Inconveniente con las cookies y el update de los usuarios.
 
 ## Qué se va a hacer esta semana?
 
-- Diagramar base de datos.  
+- Diagramar base de datos.
 - Actualizar tablero de trello.
 
+# Semana 5
+
+## Qué se hizo la semana pasada?
+
+- Puesta a punto del sprint 5 y entrega.
+
+## Impedimentos
+
+- Hubo problemas para subir las fotos en la página de editar productos.
+- Problemas al aplicar .destroy a los modelos.
+
+## Qué se va a hacer esta semana?
+
+- Actualizar tablero de trello.
+- Repartirnos las tareas.
+- Validar formularios desde el backend.
