@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   let previewsImages = document.querySelectorAll(".preview-img");
   //console.log(inputsFile);
   //console.log(previewsImages);
-
+  //-----------Para que se muestren las imagenes cuando la ponemos en el input ------------------
   for (let i = 0; i < inputsFile.length; i++) {
     inputsFile[i].addEventListener("change", () => {
       let file = inputsFile[i].files[0];

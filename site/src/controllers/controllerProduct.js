@@ -36,5 +36,8 @@ module.exports = {
                     }
                 )
                 .catch(err => res.send(err)) 
+    },
+    search: (req, res) =>{
+        
     }
 }

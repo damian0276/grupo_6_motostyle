@@ -5,60 +5,98 @@ const User = db.User;
 const Product = db.Product;
 const Image = db.Image;
 const ImageProduct = db.ImageProduct;
+const Brand = db.Brand;
+const Color = db.Color;
 
+const {
+  check,
+  validationResult,
+  body
+} = require('express-validator');
 
 
 module.exports = {
-  add: (req, res) => {
-    res.render(path.resolve(__dirname, '..', 'views', 'admin', 'productAdd'));
+  add: async (req, res) => {
+
+    let brands = await Brand.findAll();
+    let colors = await Color.findAll();
+    res.render(path.resolve(__dirname, '..', 'views', 'admin', 'productAdd'), { brands, colors });
+
   },
+
   administrar: (req, res) => {
+
     Product.findAll({ include: ['brand'] })
       .then(bikes => {
         res.render(path.resolve(__dirname, '..', 'views', 'admin', 'administrar'), { bikes });
       })
       .catch(err => res.send(err))
+
   },
+
   create: async (req, res) => {
 
-    let imagesIds = [];
-    req.files.forEach(async image => {
-      if (image.fieldname == 'imagenPortada') {
-        let file = await Image.create({
-          name: image.filename,
-          coverImage: 1
-        })
-        imagesIds.push(file.id);
-      } else {
-        let file = await Image.create({
-          name: image.filename,
-          coverImage: 0
-        })
-        imagesIds.push(file.id);
-      }
-    });
-    let nuevaMoto = await Product.create({
-      brandId: req.body.brand,
-      model: req.body.model,
-      colorId: req.body.color,
-      cc: req.body.cc,
-      brakes: req.body.brakes,
-      stock: req.body.stock,
-      iva: req.body.iva,
-      gross: req.body.gross,
-      coin: req.body.coin,
-      description: req.body.description,
-      specification: req.body.specification
-    })
-    imagesIds.forEach(async id => {
-      ImageProduct.create({
-        productId: nuevaMoto.id,
-        imageId: id
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+
+      let imagesIds = [];
+      req.files.forEach(async image => {
+        if (image.fieldname == 'imagenPortada') {
+          let file = await Image.create({
+            name: image.filename,
+            coverImage: 1
+          })
+          imagesIds.push(file.id);
+        } else {
+          let file = await Image.create({
+            name: image.filename,
+            coverImage: 0
+          })
+          imagesIds.push(file.id);
+        }
+      });
+      let nuevaMoto = await Product.create({
+        brandId: req.body.brand,
+        model: req.body.model,
+        colorId: req.body.color,
+        cc: req.body.cc,
+        brakes: req.body.brakes,
+        stock: req.body.stock,
+        iva: req.body.iva,
+        gross: req.body.gross,
+        coin: req.body.coin,
+        description: req.body.description,
+        specification: req.body.specification
       })
-    })
-    return res.redirect('/administrar');
+      imagesIds.forEach(async id => {
+        ImageProduct.create({
+          productId: nuevaMoto.id,
+          imageId: id
+        })
+      })
+      return res.redirect('/administrar');
+
+    } else {
+
+      if (req.files) {
+        req.files.forEach(file => {
+          fs.unlink(path.resolve(__dirname, '../../public/asset/img/productos/' + file.filename), (err) => {
+            if (err) { console.log(err) };
+            //console.log('../../public/asset/img/users/'+ req.file.filename + ' fue borrada');
+          });
+        })
+
+      }
+      let brands = await Brand.findAll();
+      let colors = await Color.findAll();
+      return res.render(path.resolve(__dirname, '..', 'views', 'admin', 'productAdd'), {
+        errors: errors.mapped(), old: req.body, brands, colors
+      });
+    }
   },
+
   edit: (req, res) => {
+
     Product.findByPk(req.params.id, { include: ['brand', 'color', 'image'] })
       .then(bike => {
         let numInput = 0;
@@ -70,7 +108,9 @@ module.exports = {
       })
 
   },
+
   update: async (req, res) => {
+
     await Product.update({
       brandId: req.body.brand,
       model: req.body.model,
@@ -173,8 +213,11 @@ module.exports = {
     }
 
     return res.redirect('/administrar');
+
   },
+
   destroy: async (req, res) => {
+
     let imagesToDestroyIds = await ImageProduct.findAll({ where: { productId: req.params.id } })
     await ImageProduct.destroy({ where: { productId: req.params.id }, force: true })
     imagesToDestroyIds.forEach(async fila => {
@@ -187,8 +230,11 @@ module.exports = {
     })
     await Product.destroy({ where: { id: req.params.id } })
     return res.redirect('/administrar');
+
   },
+
   adminUser: (req, res) => {
+
     User.findAll()
       .then(function (users) {
         res.render(path.resolve(__dirname, '..', 'views', 'admin', 'adminUser'), { users });
@@ -196,8 +242,11 @@ module.exports = {
       })
       .catch(error => res.send(error)
       )
+
   },
+
   editUserProfile: (req, res) => {
+
     User.update({
       profile: req.body.profile
     },
@@ -210,8 +259,11 @@ module.exports = {
         res.redirect('/adminUser')
       })
       .catch(error => res.send(error));
+
   },
+
   deleteUser: async (req, res) => {
+
     let deletedUser = await User.findOne({ where: { id: req.params.id } })
     //return res.send(deletedUser)
     await User.destroy({
@@ -225,8 +277,11 @@ module.exports = {
       console.log('../../public/asset/img/users/' + deletedUser.image + ' fue borrada');
     })
     return res.redirect('/adminUser');
+
   },
+
   userShow: (req, res) => {
+
     User.findByPk(req.params.id)
       .then(user => {
         //return console.log(user);

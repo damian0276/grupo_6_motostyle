@@ -13,6 +13,8 @@ module.exports = (req,res,next) => {
             let userLogueado = user;
             delete userLogueado.password;            
             //console.log(userLogueado);
+            req.session.user = undefined;
+            res.locals.user = undefined;
             req.session.user = userLogueado;
             res.locals.user = userLogueado;
             return next();
