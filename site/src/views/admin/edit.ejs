@@ -12,14 +12,17 @@
         <%- include('../partials/loginModal') %>
         <!-- Solapas -->
         <section>            
-            <div class="solapas">
+            <div class="solapas"> 
                 <div class="titulo col-12">
                     <h3>Editor de  Productos</h3>
-                </div>                
+                </div>  
                 <div>
-                    <form method="POST" action="/edit/<%= bike.id%>?_method=PUT" enctype="multipart/form-data">
+                    <ul id="errores"> </ul>
+                </div>
+                <div>
+                    <form method="POST" action="/edit/<%= bike.id%>?_method=PUT" enctype="multipart/form-data" class="formulario">
                         <div>                                                
-                            <!-- Botones -->         
+                            <!-- Botones -->   
                             <div class="contenedor mt-1 ">            
                                 <div class="formulario">
                                     <div class="formu">                                    
@@ -35,11 +38,16 @@
                                                 <option value="5" <%= bike.brand.name == "Kawasaki" ? "selected" : null %>>Kawasaki</option>
                                                 <option value="6" <%= bike.brand.name == "Ducati" ? "selected" : null %>>Ducati</option>
                                                 <option value="7" <%= bike.brand.name == "KTM" ? "selected" : null %>>KTM</option>
-                                            </select>
+                                             </select>
                                         </div>
+                                        <% if(typeof(errors) != 'undefined' && errors.model){%>
+                                            <div class="text-danger text-center">
+                                              <%= errors.model.msg %>
+                                            </div>
+                                        <%}%>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text ">Modelo</span>
+                                                <span class="input-group-text">Modelo</span>
                                             </div>
                                             <textarea name="model" class="form-control" aria-label="With textarea"><%=bike.model%></textarea>
                                         </div>
@@ -54,6 +62,11 @@
                                                 <option <%= bike.color.name == "Gris" ? "selected" : null %> value="4">Gris</option>
                                             </select>
                                         </div>
+                                        <% if(typeof(errors) != 'undefined' && errors.cc){%>
+                                            <div class="text-danger text-center">
+                                              <%= errors.cc.msg %>
+                                            </div>
+                                        <%}%>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cilindrada</span>
@@ -70,6 +83,11 @@
                                                 <option <%= bike.brakes == "Doble disco" ? "selected" : null %> value="Doble disco">Doble disco</option>                                                
                                             </select>
                                         </div>
+                                        <% if(typeof(errors) != 'undefined' && errors.brakes){%>
+                                            <div class="text-danger text-center">
+                                              <%= errors.brakes.msg %>
+                                            </div>
+                                        <%}%>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Cantidad</span>
@@ -97,6 +115,11 @@
                                                 </div>
                                             </div>
                                             <div>
+                                                <% if(typeof(errors) != 'undefined' && errors.gross){%>
+                                                    <div class="text-danger text-center">
+                                                      <%= errors.gross.msg %>
+                                                    </div>
+                                                <%}%>
                                                 <h6>Bruto</h6>
                                                 <div class="form-group">
                                                     <input value="<%= bike.gross%>" type="number" class="form-control" name="gross" required>
@@ -107,11 +130,10 @@
                                     </div>
                                 </div>                           
                             </div>
-                        </div>
                         <div clas="container-fluid">
                                 <div class="paso2 row">
-                                    <!-- imagen portada -->                                
-                                    <div class="fotop">
+                                    <!-- imagen portada -->
+                        <div class="fotop">
                                         <% bike.image.forEach(image => { %>
                                             <% if (image.coverImage == 1) { %>
                                             <figure class=" col-12 col-md-6 col-lg-7  ">
@@ -156,7 +178,8 @@
                             
     <!--Script de boostrap-->
     <%- include('../partials/scripts') %>
-    <script src="/js/imagesPreview.js"></script>                                
+    <script src="/js/imagesPreview.js"></script>
+    <script src="/js/productEditAuth.js"></script>                               
 </body>
                         
 </html>

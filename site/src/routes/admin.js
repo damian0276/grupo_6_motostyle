@@ -4,8 +4,10 @@ const path = require('path');
 const multer = require('multer');
 const adminOnly = require('../middlewares/route/adminOnly');
 const sudoOnly = require('../middlewares/route/sudoOnly');
+const productAuth = require('../middlewares/route/productAuth');
 const db = require('../database/models');
 const User = db.User;
+const Product = db.Product;
 
 //Aquí dispongo lo referido al nombre del arhivo y a donde se va a guardar
 const storage = multer.diskStorage({
@@ -24,7 +26,7 @@ const controllerAdmin = require(path.resolve(__dirname, '..', 'controllers', 'co
 router.get('/administrar',adminOnly, controllerAdmin.administrar);
 router.get('/productAdd',adminOnly, controllerAdmin.add);
 router.get('/edit/:id',adminOnly, controllerAdmin.edit);
-router.put('/edit/:id',upload.any(),adminOnly, controllerAdmin.update);
+router.put('/edit/:id',upload.any(),adminOnly, productAuth,controllerAdmin.update); 
 router.post('/administrar/create',upload.any(), adminOnly,controllerAdmin.create);
 router.delete('/delete/:id',adminOnly, controllerAdmin.destroy);
 

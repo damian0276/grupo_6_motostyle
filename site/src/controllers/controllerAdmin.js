@@ -5,6 +5,12 @@ const User = db.User;
 const Product = db.Product;
 const Image = db.Image;
 const ImageProduct = db.ImageProduct;
+const {
+  check,
+  validationResult,
+  body
+} = require('express-validator');
+
 
 
 
@@ -59,6 +65,7 @@ module.exports = {
     return res.redirect('/administrar');
   },
   edit: (req,res) =>{
+    
     Product.findByPk(req.params.id,{include: ['brand', 'color', 'image']})
       .then(bike=>{
         let numInput = 0;
@@ -71,7 +78,19 @@ module.exports = {
      
   },
   update:async (req, res) => {
-    await Product.update({
+    let errors = validationResult(req);
+        if(!errors.isEmpty()){ 
+          Product.findByPk(req.params.id,{include: ['brand', 'color', 'image']})
+          .then(bike=>{
+            let numInput = 0;
+            let numOld = 0;
+            //return res.send(bike.image)
+            let imagesNoCover = bike.image.filter(image => image.coverImage != 1)
+            //return res.send(imagesNoCover)
+            res.render(path.resolve(__dirname,'..','views','admin','edit'),{bike, imagesNoCover,numInput, numOld, errors: errors.mapped()})
+          })
+        } else {
+    await Product.update({  
      brandId: req.body.brand,
      model: req.body.model,
      color: req.body.color,
@@ -173,7 +192,7 @@ module.exports = {
     }
    
   return  res.redirect('/administrar');
-  },
+  }},
   destroy: async (req, res) =>{
     let imagesToDestroyIds = await ImageProduct.findAll({where:{productId:req.params.id}})    
     await ImageProduct.destroy({where:{productId:req.params.id}, force:true})
