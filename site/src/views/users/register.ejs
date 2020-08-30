@@ -27,14 +27,14 @@
                    <!-- aca atrapo los errores del lado del front -->
                    <div>
                     <ul id="errores"></ul>
-                </div>                
-                <% if (typeof(errores)!='undefined'){ %> 
-                    <ul class="alert alert-danger ">
-                        <% errores.forEach(error =>{ %>
-                            <li><%= error.msg %> </li>
-                        <%})%> 
-                    </ul>            
-                <% } %>          
+                </div>
+             <% if (typeof(errores)!='undefined'){ %> 
+                 <ul class="alert alert-secondary ">
+                     <% errores.forEach(error =>{ %>
+                         <li><%= error.msg %> </li>
+                     <%})%> 
+                 </ul>            
+             <% } %>          
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
                     <form class="rounded" action="/register" method="POST" enctype="multipart/form-data">
                         <div class="text-center">
@@ -68,7 +68,7 @@
                              <%}%>
                         </div>
                         <div class="text-center">
-                            <input class="rounded-pill text-center border-0 mb-2" type="text" name="lastName" id="lastName-input"value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
+                            <input class="rounded-pill text-center border-0 mb-2 " type="text" name="lastName" id="lastName-input"value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
                         </div>
                         <div class="text-center">
                             <label for="email">Email</label>
