@@ -160,7 +160,7 @@ header .header-div ul .text{
 #login-modal .modal-dialog .modal-content .modal-body .div-form form a{
     color: black;
 }
-#login-modal .modal-dialog .modal-content .modal-body #errores{
+#login-modal .modal-dialog .modal-content .modal-body #errors{
     font-size: 10px;
     width: 73%;
 }
