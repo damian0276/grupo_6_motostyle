@@ -29,7 +29,7 @@
                     <ul id="errores"></ul>
                 </div>
              <% if (typeof(errores)!='undefined'){ %> 
-                 <ul class="alert alert-secondary ">
+                 <ul class="alert alert-danger ">
                      <% errores.forEach(error =>{ %>
                          <li><%= error.msg %> </li>
                      <%})%> 
