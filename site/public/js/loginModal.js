@@ -1,5 +1,5 @@
 window.addEventListener('load',function(){
-    let formulario = document.querySelector('.boxlogin');
+    let formulario = document.querySelector('.loginModal');
     //console.log(formulario);
     formulario.addEventListener('submit',function(evento){
         
@@ -57,7 +57,6 @@ window.addEventListener('load',function(){
              return true;
          } 
        }
-        
+     
     })
-
 })
