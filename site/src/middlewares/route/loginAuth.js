@@ -26,4 +26,6 @@ module.exports = [
   check('password').isLength({
       min: 1
     }).withMessage('El campo nombre no puede estar vacío')
+
+    // body('field_name').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i").withMessage('Password should be combination of one uppercase , one lower case, one special char, one digit and min 8 , max 20 char long'),
 ]
