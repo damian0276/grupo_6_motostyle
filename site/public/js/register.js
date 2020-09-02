@@ -17,11 +17,15 @@ window.addEventListener('load',function(){
         console.log(formulario.elements.email);
 
         //Aquí validamos que el usuario coloque bien el avatar
-        if(avatar.value == ''){
-            errores.push('Debe seleccionar su avatar en formato JPG - PNG ó JPEG');
+        if(avatar.value == '' || !(/\.(jpg|png|gif)$/i).test(avatar.value)){
+            errores.push('Debe seleccionar su avatar en formato JPG - PNG ó JPEG ');
             avatar.classList.add('input-invalid');   
             
-        }else{
+        // }if (avatar.value != '' && !(/\.(jpg|png|gif)$/i).test(avatar.value)){
+        //     errores.push('Debe seleccionar su avatar en formato JPG - PNG ó JPEG');
+        //     avatar.classList.add('input-invalid'); 
+        }
+        else{
             avatar.classList.add('input-valid');
             avatar.classList.remove('input-invalid');
         }
@@ -32,13 +36,17 @@ window.addEventListener('load',function(){
           if(firstName.value == ''){
             errores.push('El campo nombre no puede estar vacio...');
             firstName.classList.add('input-invalid');              
+        }
+        if(firstName.value.length<2){
+            errores.push('El campo nombre no puede tener menos de dos caracteres...');
+            firstName.classList.add('input-invalid'); 
         }else{
             firstName.classList.add('input-valid');
             firstName.classList.remove('input-invalid');
         }
         // Acá validamos que el campo apellido no este vacio
         if(lastName.value == ''){
-            errores.push('El campo nombre no puede estar vacio...');
+            errores.push('El campo apellido no puede estar vacio...');
             lastName.classList.add('input-invalid');              
         }else{
             lastName.classList.add('input-valid');
@@ -79,7 +87,7 @@ window.addEventListener('load',function(){
         if(password.value != confirmPassword.value && confirmPassword != ""){
             errores.push('Las contraseñas deben ser iguales');
             confirmPassword.classList.add('input-invalid');   
-        //errores['last_name'] = 'El campo nombre no puede estar vacio...';
+        
         }else{
             confirmPassword.classList.add('input-valid');
             confirmPassword.classList.remove('input-invalid');
