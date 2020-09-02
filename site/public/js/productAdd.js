@@ -42,78 +42,66 @@ window.addEventListener('load', () => {
         if(brand.value == 'Seleccionar'){
             errors.push(1);
             //console.log(model.parentElement);
-            brand.parentElement.classList.add('border-danger');
-            brand.parentElement.classList.add('rounded');
-            brand.parentElement.classList.add('border');
+            brand.classList.add('is-invalid');
         } else {
-            brand.parentElement.classList.remove('border-danger');
-            brand.parentElement.classList.add('border-success'); 
+            brand.classList.remove('is-invalid');
+            brand.classList.add('is-valid'); 
         }
 
         //Validación del campo Model
         if(!reAlpha.test(model.value)){
             errors.push(1);
             //console.log(model.parentElement);
-            model.parentElement.classList.add('border-danger');
-            model.parentElement.classList.add('rounded');
-            model.parentElement.classList.add('border');
+            model.classList.add('is-invalid');
             model.value = ''
             model.placeholder = 'No puede estar vacío y debes ingresar caracteres alfanuméricos';
         } else {
-            model.parentElement.classList.remove('border-danger');
-            model.parentElement.classList.add('border-success'); 
+            model.classList.remove('is-invalid');
+            model.classList.add('is-valid'); 
         }
 
         //Validación del campo Color
         if(color.value == 'Seleccionar'){
             errors.push(1);
             //console.log(model.parentElement);
-            color.parentElement.classList.add('border-danger');
-            color.parentElement.classList.add('rounded');
-            color.parentElement.classList.add('border');
+            color.classList.add('is-invalid');
         } else {
-            color.parentElement.classList.remove('border-danger');
-            color.parentElement.classList.add('border-success'); 
+            color.classList.remove('is-invalid');
+            color.classList.add('is-valid'); 
         }
 
         //Validación del campo Cc
         if(!reNumberCc.test(cc.value)){
             errors.push(1);
             //console.log(cc.parentElement);
-            cc.parentElement.classList.add('border-danger');
-            cc.parentElement.classList.add('rounded');
-            cc.parentElement.classList.add('border');
+            cc.classList.add('is-invalid');
             cc.value = ''
             cc.placeholder = 'Debes ingresar sólo números de 3 a 4 cifras.';
         } else {
-            cc.parentElement.classList.remove('border-danger');
-            cc.parentElement.classList.add('border-success'); 
+            cc.classList.remove('is-invalid');
+            cc.classList.add('is-valid'); 
         }
 
         //Validación del campo Brakes
         if(brakes.value == 'Seleccionar'){
             errors.push(1);
             //console.log(model.parentElement);
-            brakes.parentElement.classList.add('border-danger');
-            brakes.parentElement.classList.add('rounded');
-            brakes.parentElement.classList.add('border');
+            brakes.classList.add('is-invalid');
         } else {
-            brakes.parentElement.classList.remove('border-danger');
-            brakes.parentElement.classList.add('border-success'); 
+            brakes.classList.remove('is-invalid');
+            brakes.classList.add('is-valid'); 
         }
 
         //Validación del campo Stock
         if(!reNumber.test(stock.value)){
             errors.push(1);
             //console.log(stock.parentElement);
-            stock.parentElement.classList.add('border-danger');
-            stock.parentElement.classList.add('rounded');
-            stock.parentElement.classList.add('border');
+            stock.classList.add('is-invalid');
             stock.value = ''
             stock.placeholder = 'Este campo no puede estar vacío y debes ingresar sólo números.';
         } else {
-            stock.parentElement.classList.remove('border-danger');
-            stock.parentElement.classList.add('border-success'); 
+            stock.classList.remove('is-invalid');
+            stock.classList.add('is-valid'); 
         }
 
         //Validación del campo Coin
@@ -121,12 +109,10 @@ window.addEventListener('load', () => {
             errors.push(1);
             errorsPrice.push('Debes seleccionar un tipo de moneda.')
             //console.log(model.parentElement);
-            coin.parentElement.classList.add('border-danger');
-            coin.parentElement.classList.add('rounded');
-            coin.parentElement.classList.add('border');
+            coin.classList.add('is-invalid');
         } else {
-            coin.parentElement.classList.remove('border-danger');
-            coin.parentElement.classList.add('border-success'); 
+            coin.classList.remove('is-invalid');
+            coin.classList.add('is-valid');
         }
 
         //Validación del campo Iva
@@ -134,13 +120,11 @@ window.addEventListener('load', () => {
             errors.push(1);
             errorsPrice.push('El iva debe ser 21.')
             //console.log(stock.parentElement);
-            iva.parentElement.classList.add('border-danger');
-            iva.parentElement.classList.add('rounded');
-            iva.parentElement.classList.add('border');
+            iva.classList.add('is-invalid');
             iva.value = '';
         } else {
-            iva.parentElement.classList.remove('border-danger');
-            iva.parentElement.classList.add('border-success');
+            iva.classList.remove('is-invalid');
+            iva.classList.add('is-valid');
         }
 
         //Validación del campo Gross
@@ -149,13 +133,11 @@ window.addEventListener('load', () => {
             errors.push(1);
             errorsPrice.push('El bruto no puede estar vacío y debes ingresar sólo números.')
             //console.log(gross.parentElement);
-            gross.parentElement.classList.add('border-danger');
-            gross.parentElement.classList.add('rounded');
-            gross.parentElement.classList.add('border');
+            gross.classList.add('is-invalid');
             gross.value = ''
         } else {
-            gross.parentElement.classList.remove('border-danger');
-            gross.parentElement.classList.add('border-success'); 
+            gross.classList.remove('is-invalid');
+            gross.classList.add('is-valid'); 
         }
 
         //Aquí es cuando yo controlo si hay o no errores en el apartado de precio para enviar o no al usuario
@@ -171,12 +153,12 @@ window.addEventListener('load', () => {
         //Validando la extensión de las imagenes.
         
         if(!reImage.test(imagenPortada.value)){
-            errors.push(1);
-            errorImagePortada.innerHTML = 'La archivo debe ser .jpg, .jpeg o .png'
+            errors.push(1);            
+            errorImagePortada.innerHTML = 'El archivo debe ser .jpg, .jpeg o .png'
             imagenPortada.parentElement.classList.add('border-danger');
             imagenPortada.parentElement.classList.add('rounded');
             imagenPortada.parentElement.classList.add('border');
-        } else {
+        } else {            
             errorImagePortada.innerHTML = '';
             imagenPortada.parentElement.classList.remove('border-danger');
             imagenPortada.parentElement.classList.add('border-success');
@@ -186,7 +168,7 @@ window.addEventListener('load', () => {
         for ( let i = 0 ; i < imagesNoCoverArray.length ; i++ ){
             if(!reImage.test(imagesNoCoverArray[i].value)){
                 errors.push(1);
-                errorImageDivs[i].innerHTML = 'La archivo debe ser .jpg, .jpeg o .png'
+                errorImageDivs[i].innerHTML = 'El archivo debe ser .jpg, .jpeg o .png'
                 imagesNoCoverArray[i].parentElement.classList.add('border-danger');
                 imagesNoCoverArray[i].parentElement.classList.add('rounded');
                 imagesNoCoverArray[i].parentElement.classList.add('border');

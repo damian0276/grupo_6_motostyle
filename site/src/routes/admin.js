@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     cb(null, path.resolve(__dirname, '..', '..', 'public', 'asset', 'img', 'productos'));
   },
   filename: function (req, file, cb) {
-    cb(null, 'moto-' + Date.now() + path.extname(file.originalname));
+    cb(null, 'moto-' + (Math.random().toString(36)+'00000000000000000').slice(2, 10) + Date.now() + path.extname(file.originalname));
   }
 })
 

@@ -10,8 +10,7 @@ module.exports = [
     check('brand').exists().withMessage('Debes elegir una marca.'),
     check('model')
         .isLength({ min: 1 }).withMessage('Este campo no puede estar vacío')
-        .isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres.')
-        .isAlphanumeric().withMessage('Debe contener caracteres alfanumericos.'),
+        .isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres.'),
     check('color').exists().withMessage('Debes elegir un color.'),
     check('cc')
         .isLength({ min: 1 }).withMessage('Este campo no puede estar vacío.')
@@ -29,11 +28,14 @@ module.exports = [
         .isLength({ min: 1 }).withMessage('El campo BRUTO no puede estar vacío')
         .isNumeric().withMessage('Debes ingresar solo números.'),
     check('imagenPortada')
-        .exists().withMessage('Debes seleccionar una imagen.')
+        //.exists().withMessage('Debes seleccionar una imagen.')
         .custom((value, { req }) => {
-            //console.log(req.file.filename);
-            let ext = path.extname(req.file.filename).toLowerCase()
-            switch (ext) {
+            //console.log(req.files[0].fieldname+'------------------------------------------');
+            let image = req.files.find(file => file.fieldname == 'imagenPortada')
+            //console.log(image);
+            if(image){
+            let ext = path.extname(image.filename).toLowerCase();
+            switch (ext) {                
                 case '.jpg':
                     return true;
                 case '.jpeg':
@@ -42,14 +44,19 @@ module.exports = [
                     return true;
                 default:
                     return false;
-            }
+            }} else {
+                return false
+            }   
         }).withMessage('El archivo debe ser formato JPG, JPEG o PNG.'),
     check('imagen1')
-        .exists().withMessage('Debes seleccionar una imagen.')
+        //.exists().withMessage('Debes seleccionar una imagen.')
         .custom((value, { req }) => {
-            //console.log(req.file.filename);
-            let ext = path.extname(req.file.filename).toLowerCase()
-            switch (ext) {
+            //console.log(req.files[0].fieldname+'------------------------------------------');
+            let image = req.files.find(file => file.fieldname == 'imagen1')
+            //console.log(image);
+            if(image){
+            let ext = path.extname(image.filename).toLowerCase();
+            switch (ext) {                
                 case '.jpg':
                     return true;
                 case '.jpeg':
@@ -58,14 +65,18 @@ module.exports = [
                     return true;
                 default:
                     return false;
-            }
+            }} else {
+                return false
+            }   
         }).withMessage('El archivo debe ser formato JPG, JPEG o PNG.'),
     check('imagen2')
-        .exists().withMessage('Debes seleccionar una imagen.')
+        //.exists().withMessage('Debes seleccionar una imagen.')
         .custom((value, { req }) => {
-            //console.log(req.file.filename);
-            let ext = path.extname(req.file.filename).toLowerCase()
-            switch (ext) {
+            //console.log(req.files[0].fieldname+'------------------------------------------');
+            let image = req.files.find(file => file.fieldname == 'imagen2');
+            if(image){
+            let ext = path.extname(image.filename).toLowerCase();
+            switch (ext) {                
                 case '.jpg':
                     return true;
                 case '.jpeg':
@@ -74,14 +85,19 @@ module.exports = [
                     return true;
                 default:
                     return false;
-            }
+            }} else {
+                return false
+            }   
         }).withMessage('El archivo debe ser formato JPG, JPEG o PNG.'),
     check('imagen3')
-        .exists().withMessage('Debes seleccionar una imagen.')
+        //.exists().withMessage('Debes seleccionar una imagen.')
         .custom((value, { req }) => {
-            //console.log(req.file.filename);
-            let ext = path.extname(req.file.filename).toLowerCase()
-            switch (ext) {
+            //console.log(req.files[0].fieldname+'------------------------------------------');
+            let image = req.files.find(file => file.fieldname == 'imagen3')
+            //console.log(image);
+            if(image){
+            let ext = path.extname(image.filename).toLowerCase();
+            switch (ext) {                
                 case '.jpg':
                     return true;
                 case '.jpeg':
@@ -90,14 +106,19 @@ module.exports = [
                     return true;
                 default:
                     return false;
-            }
+            }} else {
+                return false
+            }   
         }).withMessage('El archivo debe ser formato JPG, JPEG o PNG.'),
     check('imagen4')
-        .exists().withMessage('Debes seleccionar una imagen.')
+        //.exists().withMessage('Debes seleccionar una imagen.')
         .custom((value, { req }) => {
-            //console.log(req.file.filename);
-            let ext = path.extname(req.file.filename).toLowerCase()
-            switch (ext) {
+            //console.log(req.files[0].fieldname+'------------------------------------------');
+            let image = req.files.find(file => file.fieldname == 'imagen4')
+            //console.log(image);
+            if(image){
+            let ext = path.extname(image.filename).toLowerCase();
+            switch (ext) {                
                 case '.jpg':
                     return true;
                 case '.jpeg':
@@ -106,7 +127,9 @@ module.exports = [
                     return true;
                 default:
                     return false;
-            }
+            }} else {
+                return false
+            }   
         }).withMessage('El archivo debe ser formato JPG, JPEG o PNG.'),
     check('description')
         .isLength({ min: 20 }).withMessage('Este campo debe tener al menos 20 caracteres.')

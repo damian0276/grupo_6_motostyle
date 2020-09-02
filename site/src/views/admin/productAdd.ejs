@@ -220,7 +220,7 @@
                                                 <%}%>
                                                 <p><label for="description">Descripción</label></p>
                                                 <div id="description-errors" class="text-danger"></div>
-                                                <textarea name="description" id="descripcion" cols="35" rows="8"></textarea>
+                                                <textarea name="description" id="descripcion" cols="35" rows="8"><%= typeof old != 'undefined' ? old.description: '' %></textarea>
                                                 <% if(typeof(errors) != 'undefined' && errors.specification){%>
                                                 <div class="text-danger text-center">
                                                     <%= errors.specification.msg %>
@@ -228,7 +228,7 @@
                                                 <%}%>
                                                 <p><label for="specification">Especificaciones</label></p>
                                                 <div id="specification-errors" class="text-danger"></div>
-                                                <textarea name="specification" id="especificaciones" cols="35" rows="8"></textarea>
+                                                <textarea name="specification" id="especificaciones" cols="35" rows="8"><%= typeof old != 'undefined' ? old.specification : '' %></textarea>
                                             </div>
                                             <div class="form-group guardar">
                                                 <a href="/administrar" class="btm btn-primary">Volver</a>
