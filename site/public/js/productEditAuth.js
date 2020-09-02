@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
         function validaciones(evento){
 
         let {model, cc, stock, iva, gross, imagenPortada, imagen1, imagen2, imagen3, imagen4, description, specification} = formulario.elements;
-        let imagenNoCover = [imagen1, imagen2, imagen3, imagen4];
+        let descriptionError = document.getElementById("description-Errors")
         //Regex que evalua si el campo es alfanumerito y no está vacío.
         let reAlpha = /^([A-Za-z0-9\s]+){1,}$/g;
         
@@ -93,22 +93,62 @@ window.addEventListener("load",function(){
             imagenPortada.classList.remove('is-invalid');
         }
 
+        if(!reImage.test(imagen1.value)){
+            errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
+            imagen1.classList.add('is-invalid');   
+            
+        }else{
+            imagen1.classList.add('is-valid');
+            imagen1.classList.remove('is-invalid');
+        }
+
+        if(!reImage.test(imagen2.value)){
+            errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
+            imagen2.classList.add('is-invalid');   
+            
+        }else{
+            imagen2.classList.add('is-valid');
+            imagen2.classList.remove('is-invalid');
+        }
+
+        if(!reImage.test(imagen3.value)){
+            errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
+            imagen3.classList.add('is-invalid');   
+            
+        }else{
+            imagen3.classList.add('is-valid');
+            imagen3.classList.remove('is-invalid');
+        }
+
+        if(!reImage.test(imagen4.value)){
+            errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
+            imagen4.classList.add('is-invalid');   
+            
+        }else{
+            imagen4.classList.add('is-valid');
+            imagen4.classList.remove('is-invalid');
+        }
+
         //Validacion de la descripción
 
         if(!reAlpha.test(description.value)){
+            descriptionError.innerHTML="Debes completar la descripción del producto";
             errores.push('Debes completar la descripción del producto');
             description.classList.add('is-invalid');   
             
         }else{
+            descriptionError.innerHTML="";
             description.classList.add('is-valid');
             description.classList.remove('is-invalid');
         }
 
         if(specification.value == ''){
+            specificationError.innerHTML="Por favor completa las especificaciones";
             errores.push('Por favor completa las especificaciones');
-           specification.classList.add('is-invalid');   
+            specification.classList.add('is-invalid');   
             
         }else{
+            specificationError.innerHTML="";
             specification.classList.add('is-valid');
             specification.classList.remove('is-invalid');
         }
