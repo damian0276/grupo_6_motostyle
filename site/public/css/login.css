@@ -1,4 +1,11 @@
-
+.input-valid{
+    background-color: lightgreen;
+    
+}
+ .input-invalid{
+    background-color: lightcoral;
+    
+} 
 .absolute{
     width: 100%;
     height: 100%;
@@ -14,6 +21,12 @@
 video{
     width: 100%;
     height: auto;
+}
+.alert-danger{
+    width: 65%;
+    margin-left: 15%;
+    margin-right: 25%;
+    margin-bottom: 3px;
 }
 
 @media(min-width: 992px){

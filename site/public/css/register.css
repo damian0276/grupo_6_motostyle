@@ -47,6 +47,14 @@
     width: 150px;
     margin-bottom: 5px;
 }
+.input-valid{
+    background-color: #b3fcbc;
+}
+
+ .input-invalid{
+    background-color:#f88484;
+
+} 
 
 /*Beneficios*/
 .register-section .beneficios-div p{

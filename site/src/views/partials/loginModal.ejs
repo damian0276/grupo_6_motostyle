@@ -5,16 +5,26 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <div>
+                    <ul id="errors"></ul>
+                </div>
+             <!-- <% if (typeof(errors)!='undefined'){ %> 
+                 <ul class="alert alert-danger ">
+                     <% errors.forEach(error =>{ %>
+                         <li><%= error.msg %> </li>
+                     <%})%> 
+                 </ul>            
+             <% } %>  -->
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
-                    <form action="/login" method="POST">
+                    <form action="/login" method="POST" class="loginModal">
                         <div class="text-center"><label for="email">Email</label>
                             <% if(typeof(errors) != 'undefined' && errors.email){%>
                                 <div class="text-danger text-center">
                                   <%= errors.email.msg %>
                                 </div>
                             <%}%>
-                        </div>
-                        <div class="text-center"><input class="rounded-pill border-0 mb-2 text-center type="email" name="email" id="user-input"></div>
+                        </div>                        
+                        <div class="text-center"><input class="rounded-pill border-0 mb-2 text-center" type="email" name="email" id="user-input" ></div>
                         <div class="text-center"><label for="password">Contraseña</label>
                             <% if(typeof(errors) != 'undefined' && errors.password){%>
                                 <div class="text-danger text-center">
@@ -33,3 +43,4 @@
         </div>
     </div>
 </div>
+<script src="/js/loginModal.js"></script>
