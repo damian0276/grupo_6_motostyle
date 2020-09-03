@@ -12,7 +12,9 @@ window.addEventListener("load",function(){
         function validaciones(evento){
 
         let {model, cc, stock, iva, gross, imagenPortada, imagen1, imagen2, imagen3, imagen4, description, specification} = formulario.elements;
-        let descriptionError = document.getElementById("description-Errors")
+        let descriptionError = document.getElementById("description-Errors");
+        let errorImagePortada = document.getElementById('error-imagePortada');
+        let errorImageDivs = document.querySelectorAll('.error-image-div')
         //Regex que evalua si el campo es alfanumerito y no está vacío.
         let reAlpha = /^([A-Za-z0-9\s]+){1,}$/g;
         
@@ -85,46 +87,56 @@ window.addEventListener("load",function(){
         //Validacion de las imagenes
 
         if(!reImage.test(imagenPortada.value)){
+            errorImagePortada.innerHTML= "El archivo tiene que ser formato .jpg .jpeg .png "
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
             imagenPortada.classList.add('is-invalid');   
             
         }else{
+            errorImagePortada.innerHTML= " ";
             imagenPortada.classList.add('is-valid');
             imagenPortada.classList.remove('is-invalid');
         }
 
         if(!reImage.test(imagen1.value)){
+            errorImageDivs.innerHTML="El archivo tiene que ser formato .jpg .jpeg .png"
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
             imagen1.classList.add('is-invalid');   
             
         }else{
+            errorImageDivs.innerHTML="";
             imagen1.classList.add('is-valid');
             imagen1.classList.remove('is-invalid');
         }
 
         if(!reImage.test(imagen2.value)){
+            errorImageDivs.innerHTML="El archivo tiene que ser formato .jpg .jpeg .png"
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
             imagen2.classList.add('is-invalid');   
             
         }else{
+            errorImageDivs.innerHTML="";
             imagen2.classList.add('is-valid');
             imagen2.classList.remove('is-invalid');
         }
 
         if(!reImage.test(imagen3.value)){
+            errorImageDivs.innerHTML="El archivo tiene que ser formato .jpg .jpeg .png"
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
             imagen3.classList.add('is-invalid');   
             
         }else{
+            errorImageDivs.innerHTML="";
             imagen3.classList.add('is-valid');
             imagen3.classList.remove('is-invalid');
         }
 
         if(!reImage.test(imagen4.value)){
+            errorImageDivs.innerHTML="El archivo tiene que ser formato .jpg .jpeg .png"
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
             imagen4.classList.add('is-invalid');   
             
         }else{
+            errorImageDivs.innerHTML="";
             imagen4.classList.add('is-valid');
             imagen4.classList.remove('is-invalid');
         }

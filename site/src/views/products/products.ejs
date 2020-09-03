@@ -34,7 +34,7 @@
                                 <a class="title-filtro rounded-top text-dark sombra" id="title-filtro-marca" data-toggle="collapse" href="#marcas-collapse" role="button" aria-expanded="false" aria-controls="marcas-collapse">
                                     Marca <i class="fas fa-caret-down"></i>
                                 </a>                            
-                                <div class="collapse input-div sombra" id="marcas-collapse">
+                                <form class="collapse input-div sombra" id="marcas-collapse">
                                     <div class="checkboxes-filtros pt-2">
                                         <div class="grupo-input">
                                             <input type="checkbox" name="yamaha" id="yamaha">
@@ -49,8 +49,8 @@
                                             <label for="bmw">BMW</label>
                                         </div>
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="mercedez-benz" id="mercedez-benz">
-                                            <label for="mercedez-benz">Mercedez-benz</label>
+                                            <input type="checkbox" name="mercedezBenz" id="mercedezBenz">
+                                            <label for="mercedezBenz">Mercedez-benz</label>
                                         </div>
                                         <div class="grupo-input">
                                             <input type="checkbox" name="kawasaki" id="kawasaki">
@@ -65,42 +65,46 @@
                                             <label for="ktm">KTM</label>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="contenedor-flexible">
                                 <a class=" title-filtro text-dark sombra" data-toggle="collapse" href="#cilindrada-collapse" role="button" aria-expanded="false" aria-controls="cilindrada-collapse">
                                     Cilindrada <i class="fas fa-caret-down"></i>
                                 </a>
-                                <div class="collapse input-div sombra" id="cilindrada-collapse">                                
+                                <form class="collapse input-div sombra" id="cilindrada-collapse">                                
                                     <div class="checkboxes-filtros pt-2">
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="600-900" id="600-900">
-                                            <label for="600-900">600-900</label>
+                                            <input type="checkbox" name="sixToNine" id="sixToNine">
+                                            <label for="sixToNine">600-900</label>
                                         </div>
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="900-1200" id="900-1200">
-                                            <label for="900-1200">900-1200</label>
+                                            <input type="checkbox" name="nineToTwelve" id="nineToTwelve">
+                                            <label for="nineToTwelve">900-1200</label>
                                         </div>
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="1200-1500" id="1200-1500">
-                                            <label for="1200-1500">1200-1500</label>
+                                            <input type="checkbox" name="twelveToFifteen" id="twelveToFifteen">
+                                            <label for="twelveToFifteen">1200-1500</label>
                                         </div>
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="1500-1800" id="1500-1800">
-                                            <label for="1500-1800">1500-1800</label>
+                                            <input type="checkbox" name="fifteenToEigthteen" id="fifteenToEigthteen">
+                                            <label for="fifteenToEigthteen">1500-1800</label>
                                         </div>
                                         <div class="grupo-input">
-                                            <input type="checkbox" name="1800-2100" id="1800-2100">
-                                            <label for="1800-2100">1800-2100</label>
-                                        </div>                                    
+                                            <input type="checkbox" name="eigthteenToTwentyone" id="eigthteenToTwentyone">
+                                            <label for="eigthteenToTwentyone">1800-2100</label>
+                                        </div>    
+                                        <div class="grupo-input">
+                                            <input type="checkbox" name="twentyoneToUp" id="twentyoneToUp">
+                                            <label for="twentyoneToUp">2100-más</label>
+                                        </div>                                 
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="contenedor-flexible">
                                 <a class=" title-filtro text-dark sombra" data-toggle="collapse" href="#frenos-collapse" role="button" aria-expanded="false" aria-controls="frenos-collapse">
                                     Frenos <i class="fas fa-caret-down"></i>
                                 </a>
-                                <div class="collapse input-div sombra" id="frenos-collapse">
+                                <form class="collapse input-div sombra" id="frenos-collapse">
                                     <div class="checkboxes-filtros pt-2 ">
                                         <div class="grupo-input">
                                             <input type="checkbox" name="discoDelantero" id="discoDelantero">
@@ -115,17 +119,17 @@
                                             <label for="dobleDisco">Doble disco</label>
                                         </div>                                   
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="contenedor-flexible">
                                 <a class="rounded-bottom title-filtro text-dark sombra" id="title-filtro-precio" data-toggle="collapse" href="#precio-collapse" role="button" aria-expanded="false" aria-controls="precio-collapse">
                                     Precio <i class="fas fa-caret-down"></i>
                                 </a>
-                                <div class="collapse input-div sombra border-bottom border-dark  rounded-bottom" id="precio-collapse">
+                                <form class="collapse input-div sombra border-bottom border-dark  rounded-bottom" id="precio-collapse">
                                     <div class="precio-input pt-2 mb-2">
                                         <span class="d-lg-block">Min u$s<input type="text" name="min" id="min"></span><span class="d-lg-none">&nbsp;-&nbsp;</span><span class="d-lg-block">Max u$s<input type="text" name="max" id="max"></span>
                                     </div>                                       
-                                 </div>                                
+                                </form>                                
                             </div>
                         </div>
                     </div>
@@ -134,16 +138,19 @@
                 <section class="container-fluid">
                     <div class="row products" id="productos">
                         <% bikes.forEach(bike =>{%>
-                        <div class="product-box col-12 col-md-6 col-lg-4">                            
+                        <div id='<%= bike.id %>' class="product-box col-12 col-md-6 col-lg-4">                            
                             <article class="card border-dark sombra">
-                                <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.brandId%></span></h5>
+                                <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.brand.name%></span></h5>
                                 <a href="/productDetail/<%=bike.id%>">
-                                    <img src="/asset/img/productos/<%=bike.coverImage%>" class="card-img-top" alt="<%=bike.model%>">
+                                    <img src="/asset/img/productos/<%= bike.image[0].name%>" class="card-img-top" alt="<%=bike.model%>">
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.model%></span><span class="product-price"><%= bike.coin%> <%=(bike.gross * bike.iva)/100 + bike.gross %></span></h5>
+                                    <h5 class="card-title d-flex justify-content-between"><span class="product-name"><%=bike.model%></span><span class="product-price"><%= bike.coin%> <%=((bike.gross * bike.iva)/100 + bike.gross).toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                                        ".") %></span></h5>
                                     <p class="d-none d-lg-block"><%= bike.description%></p>
                                 </div>
+                                <p class="d-none"><%= bike.cc %></p>
+                                <p class="d-none"><%= bike.brakes %></p>
                             </article>
                         </div> 
                          <%});%>                                                         
@@ -157,6 +164,7 @@
         
 <!--Script de boostrap-->
 <%- include('../partials/scripts') %>
+<script src="/js/productsFilters.js"></script>
 </body>
 </html>
         
