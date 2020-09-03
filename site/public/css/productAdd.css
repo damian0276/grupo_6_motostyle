@@ -107,10 +107,13 @@ h6{
 }
 /* desctop */
 @media(min-width:992px){
+    #all-container{
+        margin-top: 105px;
+    }
 .solapas{
         margin-top: 14vh;
     }
-    .titulo{
+.titulo{
         margin-top: 12vh;
         width: 80vw;
     }

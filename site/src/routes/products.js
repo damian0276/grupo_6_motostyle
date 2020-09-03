@@ -9,6 +9,7 @@ const controllerProduct = require(path.resolve(__dirname, '..', 'controllers', '
 router.get('/products', controllerProduct.index);
 router.get('/productCart/:id?',loggedOnly, controllerProduct.cart);
 router.get('/productDetail/:id', controllerProduct.detail);
+router.get('/products/search_results', controllerProduct.search);
 
 module.exports = router;
 
