@@ -54,8 +54,8 @@ module.exports = {
         }
     },
     login: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
+        let errorsLogin = validationResult(req);
+        if (errorsLogin.isEmpty()) {
             User.findOne({ where: { email: req.body.email } })
                 .then(user => {
                     let userLogueado = user;
@@ -73,7 +73,7 @@ module.exports = {
         } else {
 
             return res.render(path.resolve(__dirname, '../views/users/login'), {
-                errors: errors.mapped(), old: req.body,
+                errorsLogin: errors.mapped(), old: req.body,
                 motos
             })
         }

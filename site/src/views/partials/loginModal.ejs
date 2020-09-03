@@ -8,9 +8,9 @@
                 <div>
                     <ul id="errors"></ul>
                 </div>
-             <!-- <% if (typeof(errors)!='undefined'){ %> 
+             <!-- <% if (typeof(errorsLogin)!='undefined'){ %> 
                  <ul class="alert alert-danger ">
-                     <% errors.forEach(error =>{ %>
+                     <% errorsLogin.forEach(error =>{ %>
                          <li><%= error.msg %> </li>
                      <%})%> 
                  </ul>            
@@ -18,17 +18,17 @@
                 <div class="div-form d-flex flex-column align-items-center" id="div-form">
                     <form action="/login" method="POST" class="loginModal">
                         <div class="text-center"><label for="email">Email</label>
-                            <% if(typeof(errors) != 'undefined' && errors.email){%>
+                            <% if(typeof(errorsLogin) != 'undefined' && errorsLogin.email){%>
                                 <div class="text-danger text-center">
-                                  <%= errors.email.msg %>
+                                  <%= errorsLogin.email.msg %>
                                 </div>
                             <%}%>
                         </div>                        
                         <div class="text-center"><input class="rounded-pill border-0 mb-2 text-center" type="email" name="email" id="user-input" ></div>
                         <div class="text-center"><label for="password">Contraseña</label>
-                            <% if(typeof(errors) != 'undefined' && errors.password){%>
+                            <% if(typeof(errorsLogin) != 'undefined' && errorsLogin.password){%>
                                 <div class="text-danger text-center">
-                                  <%= errors.password.msg %>
+                                  <%= errorsLogin.password.msg %>
                                 </div>
                              <%}%>
                         </div>

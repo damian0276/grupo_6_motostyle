@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-
+    
     //Capturas de elementos
     let form = document.getElementById('form-productAdd');
     let ulErrorsPrice = document.getElementById('errorsPrice');
@@ -11,14 +11,14 @@ window.addEventListener('load', () => {
 
     form.addEventListener('submit', (event) =>{
 
-        if(!validations(event)){
+        if(!validations()){
             return event.preventDefault();
         }
         return form.submit();
         
     })
 
-    function validations(event){
+    function validations(){
 
         let { brand, model, color, cc, brakes, stock, coin, iva, gross, imagenPortada, imagen1, imagen2, imagen3, imagen4, description, specification } = form.elements;
         let imagesNoCoverArray = [imagen1, imagen2, imagen3, imagen4];

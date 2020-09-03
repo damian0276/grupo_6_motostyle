@@ -3,8 +3,9 @@ const router = express.Router();
 const path = require('path');
 const db = require('../database/models');
 const User = db.User;
-const registerAuth = require("../middlewares/route/registerAuth");
-const loginAuth = require("../middlewares/route/loginAuth");
+//const registerAuth = require("../middlewares/route/registerAuth");
+//const loginAuth = require("../middlewares/route/loginAuth");
+const validator = require('../middlewares/route/validator')
 const loggedOnly = require("../middlewares/route/loggedOnly");
 const guestOnly = require("../middlewares/route/guestOnly");
 
@@ -35,8 +36,8 @@ const controllerUser = require(path.resolve(__dirname, '..', 'controllers', 'con
 router.get('/register', guestOnly ,controllerUser.register);
 router.get('/passwordRecovery',loggedOnly, controllerUser.passwordRecovery);
 router.get('/buy/:id',loggedOnly, controllerUser.buy); 
-router.post('/register', upload.single('avatar'),registerAuth, controllerUser.create);
-router.post('/login',loginAuth,controllerUser.login);
+router.post('/register', upload.single('avatar'), validator.register, controllerUser.create);
+router.post('/login', validator.login,controllerUser.login);
 router.get('/logOut',loggedOnly, controllerUser.logOut)
 router.get('/user/profile/:id',loggedOnly, controllerUser.profile);
 router.get('/login', guestOnly, controllerUser.loginViews); 

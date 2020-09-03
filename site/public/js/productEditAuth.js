@@ -1,18 +1,19 @@
 window.addEventListener("load",function(){
-
-    let formulario = document.querySelector(".formulario");
     
-    formulario.addEventListener("submit",function(evento){
-        if(!validaciones(evento)){
-            evento.preventDefault();
-        }else{
-            formulario.submit();
-        }    
+    let formulario = document.querySelector(".formulario");
 
-        function validaciones(evento){
+    formulario.addEventListener("submit",function(evento){
+        if(!validaciones()){
+            return evento.preventDefault();
+        }else{
+            return formulario.submit();
+        }})  
+
+    function validaciones(){
 
         let {model, cc, stock, iva, gross, imagenPortada, imagen1, imagen2, imagen3, imagen4, description, specification} = formulario.elements;
         let descriptionError = document.getElementById("description-Errors");
+        let specificationError= document.getElementById('specification-Errors')
         let errorImagePortada = document.getElementById('error-imagePortada');
         let errorImageDivs = document.querySelectorAll('.error-image-div')
         //Regex que evalua si el campo es alfanumerito y no está vacío.
@@ -85,7 +86,7 @@ window.addEventListener("load",function(){
         } 
 
         //Validacion de las imagenes
-
+        
         if(!reImage.test(imagenPortada.value)){
             errorImagePortada.innerHTML= "El archivo tiene que ser formato .jpg .jpeg .png "
             errores.push('El archivo tiene que ser formato .jpg .jpeg .png ');
@@ -140,7 +141,7 @@ window.addEventListener("load",function(){
             imagen4.classList.add('is-valid');
             imagen4.classList.remove('is-invalid');
         }
-
+        
         //Validacion de la descripción
 
         if(!reAlpha.test(description.value)){
@@ -167,21 +168,17 @@ window.addEventListener("load",function(){
 
         
         //validación de errores
-
         let ulErrores = document.getElementById('errores');
         ulErrores.classList.add('alert-danger')
-        if(errores.length > 0){
-            
-            evento.preventDefault();
+        if(errores.length > 0){ 
             ulErrores.innerHTML = "";
             for (let i = 0 ; i < errores.length; i++){
               ulErrores.innerHTML += `<li> ${errores[i]} </li> `
             }
-            errores = [];
+            return false;
         }else{
             return true;
         }
-        }
-    })
-        })
+    }
+})
  

@@ -5,8 +5,9 @@ const path = require('path');
 const multer = require('multer');
 const adminOnly = require('../middlewares/route/adminOnly');
 const sudoOnly = require('../middlewares/route/sudoOnly');
-const productAuth = require('../middlewares/route/productAuth');
-const productAddAuth = require('../middlewares/route/productAddAuth');
+//const productAuth = require('../middlewares/route/productAuth');
+//const productAddAuth = require('../middlewares/route/productAddAuth');
+const validator = require('../middlewares/route/validator');
 // ----------------Database Models ---------------
 const db = require('../database/models');
 const User = db.User;
@@ -29,8 +30,8 @@ const controllerAdmin = require(path.resolve(__dirname, '..', 'controllers', 'co
 router.get('/administrar', adminOnly, controllerAdmin.administrar);
 router.get('/productAdd', adminOnly, controllerAdmin.add);
 router.get('/edit/:id', adminOnly, controllerAdmin.edit);
-router.put('/edit/:id', upload.any(), adminOnly,productAuth, controllerAdmin.update);
-router.post('/administrar/create', upload.any(), adminOnly, productAddAuth, controllerAdmin.create);
+router.put('/edit/:id', upload.any(), adminOnly, validator.productEdit , controllerAdmin.update);
+router.post('/administrar/create', upload.any(), adminOnly, validator.productAdd, controllerAdmin.create);
 router.delete('/delete/:id', adminOnly, controllerAdmin.destroy);
 
 //Rutas para administrar usuaruios
