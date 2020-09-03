@@ -56,3 +56,7 @@ dirección
 ## Tablero de trabajo
 
 - https://trello.com/b/X6UEioXV/proyecto-integrador-ecommerce
+
+## Link del diseño de la base de datos
+
+- https://app.dbdesigner.id/?action=open&uuid=2cf96070-51f5-4f5a-ac10-b46094b8f72f
