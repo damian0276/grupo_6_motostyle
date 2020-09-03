@@ -48,6 +48,10 @@ window.addEventListener('load',function(){
         if(lastName.value == ''){
             errores.push('El campo apellido no puede estar vacio...');
             lastName.classList.add('input-invalid');              
+        }
+        if(lastName.value.length<2){
+            errores.push('El campo apellido no puede tener menos de dos caracteres...');
+            lastName.classList.add('input-invalid'); 
         }else{
             lastName.classList.add('input-valid');
             lastName.classList.remove('input-invalid');
