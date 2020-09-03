@@ -38,6 +38,7 @@ const webRoutes = require('./routes/web');
 const productRoutes = require('./routes/products');
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/user');
+const apiRoutes = require('./routes/api/apiRouteUser')
 
 
 
@@ -48,7 +49,7 @@ app.use(webRoutes);
 app.use(productRoutes);
 app.use(adminRoutes);
 app.use(userRoutes);
-
+app.use(apiRoutes);
 
 
 //Levantar servidor
