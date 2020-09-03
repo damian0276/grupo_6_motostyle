@@ -47,40 +47,6 @@ module.exports = [
             return false
         }        
         }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),
-    check('imagen1').custom(function (value, { req }) {
-        let image = req.file.find(file=>file.filename == "imagen1")
-        if(image){
-            let ext = path.extname(image.filename).toLowerCase();
-        switch (ext){
-        case ".jpg": 
-          return true;
-        case ".jpeg": 
-          return true;
-        case ".png": 
-          return true;
-        default: 
-          return false;
-        }}else{
-            return false
-        }        
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'), 
-    check('imagen1').custom(function (value, { req }) {
-        let image = req.file.find(file=>file.filename == "imagen1")
-        if(image){
-            let ext = path.extname(image.filename).toLowerCase();
-        switch (ext){
-        case ".jpg": 
-          return true;
-        case ".jpeg": 
-          return true;
-        case ".png": 
-          return true;
-        default: 
-          return false;
-        }}else{
-            return false
-        }        
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),  
     check('imagen2').custom(function (value, { req }) {
         let image = req.file.find(file=>file.filename == "imagen2")
         if(image){
@@ -97,7 +63,7 @@ module.exports = [
         }}else{
             return false
         }        
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),
+        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'), 
     check('imagen3').custom(function (value, { req }) {
         let image = req.file.find(file=>file.filename == "imagen3")
         if(image){
@@ -114,9 +80,9 @@ module.exports = [
         }}else{
             return false
         }        
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),
-    check('imagen3').custom(function (value, { req }) {
-        let image = req.file.find(file=>file.filename == "imagen3")
+        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),  
+    check('imagen4').custom(function (value, { req }) {
+        let image = req.file.find(file=>file.filename == "imagen4")
         if(image){
             let ext = path.extname(image.filename).toLowerCase();
         switch (ext){
@@ -131,8 +97,5 @@ module.exports = [
         }}else{
             return false
         }        
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),          
-            
-
-]
-
+        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF'),
+      ]
