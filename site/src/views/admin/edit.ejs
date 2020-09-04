@@ -139,12 +139,12 @@
                         <div clas="container-fluid">
                                 <div class="paso2 row">
                                     <!-- imagen portada -->
-                        <div class="fotop">
+                        <div class="col-12 col-md-6 col-lg-12 d-lg-flex justify-content-lg-center">
                                         <% bike.image.forEach(image => { %>
                                             <% if (image.coverImage == 1) { %>
-                                            <figure class=" col-12 col-md-6 col-lg-7  ">
+                                            <figure class="figure-portada">
                                                 <h4>Imagen de la portada</h4>
-                                                <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model %> "> 
+                                                <img class="w-100 border-1 p-1 preview-img" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model %> "> 
                                                 <% if(typeof(errors) != 'undefined' && errors.imagenPortada){%>
                                                     <div class="text-danger text-center">
                                                         <%= errors.imagenPortada.msg %>
@@ -159,7 +159,7 @@
                                     </div>
                                     <% imagesNoCover.forEach(image => { %>
                                         <figure class=" col-12 col-md-6 col-lg-3 foto ">
-                                            <img class="w-100 border-1 p-1" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model%>">
+                                            <img class="w-100 border-1 p-1 preview-img" src="/asset/img/productos/<%= image.name%>" alt="<%=bike.model%>">
                                             <div class="text-danger error-image-div"></div>
                                             <input type="hidden" name="oldImagen<%= numOld += 1 %>"  value="<%= image.name%>">
                                             <input type="file" name="imagen<%= numInput += 1 %>" class="botonImg" >
@@ -204,7 +204,7 @@
     <!--Script de boostrap-->
     <%- include('../partials/scripts') %>
     <script src="/js/imagesPreview.js"></script>
-    <script src="/js/productEditAuth.js"></script>    
+    <script src="/js/productEdit.js"></script>    
 </body>
                         
 </html>

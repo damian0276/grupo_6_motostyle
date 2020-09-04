@@ -94,44 +94,6 @@ module.exports = {
       });
     }
   },
-
-  edit: (req, res) => {
-
-    Product.findByPk(req.params.id, { include: ['brand', 'color', 'image'] })
-      .then(bike => {
-        let numInput = 0;
-        let numOld = 0;
-        //return res.send(bike.image)
-        let imagesNoCover = bike.image.filter(image => image.coverImage != 1)
-        //return res.send(imagesNoCover)
-        res.render(path.resolve(__dirname, '..', 'views', 'admin', 'edit'), { bike, imagesNoCover, numInput, numOld })
-      })
-
-  },
-
-  update: async (req, res) => {
-
-    await Product.update({
-      brandId: req.body.brand,
-      model: req.body.model,
-      color: req.body.color,
-      cc: req.body.cc,
-      brakes: req.body.brakes,
-      stock: req.body.stock,
-      iva: req.body.iva,
-      gross: req.body.gross,
-      coin: req.body.coin,
-      description: req.body.description,
-      specification: req.body.specification
-    })
-    imagesIds.forEach(async id =>{
-      ImageProduct.create({
-        productId: nuevaMoto.id,
-        imageId: id
-      })
-    })    
-    return res.redirect('/administrar');
-  },
   edit: (req,res) =>{
     
     Product.findByPk(req.params.id,{include: ['brand', 'color', 'image']})

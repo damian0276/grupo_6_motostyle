@@ -73,6 +73,9 @@ h6{
     text-align: left;
     padding-left:  20px;
 }
+.figure-portada{
+    width: 100%;
+}
 .foto{
     padding: 3%;
     width: 50%;
@@ -101,8 +104,7 @@ h6{
 
 .solapas{
     /* background-color: white; */
-    margin-top: 100px;
- 
+    margin-top: 100px; 
 }
 }
 /* desctop */
@@ -113,13 +115,13 @@ h6{
 .solapas{
         margin-top: 14vh;
     }
+    .figure-portada{
+        width: 50%;
+    }
 .titulo{
         margin-top: 12vh;
         width: 80vw;
     }
-.fotop{
-    margin-left: 30vw;
-} 
 
 .large-textarea textarea {
     font-family: Courier, sans-serif,;

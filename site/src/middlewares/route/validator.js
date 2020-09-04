@@ -167,7 +167,7 @@ module.exports = {
                     default:
                         return false;
                 }} else {
-                    return false
+                    return true
                 }   
             }).withMessage("El archivo debe ser formato JPG, JPEG o PNG."),
         check("imagen1").custom((value, { req }) => {
@@ -184,7 +184,7 @@ module.exports = {
                     default:
                         return false;
                 }} else {
-                    return false
+                    return true
                 }   
             }).withMessage("El archivo debe ser formato JPG, JPEG o PNG."),
         check("imagen2").custom((value, { req }) => {
@@ -201,7 +201,7 @@ module.exports = {
                     default:
                         return false;
                 }} else {
-                    return false
+                    return true
                 }   
             }).withMessage("El archivo debe ser formato JPG, JPEG o PNG."),
         check("imagen3").custom((value, { req }) => {
@@ -218,7 +218,7 @@ module.exports = {
                     default:
                         return false;
                 }} else {
-                    return false
+                    return true
                 }   
             }).withMessage("El archivo debe ser formato JPG, JPEG o PNG."),
         check("imagen4")
@@ -236,7 +236,7 @@ module.exports = {
                     default:
                         return false;
                 }} else {
-                    return false
+                    return true
                 }   
             }).withMessage("El archivo debe ser formato JPG, JPEG o PNG."),
         check("description").isLength({ min: 20 }).withMessage("Por favor completá el campo con la descripción del produco"),

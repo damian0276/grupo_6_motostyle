@@ -73,6 +73,9 @@ h6{
     text-align: left;
     padding-left:  20px;
 }
+.figure-portada{
+    width: 100%;
+}
 .foto{
     padding: 3%;
     width: 50%;
@@ -117,9 +120,9 @@ h6{
         margin-top: 12vh;
         width: 80vw;
     }
-.fotop{
-    margin-left: 30vw;
-} 
+    .figure-portada{
+        width: 50%;
+    }
 
 .large-textarea textarea {
     font-family: Courier, sans-serif,;
