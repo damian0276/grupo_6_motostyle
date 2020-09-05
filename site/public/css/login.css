@@ -31,6 +31,17 @@ video{
 
 @media(min-width: 992px){
 
+    #div-back{
+        height: 100vh;
+        width: 100%;
+    }
+    #div-color-bg{
+        height: 315px;
+        width: 230px;
+        margin-top: 25vh;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
     .login-container{
         background-color:black;
         position: relative;
@@ -38,7 +49,7 @@ video{
     }
     
     video{
-   
+    height: 100%;    
     width: 100%;
     
     }
