@@ -115,9 +115,9 @@ window.addEventListener('load',function(){
                         for (let i = 0 ; i < errores.length; i++){
                             ulErrores.innerHTML += `<li> ${errores[i]} </li> `
                         }
-                        return false
+                        return false;
                     }else{
-                        return true;
+                        return formulario.submit();
                     } 
                 })  
                 .catch(err => console.error(err))
