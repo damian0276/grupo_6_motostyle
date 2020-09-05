@@ -73,7 +73,7 @@ module.exports = {
         } else {
 
             return res.render(path.resolve(__dirname, '../views/users/login'), {
-                errorsLogin: errors.mapped(), old: req.body,
+                errorsLogin: errorsLogin.mapped(), old: req.body,
                 motos
             })
         }

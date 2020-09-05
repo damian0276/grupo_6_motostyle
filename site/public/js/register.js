@@ -59,17 +59,11 @@ window.addEventListener('load',function(){
 
 
 
-        // Acá validamos el email a través  de expreciones regulares
+        // validacion para que no este repetido el email
+        
+        
 
-        let reEmail  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  
-        if(!reEmail.test(email.value)){
-            errores.push('El email es inválido...');          
-            email.classList.add('input-invalid');                   
-        }else{
-          email.classList.add('input-valid');
-           email.classList.remove('input-invalid');
-        }
+
 
          //Aquí validamos el password a través  de expreciones regulares
          //Esta expresión regular valida como Mínimo ocho caracteres, al menos una letra y un número:
@@ -98,19 +92,52 @@ window.addEventListener('load',function(){
         }
         }
 
-        //Aquí enviamos los errores al usuario
+        
+
+        fetch("/apiUsersMsList")
+            .then(function(respuesta){
+            return respuesta.json();
+        })
+
+            .then(function(dataUsuario){
+                
+        // Acá validamos el email a través  de expreciones regulares
+
+        
+                let usersEmail = dataUsuario.data
+                //  console.log(email.value);
+                let reEmail  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  
+        if(!reEmail.test(email.value)){
+            errores.push('El email es inválido...');          
+            email.classList.add('input-invalid');  
+            email.classList.remove('input-valid');                 
+        }
+              else if( usersEmail.find(userEmail =>userEmail == email.value)){
+                    errores.push('El email ya esta en uso...');          
+                    email.classList.add('input-invalid'); 
+                  }else{
+                    email.classList.add('input-valid');
+                     email.classList.remove('input-invalid');
+                  }
+               //Aquí enviamos los errores al usuario
          let ulErrores = document.getElementById('errores');
          ulErrores.classList.add('alert-danger')
          if(errores.length > 0){             
-             evento.preventDefault();
+           console.log(errores);
              ulErrores.innerHTML = "";
              for (let i = 0 ; i < errores.length; i++){
+            
                ulErrores.innerHTML += `<li> ${errores[i]} </li> `
              }
-             errores = [];
+            return false
         }else{
              return true;
         } 
+        })  
+            .catch(err => console.error(err))
+            
+        
          
        }
         
