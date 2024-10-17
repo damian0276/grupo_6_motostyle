@@ -7,7 +7,7 @@
 
 ## Integrantes del equipo
 - Leandro Corbalán: 31 años, en pareja y dueño de una herrería. Conocimiento básico de HTML5 y CSS.
-- China Fernandes: 35 años, casada y empleada administrativa.
+- China Fernandes: 35 años, empleada administrativa.
 - Damián Loria: 43 años, casado y empleado administrativo.
 
 
